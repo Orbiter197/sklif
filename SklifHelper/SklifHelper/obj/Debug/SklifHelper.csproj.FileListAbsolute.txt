@@ -1,0 +1,15 @@
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\bin\Debug\SklifHelper.exe.config
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\bin\Debug\SklifHelper.exe
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\bin\Debug\SklifHelper.pdb
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper.csprojAssemblyReference.cache
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\MainWindow.g.cs
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\App.g.cs
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper_MarkupCompile.cache
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper_MarkupCompile.lref
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\MainWindow.baml
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper.g.resources
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper.Properties.Resources.resources
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper.csproj.GenerateResource.cache
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper.csproj.CoreCompileInputs.cache
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper.exe
+C:\Users\Vsevolod\source\repos\SklifHelper\SklifHelper\obj\Debug\SklifHelper.pdb
