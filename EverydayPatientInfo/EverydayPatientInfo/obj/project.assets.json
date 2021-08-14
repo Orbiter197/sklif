@@ -1,11 +1,92 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Fody/6.5.2": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "PropertyChanged.Fody/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Fody/6.5.2": {
+      "sha512": "vG7NsoJvHdhHQbhheNRktTN/mKe9SwRJz42h4iThyxeJDflsbTPP1sNUuBWE+mnbbEWxoZuDThufcG1WmkGWQw==",
+      "type": "package",
+      "path": "fody/6.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "build/Fody.targets",
+        "fody.6.5.2.nupkg.sha512",
+        "fody.nuspec",
+        "netclassictask/Fody.dll",
+        "netclassictask/FodyCommon.dll",
+        "netclassictask/FodyHelpers.dll",
+        "netclassictask/FodyIsolated.dll",
+        "netclassictask/Mono.Cecil.Pdb.dll",
+        "netclassictask/Mono.Cecil.Pdb.pdb",
+        "netclassictask/Mono.Cecil.Rocks.dll",
+        "netclassictask/Mono.Cecil.Rocks.pdb",
+        "netclassictask/Mono.Cecil.dll",
+        "netclassictask/Mono.Cecil.pdb",
+        "netstandardtask/Fody.dll",
+        "netstandardtask/FodyCommon.dll",
+        "netstandardtask/FodyHelpers.dll",
+        "netstandardtask/FodyIsolated.dll",
+        "netstandardtask/Mono.Cecil.Pdb.dll",
+        "netstandardtask/Mono.Cecil.Pdb.pdb",
+        "netstandardtask/Mono.Cecil.Rocks.dll",
+        "netstandardtask/Mono.Cecil.Rocks.pdb",
+        "netstandardtask/Mono.Cecil.dll",
+        "netstandardtask/Mono.Cecil.pdb"
+      ]
+    },
+    "PropertyChanged.Fody/3.4.0": {
+      "sha512": "IAZyq0uolKo2WYm4mjx+q7A8fSGFT0x2e1s3y+ODn4JI0kqTDoo9GF2tdaypUzRFJZfdMxfC5HZW9QzdJLtOnA==",
+      "type": "package",
+      "path": "propertychanged.fody/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/PropertyChanged.Fody.props",
+        "lib/net40/PropertyChanged.dll",
+        "lib/net40/PropertyChanged.xml",
+        "lib/netstandard1.0/PropertyChanged.dll",
+        "lib/netstandard1.0/PropertyChanged.xml",
+        "lib/netstandard2.0/PropertyChanged.dll",
+        "lib/netstandard2.0/PropertyChanged.xml",
+        "lib/netstandard2.1/PropertyChanged.dll",
+        "lib/netstandard2.1/PropertyChanged.xml",
+        "propertychanged.fody.3.4.0.nupkg.sha512",
+        "propertychanged.fody.nuspec",
+        "weaver/PropertyChanged.Fody.dll",
+        "weaver/PropertyChanged.Fody.xcf"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Fody >= 6.5.2",
+      "PropertyChanged.Fody >= 3.4.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Vsevolod\\.nuget\\packages\\": {},
@@ -14,11 +95,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vsevolod\\Source\\Repos\\TemporaryRepo\\EverydayPatientInfo\\EverydayPatientInfo.csproj",
+      "projectUniqueName": "C:\\Users\\Vsevolod\\Gerenal\\Projects\\VisualStudioProjects\\sklif\\EverydayPatientInfo\\EverydayPatientInfo\\EverydayPatientInfo.csproj",
       "projectName": "EverydayPatientInfo",
-      "projectPath": "C:\\Users\\Vsevolod\\Source\\Repos\\TemporaryRepo\\EverydayPatientInfo\\EverydayPatientInfo.csproj",
+      "projectPath": "C:\\Users\\Vsevolod\\Gerenal\\Projects\\VisualStudioProjects\\sklif\\EverydayPatientInfo\\EverydayPatientInfo\\EverydayPatientInfo.csproj",
       "packagesPath": "C:\\Users\\Vsevolod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vsevolod\\Source\\Repos\\TemporaryRepo\\EverydayPatientInfo\\obj\\",
+      "outputPath": "C:\\Users\\Vsevolod\\Gerenal\\Projects\\VisualStudioProjects\\sklif\\EverydayPatientInfo\\EverydayPatientInfo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +131,18 @@
     "frameworks": {
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "Fody": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.5.2, )"
+          },
+          "PropertyChanged.Fody": {
+            "target": "Package",
+            "version": "[3.4.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

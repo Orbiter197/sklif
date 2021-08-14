@@ -4,9 +4,48 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EverydayPatientInfo"
+        Icon="Images/icon-small.png"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
-    </Grid>
+    <Border Padding="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="210"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--#region Navigation-->
+            <Border Grid.Column="0" Background="#30009FFF" Padding="10">
+
+
+                <StackPanel x:Name="Navigation" >
+
+                    <!-- User Info-->
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="64" Height="64"></Image>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="User Name" FontSize="18" FontWeight="Bold"/>
+
+                            <TextBlock Text="User Status"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <Button x:Name="Settings" Margin="0 5" Content="Settings"/>
+                    <Button x:Name="ViewAll" Margin="0 5" Content="View All"/>
+                    <Button x:Name="Info" Margin="0 5" Content="Info"/>
+                </StackPanel>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Table-->
+            <Border Grid.Column="1">
+                <StackPanel>
+
+
+                </StackPanel>
+            </Border>
+            <!--#endregion-->
+        </Grid>
+    </Border>
 </Window>
