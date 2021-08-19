@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Vsevolod\Gerenal\Projects\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
-11407045341
+6909706631
 
 51451162518
 193478742890
-MainWindow.xaml;
+MainWindow.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
 
 False
 
