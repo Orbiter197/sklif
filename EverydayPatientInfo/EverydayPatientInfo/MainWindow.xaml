@@ -4,16 +4,63 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EverydayPatientInfo"
+        xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
+        xmlns:view="clr-namespace:EverydayPatientInfo.MVVM.View"
         Icon="Images/icon-small.png"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Border Padding="10">
-        <StackPanel Background="{StaticResource BackgroundLightBrush}">
-            <TextBlock Text="Welcome, friend!" FontSize="40"/>
-            <TextBlock Text="Welcome, friend!" FontSize="40" FontFamily="{StaticResource LatoThin}"/>
-            <TextBlock Text="Welcome, friend!" FontSize="40" FontFamily="{StaticResource LatoRegular}"/>
-            <Button Content="text" Style="{StaticResource Hoverless}"></Button>
-        </StackPanel>
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Border Background="DarkCyan" BorderThickness="5,0,5,5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--#region User Info-->
+            <Border Grid.Row="0"
+                    Grid.Column="0">
+
+                <StackPanel Orientation="Horizontal" >
+                    <Image/>
+                    <TextBlock/>
+                </StackPanel>
+
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Navigation-->
+            <StackPanel Grid.Row="1"
+                        Grid.Column="0">
+
+            </StackPanel>
+            <!--#endregion-->
+
+            <!--#region Top Bar-->
+            <StackPanel Grid.Row="0"
+                        Grid.Column="1" >
+
+            </StackPanel>
+            <!--#endregion-->
+
+            <!--#region Main View-->
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}">
+
+            </ContentControl>
+            <!--#endregion-->
+
+
+        </Grid>
     </Border>
 </Window>

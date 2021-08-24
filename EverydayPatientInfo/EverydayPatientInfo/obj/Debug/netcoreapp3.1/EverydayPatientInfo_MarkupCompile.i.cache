@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Vsevolod\Gerenal\Projects\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\
 EverydayPatientInfo
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Vsevolod\Gerenal\Projects\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
-6909706631
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
+7-1080309136
 
-7-1120450619
+101483473911
 193478742890
-MainWindow.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
+MainWindow.xaml;MVVM\View\MainContentView.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
 
-True
+False
 

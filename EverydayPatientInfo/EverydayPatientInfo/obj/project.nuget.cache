@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fiDwLMKwU2L2gSDU+eoMccK/BSTaXywcKNCg8RVzP2cnN/avW8Xic5OCUGWZLf9tatiJGwJrI6Yh06DI0FCCvA==",
+  "dgSpecHash": "adIps+/luQCh8wPp/a+uLhXOYy95GIpNl3IcwDrHYOvxIRjSJO++Ib5QjMmawZHlD2p29Sua/aq/PTbJ3qzbvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vsevolod\\Gerenal\\Projects\\VisualStudioProjects\\sklif\\EverydayPatientInfo\\EverydayPatientInfo\\EverydayPatientInfo.csproj",
+  "projectFilePath": "D:\\General\\VisualStudioProjects\\sklif\\EverydayPatientInfo\\EverydayPatientInfo\\EverydayPatientInfo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vsevolod\\.nuget\\packages\\fody\\6.5.2\\fody.6.5.2.nupkg.sha512",
     "C:\\Users\\Vsevolod\\.nuget\\packages\\propertychanged.fody\\3.4.0\\propertychanged.fody.3.4.0.nupkg.sha512"
