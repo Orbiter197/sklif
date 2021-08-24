@@ -4,10 +4,66 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="Green">
-    <StackPanel>
+             mc:Ignorable="d" Background="{StaticResource BackgroundVeryLightBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border Margin="10"
+            Background="{StaticResource BackgroundLightBrush}">
+
+        <Grid>
+            <!--#region Login-->
+
+            <Border>
+                <Grid>
+                    <!--#region Column definitions-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--#endregion-->
+                    
+                   
+                </Grid>
+
+            </Border>
+
+            <!--#endregion-->
+
+            <!--#region Table-->
+
+            <Border>
+                <StackPanel Background="Red"
+                        Visibility="Hidden">
+
+                    <!--#region TopBar-->
+
+                    <StackPanel Orientation="Horizontal">
+
+                    </StackPanel>
+
+                    <!--#endregion-->
+
+                    <!--#region Table-->
+
+                    <TreeView>
+                        <!-- TODO: create table-->
+                    </TreeView>
+
+                    <!--#endregion-->
+
+                    <!--#region ToolBar-->
+
+                    <StackPanel Orientation="Horizontal">
+
+                    </StackPanel>
+
+                    <!--#endregion-->
+
+
+                </StackPanel>
+            </Border>
+            <!--#endregion-->
+        </Grid>
         
-    </StackPanel>
+    </Border>
 </UserControl>
