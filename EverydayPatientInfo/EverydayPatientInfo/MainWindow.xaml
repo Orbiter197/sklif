@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:EverydayPatientInfo"
         xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
         xmlns:view="clr-namespace:EverydayPatientInfo.MVVM.View"
+        
         Icon="Images/icon-small.png"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" 
+        Height="450" Width="800"
+        Background="{StaticResource BackgroundLightBrush}">
 
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>
@@ -64,6 +67,8 @@
             <!--#region Navigation-->
             <StackPanel Grid.Row="1"
                         Grid.Column="0">
+                <Button Content="SignIn" Command="{Binding SignInCommand}" />
+                <Button Content="SignUp" Command="{Binding SignUpCommand}" />
 
             </StackPanel>
             <!--#endregion-->

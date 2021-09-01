@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using EverydayPatientInfo.Core;
+using System.Windows.Input;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
@@ -13,13 +14,26 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Private fields
 
         /// <summary>
-        /// 
+        /// Current view that is shown in main window
         /// </summary>
         private object _currentView;
 
         #endregion
 
         #region Public fields
+
+        public object CurrentView
+        {
+            get => _currentView;
+            set => _currentView = value;
+        }
+
+        public MainContentViewModel HomeVM;
+        public SignInViewModel SignInVM;
+        public SignUpViewModel SignUpVM;
+
+        public ICommand SignInCommand { get; set; }
+        public ICommand SignUpCommand { get; set; }
 
         #endregion
 
@@ -31,24 +45,30 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public MainWindowViewModel()
         {
             HomeVM = new MainContentViewModel();
-            CurrentView = HomeVM;
+            SignInVM = new SignInViewModel();
+            SignUpVM = new SignUpViewModel();
+
+            CurrentView = SignInVM;
+
+            SignInCommand = new RelayCommand(() => { CurrentView = SignInVM; });
+            SignUpCommand = new RelayCommand(() => { CurrentView = SignUpVM; });
         }
 
         #endregion
 
         #region Helpers
 
-        #endregion
-        public MainContentViewModel HomeVM;
-
-        
-        public object CurrentView 
-        { 
-            get => _currentView; 
-            set => _currentView = value; 
-        }
        
 
-        
+        #endregion
+
+
+
+
+
+
+
+
+
     }
 }

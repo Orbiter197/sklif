@@ -72,3 +72,8 @@ D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\ob
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\MVVM\View\MainContentView.g.cs
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\MVVM\View\MainContentView.baml
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\MVVM\View\SignInView.g.cs
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\MVVM\View\SignUpView.g.cs
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\MVVM\View\SignInView.baml
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\MVVM\View\SignUpView.baml
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\netcoreapp3.1\Styles\TextBox.baml

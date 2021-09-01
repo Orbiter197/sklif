@@ -124,7 +124,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\Model\" />
+    <Folder Include="ProjectStructure\" />
   </ItemGroup>
 
 </Project>

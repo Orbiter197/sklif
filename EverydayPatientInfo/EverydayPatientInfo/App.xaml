@@ -18,6 +18,13 @@
             <DataTemplate DataType="{x:Type viewModel:MainContentViewModel}">
                 <view:HomeView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:SignInViewModel}">
+                <view:SignInView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:SignUpViewModel}">
+                <view:SignUpView/>
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
