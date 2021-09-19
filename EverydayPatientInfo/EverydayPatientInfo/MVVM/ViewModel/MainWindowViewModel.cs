@@ -30,7 +30,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         public MainContentViewModel HomeVM;
         public SignInViewModel SignInVM;
-        public SignUpViewModel SignUpVM;
+        public RegisterViewModel SignUpVM;
 
         public ICommand SignInCommand { get; set; }
         public ICommand SignUpCommand { get; set; }
@@ -46,7 +46,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             HomeVM = new MainContentViewModel();
             SignInVM = new SignInViewModel();
-            SignUpVM = new SignUpViewModel();
+            SignUpVM = new RegisterViewModel();
 
             CurrentView = SignInVM;
 

@@ -1,10 +1,11 @@
 ﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.MVVM.Model;
-/*
+using System.Windows.Input;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
-*/
+
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
@@ -13,10 +14,14 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     /// </summary>
     class SignInViewModel : ObservableObject
     {
+        #region Private properties
+
         /// <summary>
         /// The model that handles all logic
         /// </summary>
-        private readonly SignInModel signInModel;       
+        private readonly SignInModel signInModel;
+
+        #endregion
 
         #region Public properties
 
@@ -37,7 +42,13 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             get => signInModel.Password;
             set => signInModel.Password = value;
         }
+
+        public ICommand SignInCommand { get; set; }
+        public ICommand RegisterCommand { get; set; }
+        public ICommand ResetPasswordCommand { get; set; }
         #endregion
+
+        #region Constructor
 
         /// <summary>
         /// Default constructor
@@ -45,7 +56,14 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public SignInViewModel()
         {
             signInModel = new SignInModel(this);
+
+
+            SignInCommand = new RelayCommand(signInModel.SignIn);
+            RegisterCommand = new RelayCommand(signInModel.Register);
+            ResetPasswordCommand = new RelayCommand(signInModel.ResetPassword);
         }
+
+        #endregion
 
     }
 }

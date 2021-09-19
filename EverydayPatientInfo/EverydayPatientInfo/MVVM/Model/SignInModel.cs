@@ -7,6 +7,7 @@ namespace EverydayPatientInfo.MVVM.Model
 {
     /// <summary>
     /// The model for "Sign in" window that handles all logic
+    /// This class is used to send a username and a password to a database
     /// </summary>
     class SignInModel
     {
@@ -41,7 +42,8 @@ namespace EverydayPatientInfo.MVVM.Model
                 if (value != username)
                 {
                     username = value;
-                    if (viewModel != null) viewModel.Username = username;
+                    if (viewModel != null) 
+                        viewModel.Username = username;
                 }
             }
         }
@@ -57,17 +59,34 @@ namespace EverydayPatientInfo.MVVM.Model
                 if (value != password)
                 {
                     password = value;
-                    if (viewModel != null) viewModel.Password = password;
+                    if (viewModel != null) 
+                        viewModel.Password = password;
                 }
             }
         }
         #endregion
 
+        #region Public methods
+
+        public void SignIn()
+        {
+            // TODO: send data            
+        }
+        public void Register()
+        {
+            // TODO: send data   
+        }
+        public void ResetPassword()
+        {
+            // TODO: send data   
+        }
+
+        #endregion
+
         #region
 
-        // TODO: check spelling
         /// <summary>
-        /// The model of autorisation 
+        /// The model of authorization 
         /// </summary>
         /// <param name="viewModel">The current instance of <see cref="SignInViewModel"/></param>
         public SignInModel(SignInViewModel viewModel)
@@ -75,6 +94,7 @@ namespace EverydayPatientInfo.MVVM.Model
             this.Username = "Default Username";
             this.Password = "Default Password";
 
+            // This must be at the end of a constructor
             this.viewModel = viewModel;
         }
 

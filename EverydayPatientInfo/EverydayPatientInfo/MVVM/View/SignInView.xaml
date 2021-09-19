@@ -19,59 +19,70 @@
             
             <!--#region Columns and rows-->
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
             
             <!--#endregion-->
             
             <!-- Welcome text-->
-            <TextBlock Grid.Row="0" Grid.Column="1"
+            <TextBlock Grid.Row="0" 
                        Text="Welcome!" FontSize="60"
-                       Style="{StaticResource BaseTextBlockStyle}" 
-                       Margin="0 0 0 20"/>
+                       Style="{StaticResource BaseTextBlockStyle}"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       Margin="0 0 0 20" TextWrapping="NoWrap"/>
 
-            <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
-                        VerticalAlignment="Center">
+
+            <Border Grid.Row="1"
+                    CornerRadius="20"
+                    Background="{StaticResource ThemeOrangeBrush}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    Margin="20">
                 
-                <TextBox Name="UsernameField"  
-                         Text="{Binding Username}" MinWidth="500"
-                         Style="{StaticResource NewTextBloxStyle}"
-                         HorizontalAlignment="Stretch"
-                         Margin="40 5"/>
+                <StackPanel VerticalAlignment="Center">
+                
+                    <TextBox Name="UsernameField"  
+                             Text="{Binding Username}" MinWidth="500"
+                             Style="{StaticResource NewTextBloxStyle}"
+                             HorizontalAlignment="Stretch"
+                             Margin="30 10"/>
 
-                <TextBox Name="PasswordField"
-                         Text="{Binding Password}" MinWidth="500"
-                         Style="{StaticResource NewTextBloxStyle}"
-                         HorizontalAlignment="Stretch"
-                         Margin="40 5"/>
+                    <TextBox Name="PasswordField"
+                             Text="{Binding Password}" MinWidth="500"
+                             Style="{StaticResource NewTextBloxStyle}"
+                             HorizontalAlignment="Stretch"
+                             Margin="30 10"/>
                      
-            </StackPanel>
-            
+                </StackPanel>
+            </Border>
+
             <!--#region HelpBar-->
-            <Grid Grid.Row="2" Grid.ColumnSpan="3">
-                <Button Content="Sign In" FontSize="20"
-                        Style="{StaticResource Hoverless}" 
+            <Grid Grid.Row="2">
+                <Button Content="Sign In" FontSize="24"
+                        Style="{StaticResource Orange}" 
+                        Background="Orange"
                         HorizontalAlignment="Right" 
-                        Background="Orange"/>
+                        VerticalAlignment="Center" 
+                        Width="140" Margin="10"
+                        Command="{Binding SignInCommand}"/>
                 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Button Content="Register" FontSize="16"
-                        Style="{StaticResource Hoverless}" 
-                        HorizontalAlignment="Right" 
-                            Margin="0 0 20 0"/>
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Left">
                     
-                    <Button Content="Forgot password?" FontSize="16"
-                        Style="{StaticResource Hoverless}" 
-                        HorizontalAlignment="Right" />
+                    <Button Content="Register" FontSize="20"
+                            Style="{StaticResource InvertedOrange}" 
+                            Margin="20 10"
+                            Command="{Binding RegisterCommand}"/>
+
+                    <Button Content="Forgot password?" FontSize="20"
+                            Style="{StaticResource InvertedOrange}" 
+                            Margin="20 10"
+                            HorizontalAlignment="Right" />
                 </StackPanel>
             </Grid>
             <!--#endregion-->

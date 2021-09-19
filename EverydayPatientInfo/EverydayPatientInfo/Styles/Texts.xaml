@@ -12,4 +12,11 @@
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
         <Setter Property="FontSize" Value="20"/>
     </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="TitleTextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource LatoBold}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeOrangeBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
 </ResourceDictionary>

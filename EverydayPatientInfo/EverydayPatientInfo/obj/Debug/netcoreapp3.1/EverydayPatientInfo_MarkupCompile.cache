@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
-10-2026964291
+10-555828341
 
-14-1680614943
+15478760347
 193478742890
-MainWindow.xaml;MVVM\View\MainContentView.xaml;MVVM\View\SignInView.xaml;MVVM\View\SignUpView.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\TextBox.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
+MainWindow.xaml;MVVM\View\MainContentView.xaml;MVVM\View\RegisterView.xaml;MVVM\View\SignInView.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\TextBox.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
 
 False
 
