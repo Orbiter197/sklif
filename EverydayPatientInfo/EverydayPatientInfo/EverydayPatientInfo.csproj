@@ -124,7 +124,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ProjectStructure\" />
+    <Folder Include="ProjectStructure\PatientStructure\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.26\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

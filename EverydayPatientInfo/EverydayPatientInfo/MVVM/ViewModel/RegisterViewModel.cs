@@ -22,6 +22,10 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #region Public fiels
 
+
+        #endregion
+
+        #region Constructor
         
         #endregion
     }
