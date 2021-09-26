@@ -26,12 +26,12 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Public properties
 
         /// <summary>
-        /// Username 
+        /// Login 
         /// </summary>
         public string Username
         {
-            get => signInModel.Username;
-            set => signInModel.Username = value;
+            get => signInModel.Login;
+            set => signInModel.Login = value;
         }
 
         /// <summary>
