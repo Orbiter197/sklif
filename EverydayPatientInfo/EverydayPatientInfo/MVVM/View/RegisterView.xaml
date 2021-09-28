@@ -5,19 +5,96 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="{StaticResource BackgroundLightBrush}">
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="{StaticResource BackgroundVeryLight}"/>
+            <GradientStop Color="{StaticResource ThemeBlue}" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
 
-    <Border>
-        <StackPanel HorizontalAlignment="Center" 
-                    MinWidth="200">
-            <TextBlock Style="{StaticResource TitleTextBlock}"
-                       Text="Sign Up"/>
-            <TextBox/>
-            <TextBox/>
-            <TextBox/>
-            <TextBox/>
+    <Border HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="{StaticResource ThemeOrangeBrush}"
+            CornerRadius="20" Margin="10">
+        <StackPanel MinWidth="300">
+            <TextBlock HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSizeLarge}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontFamily="{StaticResource LatoBold}"
+                       Text="R e g i s t e r"
+                       Margin="0,10,0,0"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSizeSmall}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontFamily="{StaticResource LatoBold}"
+                       Text="Login"
+                       Margin="5 10 0 0"/>
+            <TextBox Style="{StaticResource NewTextBloxStyle}"
+                     Margin="15 0"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSizeSmall}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontFamily="{StaticResource LatoBold}"
+                       Text="First name"
+                       Margin="5 10 0 0"/>
+            <TextBox Style="{StaticResource NewTextBloxStyle}"
+                     Margin="15 0"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSizeSmall}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontFamily="{StaticResource LatoBold}"
+                       Text="Patronymic"
+                       Margin="5 10 0 0"/>
+            <TextBox Style="{StaticResource NewTextBloxStyle}"
+                     Margin="15 0"/>
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSizeSmall}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontFamily="{StaticResource LatoBold}"
+                       Text="Last name"
+                       Margin="5 10 0 0"/>
+            <TextBox Style="{StaticResource NewTextBloxStyle}"
+                     Margin="15 0"/>
+
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSizeSmall}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontFamily="{StaticResource LatoBold}"
+                       Text="Password"
+                       Margin="5 10 0 0"/>
+            <TextBox Style="{StaticResource NewTextBloxStyle}"
+                     Margin="15 0"/>
+
+
+            <TextBlock HorizontalAlignment="Left"
+                       TextAlignment="Center"
+                       FontSize="{StaticResource FontSizeSmall}"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontFamily="{StaticResource LatoBold}"
+                       Text="Confirm Password"
+                       Margin="5 10 0 0"/>
+            <TextBox Style="{StaticResource NewTextBloxStyle}"
+                     Margin="15 0"/>
+
+            <Button Style="{StaticResource InvertedOrange}"
+                    Content="Register"
+                    FontSize="{StaticResource FontSizeNormal}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0 5"/>
         </StackPanel>
     </Border>
-    
+
 </UserControl>

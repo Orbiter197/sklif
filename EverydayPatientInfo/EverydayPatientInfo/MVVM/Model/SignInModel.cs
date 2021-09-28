@@ -1,22 +1,23 @@
 ﻿using EverydayPatientInfo.MVVM.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using EverydayPatientInfo.ProjectStructure.DataBaseStructure;
+
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace EverydayPatientInfo.MVVM.Model
 {
     /// <summary>
     /// The model for "Sign in" window that handles all logic
-    /// This class is used to send a username and a password to a database
+    /// This class is used to send a login and a password to a database
     /// </summary>
     class SignInModel
     {
         #region Private properties
 
         /// <summary>
-        /// Username 
+        /// Login 
         /// </summary>
-        private string username;
+        private string login;
 
         /// <summary>
         /// Password 
@@ -32,18 +33,18 @@ namespace EverydayPatientInfo.MVVM.Model
         #region Public properties
 
         /// <summary>
-        /// Username 
+        /// Login 
         /// </summary>
-        public string Username
+        public string Login
         {
-            get => username;
+            get => login;
             set
             {
-                if (value != username)
+                if (value != login)
                 {
-                    username = value;
+                    login = value;
                     if (viewModel != null) 
-                        viewModel.Username = username;
+                        viewModel.Username = login;
                 }
             }
         }
@@ -68,9 +69,26 @@ namespace EverydayPatientInfo.MVVM.Model
 
         #region Public methods
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void SignIn()
         {
-            // TODO: send data            
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE 'login' = @login AND 'password' = @password",db.getConnection());
+            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = Login;
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = Password;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                Register();
         }
         public void Register()
         {
@@ -91,7 +109,7 @@ namespace EverydayPatientInfo.MVVM.Model
         /// <param name="viewModel">The current instance of <see cref="SignInViewModel"/></param>
         public SignInModel(SignInViewModel viewModel)
         {
-            this.Username = "Default Username";
+            this.Login = "Default Login";
             this.Password = "Default Password";
 
             // This must be at the end of a constructor

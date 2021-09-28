@@ -1,4 +1,4 @@
-﻿namespace EverydayPatientInfo.ProjectStructure.UserStructure
+﻿   namespace EverydayPatientInfo.ProjectStructure.UserStructure
 {
     class Doctor : User
     {
