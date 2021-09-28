@@ -69,6 +69,9 @@ namespace EverydayPatientInfo.MVVM.Model
 
         #region Public methods
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void SignIn()
         {
             DB db = new DB();
