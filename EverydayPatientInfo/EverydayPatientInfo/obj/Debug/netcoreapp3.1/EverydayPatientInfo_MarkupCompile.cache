@@ -12,9 +12,9 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
 10-555828341
 
-19-1084912936
+20-2096233976
 194-1445925875
 MainWindow.xaml;MVVM\View\MainContentView.xaml;MVVM\View\RegisterView.xaml;MVVM\View\SignInView.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\TextBox.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
 
-False
+True
 
