@@ -11,31 +11,40 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     /// </summary>
     class MainWindowViewModel : ObservableObject
     {
+
+        private static MainWindowViewModel instance;
+
+        internal static MainWindowViewModel Instance 
+        { 
+            get => instance; 
+            private set => instance = value; 
+        }
+
         #region Private fields
 
         /// <summary>
         /// Current view that is shown in main window
         /// </summary>
-        private object _currentView;
+        private object currentView;
 
         #endregion
 
-        #region Public fields
+        #region Public properties
 
         public object CurrentView
         {
-            get => _currentView;
-            set => _currentView = value;
+            get => currentView;
+            set => currentView = value;
         }
 
-        public MainContentViewModel HomeVM;
-        public SignInViewModel SignInVM;
-        public RegisterViewModel SignUpVM;
-
-        public ICommand SignInCommand { get; set; }
-        public ICommand SignUpCommand { get; set; }
+        public SignInViewModel SignInVM { get; set; }
+        public RegisterationViewModel RegisterVM { get; set; }
+        public MainContentViewModel MainContentVM { get; set; }
+        
 
         #endregion
+
+
 
         #region Constructor 
 
@@ -44,14 +53,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// </summary>
         public MainWindowViewModel()
         {
-            HomeVM = new MainContentViewModel();
-            SignInVM = new SignInViewModel();
-            SignUpVM = new RegisterViewModel();
-
-            CurrentView = SignInVM;
-
-            SignInCommand = new RelayCommand(() => { CurrentView = SignInVM; });
-            SignUpCommand = new RelayCommand(() => { CurrentView = SignUpVM; });
+            CurrentView = new SignInViewModel();
+            Instance = this;
         }
 
         #endregion
@@ -61,14 +64,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
        
 
         #endregion
-
-
-
-
-
-
-
-
 
     }
 }

@@ -6,9 +6,9 @@
     <FontFamily x:Key="LatoThin">pack://application:,,,/Fonts/#Lato Thin</FontFamily>
     <FontFamily x:Key="LatoBold">pack://application:,,,/Fonts/#Lato Bold//</FontFamily>
 
-    <system:Double x:Key="FontSizeLarge">30</system:Double>
-    <system:Double x:Key="FontSizeNormal">15</system:Double>
-    <system:Double x:Key="FontSizeSmall">12</system:Double>
+    <system:Double x:Key="FontSizeLarge">72</system:Double>
+    <system:Double x:Key="FontSizeNormal">48</system:Double>
+    <system:Double x:Key="FontSizeSmall">24</system:Double>
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>

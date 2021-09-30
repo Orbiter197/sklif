@@ -7,7 +7,7 @@ namespace EverydayPatientInfo.ProjectStructure.DataBaseStructure
 {
     public class DB
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=everyday_patient_info");
+        MySqlConnection connection = new MySqlConnection("Server=localhost; Port=3306; Username=root; Password=[-Vse-5*0-lod-]; Database=everyday_patient_info");
 
         public void openConnection()
         {
@@ -21,7 +21,7 @@ namespace EverydayPatientInfo.ProjectStructure.DataBaseStructure
                 connection.Close();
         }
 
-        public MySqlConnection getConnection()
+        public MySqlConnection GetConnection()
         {
             return connection;
         }

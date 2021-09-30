@@ -10,86 +10,38 @@
         Icon="Images/icon-small.png"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="450" Width="800"
-        Background="{StaticResource BackgroundLightBrush}">
+        MinHeight="450" MinWidth="800"
+        Background="{StaticResource BackgroundLightBrush}" 
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:SignInViewModel}">
+            <view:SignInView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RegisterationViewModel}">
+            <view:RegistrationView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:MainContentViewModel}">
+            <view:MainContentView/>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>
     </Window.DataContext>
 
-    <Border Background="White" BorderThickness="5,0,5,5">
-        <Grid>
-            <!--#region Grid rows and columns definition-->
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            
-            <!--#endregion-->
-            
-
-            <!--#region User Info-->
-            
-            <Border Grid.Row="0"
-                    Grid.Column="0"
-                    Margin="5">
-
-                <StackPanel Orientation="Horizontal">
-                    <Rectangle Margin="10,0,0,0"
-                               VerticalAlignment="Center" 
-                               HorizontalAlignment="Center"
-                               
-                               Width="30" Height="30" 
-                               Fill="Orange"/>
-                    
-                    <StackPanel Margin="10,0,0,0">
-                        <TextBlock Text="User Name" Style="{StaticResource Alligned}" 
-                                   FontSize="16"
-                                   HorizontalAlignment="Left" />
-                        
-                        <TextBlock Text="User Role" Style="{StaticResource Alligned}" 
-                                   FontSize="10"
-                                   HorizontalAlignment="Left"/>
-                        
-                    </StackPanel>
-                </StackPanel>
-
-            </Border>
-            
-            <!--#endregion-->
-
-            <!--#region Navigation-->
-            <StackPanel Grid.Row="1"
-                        Grid.Column="0">
-                <Button Content="SignIn" Command="{Binding SignInCommand}" />
-                <Button Content="SignUp" Command="{Binding SignUpCommand}" />
-
-            </StackPanel>
-            <!--#endregion-->
-
-            <!--#region Top Bar-->
-            <StackPanel Grid.Row="0"
-                        Grid.Column="1" >
-
-            </StackPanel>
-            <!--#endregion-->
-
-            <!--#region Main View-->
-            <ContentControl Grid.Row="1"
+    <Border>
+        
+        <!--#region Main View-->
+        <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            
+
                             Content="{Binding CurrentView}">
+        </ContentControl>
+        <!--#endregion-->
 
-            </ContentControl>
-            <!--#endregion-->
 
-
-        </Grid>
     </Border>
+
+
 </Window>

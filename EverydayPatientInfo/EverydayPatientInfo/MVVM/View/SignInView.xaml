@@ -5,87 +5,155 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
              xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
-             xmlns:view="clr-namespace:EverydayPatientInfo.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="1000" d:DesignWidth="1800"
              Background="White">
 
     <UserControl.DataContext>
         <viewModel:SignInViewModel/>
     </UserControl.DataContext>
-    
-    <Border Margin="10">
-        <Grid>
-            
+
+    <Border>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
+                <GradientStop Color="#FF032F8C" Offset="1"/>
+                <GradientStop Color="#FF0675E4" Offset="0"/>
+                <GradientStop Color="#FF045FCB" Offset="0.457"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+
+        <Grid VerticalAlignment="Stretch"
+              HorizontalAlignment="Stretch"
+              Margin="300 100">
+
             <!--#region Columns and rows-->
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             <!--#endregion-->
-            
-            <!-- Welcome text-->
-            <TextBlock Grid.Row="0" 
-                       Text="Welcome!" FontSize="60"
-                       Style="{StaticResource BaseTextBlockStyle}"
-                       VerticalAlignment="Bottom"
-                       HorizontalAlignment="Center"
-                       Margin="0 0 0 20" TextWrapping="NoWrap"/>
 
+            <!--#region Left-->
+            <Border Grid.Column="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
+                        <GradientStop Color="#FF032F8C" Offset="1"/>
+                        <GradientStop Color="#FF0675E4" Offset="0"/>
+                        <GradientStop Color="#FF045FCB" Offset="0.457"/>
+                    </LinearGradientBrush>
+                </Border.Background>
 
-            <Border Grid.Row="1"
-                    CornerRadius="20"
-                    Background="{StaticResource ThemeOrangeBrush}"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Stretch"
-                    Margin="20">
-                
-                <StackPanel VerticalAlignment="Center">
-                
-                    <TextBox Name="UsernameField"  
-                             Text="{Binding Username}" MinWidth="500"
-                             Style="{StaticResource NewTextBloxStyle}"
-                             HorizontalAlignment="Stretch"
-                             Margin="30 10"/>
+                <StackPanel Orientation="Vertical"
+                            Margin="40"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
 
-                    <TextBox Name="PasswordField"
-                             Text="{Binding Password}" MinWidth="500"
-                             Style="{StaticResource NewTextBloxStyle}"
-                             HorizontalAlignment="Stretch"
-                             Margin="30 10"/>
-                     
+                    <TextBlock Grid.Row="0" 
+                               Text="Welcome!"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="{StaticResource ForegroundLightBrush}"
+                               FontSize="{StaticResource FontSizeLarge}"/>
+
                 </StackPanel>
             </Border>
-
-            <!--#region HelpBar-->
-            <Grid Grid.Row="2">
-                <Button Content="Sign In" FontSize="24"
-                        Style="{StaticResource Orange}" 
-                        Background="Orange"
-                        HorizontalAlignment="Right" 
-                        VerticalAlignment="Center" 
-                        Width="140" Margin="10"
-                        Command="{Binding SignInCommand}"/>
-                
-                <StackPanel Orientation="Horizontal" 
-                            HorizontalAlignment="Left">
-                    
-                    <Button Content="Register" FontSize="20"
-                            Style="{StaticResource InvertedOrange}" 
-                            Margin="20 10"
-                            Command="{Binding RegisterCommand}"/>
-
-                    <Button Content="Forgot password?" FontSize="20"
-                            Style="{StaticResource InvertedOrange}" 
-                            Margin="20 10"
-                            HorizontalAlignment="Right" />
-                </StackPanel>
-            </Grid>
             <!--#endregion-->
+
+            <!--#region Right-->
+            <Border Grid.Column="1"
+                    Background="{StaticResource BackgroundVeryLightBrush}">
+
+                <StackPanel Orientation="Vertical"
+                            Margin="80"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center">
+
+                    <TextBlock Text="Log In"
+                               Margin="0 0 0 40"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="{StaticResource FontSizeLarge}"/>
+
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Login"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="UsernameField"  
+                                 Text="{Binding Username}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Login"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="PasswordField"  
+                                 Text="{Binding Password}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <Button Content="Sign In"
+                            Margin="0 40 0 0"
+                            Style="{StaticResource Hoverless}"
+                            Command="{Binding SignInCommand}"
+                            Background="{StaticResource ThemeBlueBrush}"
+                            FontSize="{StaticResource FontSizeNormal}"
+                            FontFamily="{StaticResource LatoBold}"
+                            Foreground="{StaticResource ForegroundLightBrush}"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0"
+                                Content="Forgot Password"
+                                Command="{Binding ResetPasswordCommand}"
+                                Style="{StaticResource Hoverless}"
+                                FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <Button Grid.Column="1"
+                                Content="Create new account"
+                                Command="{Binding RegisterCommand}"
+                                Style="{StaticResource Hoverless}"
+                                FontSize="{StaticResource FontSizeSmall}"/>
+
+
+                    </Grid>
+                </StackPanel>
+                
+            </Border>
+            
+            <!--#endregion-->
+
+            
+            
+
+
+            
+
+           
         </Grid>
     </Border>
 </UserControl>

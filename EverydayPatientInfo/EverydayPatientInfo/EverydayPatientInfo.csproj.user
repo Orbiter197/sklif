@@ -7,13 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="MVVM\View\SignInView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="MVVM\View\MainContentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\RegisterView.xaml.cs">
+    <Compile Update="MVVM\View\RegistrationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\SignInView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,13 +21,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\SignInView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MVVM\View\MainContentView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\RegisterView.xaml">
+    <Page Update="MVVM\View\RegistrationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\SignInView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Borders.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Colors.xaml">

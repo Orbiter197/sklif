@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EverydayPatientInfo.ProjectStructure.DataBaseStructure;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

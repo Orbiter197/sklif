@@ -14,12 +14,27 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     /// </summary>
     class SignInViewModel : ObservableObject
     {
-        #region Private properties
+        #region Private fields
+
+        /// <summary>
+        /// The model that handles all logic
+        /// </summary>
+        private MainWindowViewModel parentVM;
 
         /// <summary>
         /// The model that handles all logic
         /// </summary>
         private readonly SignInModel signInModel;
+
+        /// <summary>
+        /// Login 
+        /// </summary>
+        private string login;
+
+        /// <summary>
+        /// Password 
+        /// </summary>
+        private string password;
 
         #endregion
 
@@ -28,10 +43,10 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// <summary>
         /// Login 
         /// </summary>
-        public string Username
+        public string Login
         {
-            get => signInModel.Login;
-            set => signInModel.Login = value;
+            get => login;
+            set => login = value;
         }
 
         /// <summary>
@@ -39,13 +54,42 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// </summary>
         public string Password
         {
-            get => signInModel.Password;
-            set => signInModel.Password = value;
+            get => password;
+            set => password = value;
         }
 
         public ICommand SignInCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
         public ICommand ResetPasswordCommand { get; set; }
+
+        public MainWindowViewModel ParentVM
+        {
+            get => parentVM;
+            set => parentVM = (parentVM != null) ? value : parentVM; 
+        }
+
+        #endregion
+
+        #region Private methods
+
+        private void SignIn()
+        {
+            if (signInModel.SignIn(Login, Password))
+            {
+                //transition
+            }
+        }
+
+        private void Register()
+        {
+            MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.RegisterVM;
+        }
+
+        private void ResetPassword()
+        {
+
+        }
+
         #endregion
 
         #region Constructor
@@ -57,10 +101,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             signInModel = new SignInModel(this);
 
-
-            SignInCommand = new RelayCommand(signInModel.SignIn);
-            RegisterCommand = new RelayCommand(signInModel.Register);
-            ResetPasswordCommand = new RelayCommand(signInModel.ResetPassword);
+            SignInCommand = new RelayCommand(SignIn);
+            RegisterCommand = new RelayCommand(Register);
+            ResetPasswordCommand = new RelayCommand(ResetPassword);
         }
 
         #endregion

@@ -1,69 +1,54 @@
-﻿<UserControl x:Class="EverydayPatientInfo.MVVM.View.HomeView"
+﻿<UserControl x:Class="EverydayPatientInfo.MVVM.View.MainContentView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
-             mc:Ignorable="d" Background="{StaticResource BackgroundVeryLightBrush}"
+             mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-    <Border Margin="10"
-            Background="{StaticResource BackgroundLightBrush}">
+        <!--#region Constrol panel-->
+        <Border Grid.Column="0">
 
-        <Grid>
-            <!--#region Login-->
+            <StackPanel Orientation="Vertical">
 
-            <Border>
-                <Grid>
-                    <!--#region Column definitions-->
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <!--#endregion-->
-                    
-                   
-                </Grid>
+                <!--#region User info-->
+                <StackPanel Orientation="Horizontal" Margin="10">
 
-            </Border>
+                    <Rectangle Margin="10,0,0,0"
+                               VerticalAlignment="Center" 
+                               
+                               Width="30" Height="30" 
+                               Fill="Orange"/>
 
-            <!--#endregion-->
+                    <StackPanel Orientation="Vertical"
+                                Margin="10,0,0,0">
+                        <TextBlock Text="User Name" Style="{StaticResource Alligned}" 
+                                   FontSize="16"
+                                   HorizontalAlignment="Left" />
 
-            <!--#region Table-->
-
-            <Border>
-                <StackPanel Background="Red"
-                        Visibility="Hidden">
-
-                    <!--#region TopBar-->
-
-                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="User Role" Style="{StaticResource Alligned}" 
+                                   FontSize="10"
+                                   HorizontalAlignment="Left"/>
 
                     </StackPanel>
-
-                    <!--#endregion-->
-
-                    <!--#region Table-->
-
-                    <TreeView>
-                        <!-- TODO: create table-->
-                    </TreeView>
-
-                    <!--#endregion-->
-
-                    <!--#region ToolBar-->
-
-                    <StackPanel Orientation="Horizontal">
-
-                    </StackPanel>
-
-                    <!--#endregion-->
-
-
                 </StackPanel>
-            </Border>
-            <!--#endregion-->
-        </Grid>
-        
-    </Border>
+                <!--#endregion-->
+
+            </StackPanel>
+
+
+        </Border>
+        <!--#endregion-->
+
+        <Border Grid.Column="1">
+            <Rectangle Fill="{StaticResource BackgroundLightBrush}"/>
+        </Border>
+
+    </Grid>
 </UserControl>
