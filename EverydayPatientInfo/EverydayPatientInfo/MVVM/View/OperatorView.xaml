@@ -6,13 +6,283 @@
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
              xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="1600">
 
     <UserControl.DataContext>
         <viewModel:OperatorViewModel/>
     </UserControl.DataContext>
-    
-    <Grid>
+
+    <Border Style="{StaticResource Light}">
+        <StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Find"
+                        Style="{StaticResource Blue}"
+                        Margin="20" Width="300"
+                        Command="{Binding FindCommand}"
+                        HorizontalAlignment="Stretch"/>
+                <TextBox Margin="20" Width="400" Text="{Binding InputField}"
+                         FontFamily="{StaticResource LatoRegular}"
+                         Background="Transparent"
+                         FontSize="{StaticResource FontSizeNormal}"/>
+                <TextBlock Margin="20" Text="{Binding HintField}"
+                           Style="{StaticResource Normal}"/>
+
+            </StackPanel>
             
-    </Grid>
+            
+            <Grid Margin="20"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Row="0"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource ThemeLightBlueBrush}"/>
+
+                <!-- Header -->
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Text="Index"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="1"
+                           Text="First name"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="2"
+                           Text="Last name"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="3"
+                           Text="Blood Pressure morning"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="4"
+                           Text="Blood Pressure evening"
+                           Style="{StaticResource Normal}"/>
+                
+                <!--Enter-->
+
+                <Rectangle Grid.Row="1"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource BackgroundLightBrush}"/>
+
+                <Button Grid.Row="1"
+                        Grid.Column="0"
+                        Content="Add new"
+                        Style="{StaticResource Hoverless}"
+                        Command="{Binding AddNewCommand}"
+                        FontFamily="{StaticResource LatoRegular}"
+                        HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         Text="{Binding i2}"
+                         FontFamily="{StaticResource LatoRegular}"
+                         Background="Transparent"
+                         FontSize="{StaticResource FontSizeNormal}"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="2"
+                         Text="{Binding i3}"
+                         FontFamily="{StaticResource LatoRegular}"
+                         Background="Transparent"
+                         FontSize="{StaticResource FontSizeNormal}"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="3"
+                         Text="{Binding i4}"
+                         FontFamily="{StaticResource LatoRegular}"
+                         Background="Transparent"
+                         FontSize="{StaticResource FontSizeNormal}"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="4"
+                         Text="{Binding i5}"
+                         FontFamily="{StaticResource LatoRegular}"
+                         Background="Transparent"
+                         FontSize="{StaticResource FontSizeNormal}"/>
+                
+                <!--Nikita-->
+
+                <Rectangle Grid.Row="2"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource BackgroundVeryLightBrush}"/>
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Text="1"
+                           Style="{StaticResource Normal}"/>
+                
+                <TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           Text="Nikolay"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="2"
+                           Grid.Column="2"
+                           Text="Sereshkin"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="2"
+                           Grid.Column="3"
+                           Text="140"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="2"
+                           Grid.Column="4"
+                           Text="145"
+                           Style="{StaticResource Normal}"/>
+
+                <!--Valentina-->
+
+                <Rectangle Grid.Row="3"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource BackgroundLightBrush}"/>
+                
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Text="2"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="3"
+                           Grid.Column="1"
+                           Text="Valentina"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="3"
+                           Grid.Column="2"
+                           Text="Kerman"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="3"
+                           Grid.Column="3"
+                           Text="123"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="3"
+                           Grid.Column="4"
+                           Text="144"
+                           Style="{StaticResource Normal}"/>
+
+                <!--Dmitriy-->
+
+                <Rectangle Grid.Row="4"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource BackgroundVeryLightBrush}"/>
+
+                <TextBlock Grid.Row="4"
+                           Grid.Column="0"
+                           Text="3"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="4"
+                           Grid.Column="1"
+                           Text="Dmitriy"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="4"
+                           Grid.Column="2"
+                           Text="Staroverov"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="4"
+                           Grid.Column="3"
+                           Text="121"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="4"
+                           Grid.Column="4"
+                           Text="134"
+                           Style="{StaticResource Normal}"/>
+
+                <!--Vasya-->
+                <Rectangle Grid.Row="5"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource BackgroundLightBrush}"/>
+                
+                <TextBlock Grid.Row="5"
+                           Grid.Column="0"
+                           Text="4"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="5"
+                           Grid.Column="1"
+                           Text="Vasiliy"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="5"
+                           Grid.Column="2"
+                           Text="Zayzev"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="5"
+                           Grid.Column="3"
+                           Text="110"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="5"
+                           Grid.Column="4"
+                           Text="115"
+                           Style="{StaticResource Normal}"/>
+
+                <!--Dmitriy-->
+
+                <Rectangle Grid.Row="6"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource BackgroundVeryLightBrush}"/>
+
+                <TextBlock Grid.Row="6"
+                           Grid.Column="0"
+                           Text="{Binding a1}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="6"
+                           Grid.Column="1"
+                           Text="{Binding a2}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="6"
+                           Grid.Column="2"
+                           Text="{Binding a3}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="6"
+                           Grid.Column="3"
+                           Text="{Binding a4}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="6"
+                           Grid.Column="4"
+                           Text="{Binding a5}"
+                           Style="{StaticResource Normal}"/>
+
+                <!--Vasya-->
+                <Rectangle Grid.Row="7"
+                           Grid.ColumnSpan="5"
+                           Fill="{StaticResource BackgroundLightBrush}"/>
+
+                <TextBlock Grid.Row="7"
+                           Grid.Column="0"
+                           Text="{Binding b1}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="7"
+                           Grid.Column="1"
+                           Text="{Binding b2}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="7"
+                           Grid.Column="2"
+                           Text="{Binding b3}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="7"
+                           Grid.Column="3"
+                           Text="{Binding b4}"
+                           Style="{StaticResource Normal}"/>
+                <TextBlock Grid.Row="7"
+                           Grid.Column="4"
+                           Text="{Binding b5}"
+                           Style="{StaticResource Normal}"/>
+
+
+
+
+            </Grid>
+        </StackPanel>
+    </Border>
 </UserControl>

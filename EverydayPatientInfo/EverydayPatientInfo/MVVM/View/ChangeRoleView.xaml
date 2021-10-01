@@ -15,13 +15,15 @@
     <Border Style="{StaticResource Light}">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Border Grid.Row="0"
                     Background="{StaticResource GradientBlue}">
-                <StackPanel VerticalAlignment="Center">
+                
+                <StackPanel VerticalAlignment="Center"
+                            Margin="30">
                     <TextBlock Text="Your current role is "
                                Style="{StaticResource Large}"
                                FontFamily="{StaticResource LatoRegular}"
@@ -42,6 +44,7 @@
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Left">
                     <Button Content="Not Assigned"
+                            Command="{Binding NotAssignedCommand}"
                             Style="{StaticResource Transparent}"
                             FontFamily="{StaticResource LatoRegular}"/>
                     <TextBlock Text="{Binding NotAssignedRoleAvaliable}"
@@ -50,9 +53,11 @@
                                Style="{StaticResource Small}"
                                FontFamily="{StaticResource LatoThin}"/>
                 </StackPanel>
+                
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Left">
                     <Button Content="Doctor"
+                            Command="{Binding DoctorCommand}"
                             Style="{StaticResource Transparent}"
                             FontFamily="{StaticResource LatoRegular}"/>
                     <TextBlock Text="{Binding DoctorRoleAvaliable}"
@@ -64,6 +69,7 @@
                 <StackPanel Orientation="Vertical"
                             HorizontalAlignment="Left">
                     <Button Content="Operator"
+                            Command="{Binding OperatorCommand}"
                             Style="{StaticResource Transparent}"
                             FontFamily="{StaticResource LatoRegular}"/>
                     <TextBlock Text="{Binding OperatorRoleAvaliable}"
@@ -72,7 +78,11 @@
                                Style="{StaticResource Small}"
                                FontFamily="{StaticResource LatoThin}"/>
                 </StackPanel>
-                
+
+                <Button Content="Pick role"
+                        Command="{Binding PickUpRoleCommand}"
+                        Margin="30"
+                        Style="{StaticResource Blue}"/>
 
             </StackPanel>
 

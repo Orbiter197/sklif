@@ -13,15 +13,30 @@
     </UserControl.DataContext>
 
     <Border Style="{StaticResource Gradient}">
-        <StackPanel VerticalAlignment="Center">
-            <TextBlock Text="You have no role"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="20" VerticalAlignment="Bottom">
+                <TextBlock Text="Login Successful!"
+                           Style="{StaticResource Large}"
+                           FontSize="130"
+                           Foreground="{StaticResource ForegroundLightBrush}"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="30">
+                <TextBlock Text="You have no role"
                        Style="{StaticResource Large}"
                        Foreground="{StaticResource ForegroundLightBrush}"/>
-            <TextBlock Text="You need to select a role in order to continue"
+                <TextBlock Text="You need to select a role in order to continue"
                        Style="{StaticResource Normal}"
                        HorizontalAlignment="Center"
                        Foreground="{StaticResource ForegroundLightBrush}"/>
-        </StackPanel>
+            </StackPanel>
+        </Grid>
+        
         
     </Border>
 </UserControl>
