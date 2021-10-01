@@ -18,10 +18,8 @@
     <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}"/>
     
     <!-- -->
-    <Color x:Key="ThemeBlue">#009FFF</Color>
+    <Color x:Key="ThemeBlue">#0456c0</Color>
     <SolidColorBrush x:Key="ThemeBlueBrush" Color="{StaticResource ThemeBlue}"/>
 
-    <Color x:Key="ThemeOrange">#FFB000</Color>
-    <SolidColorBrush x:Key="ThemeOrangeBrush" Color="{StaticResource ThemeOrange}"/>
     
 </ResourceDictionary>

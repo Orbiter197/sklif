@@ -32,58 +32,6 @@
 
 
     </Style>
-    <Style TargetType="{x:Type Button}" x:Key="Orange">
-
-
-        <Setter Property="Background" Value="{StaticResource ThemeOrangeBrush}"/>
-        <Setter Property="Padding" Value="8"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
-
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Padding="{TemplateBinding Padding}"
-                            Background="{TemplateBinding Background}"
-                            CornerRadius="20">
-
-                        <TextBlock Style="{StaticResource BaseTextBlockStyle}"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   Margin="10"
-                                   Text="{TemplateBinding Content}" 
-                                   FontSize="{TemplateBinding FontSize}" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style TargetType="{x:Type Button}" x:Key="InvertedOrange">
-
-
-        <Setter Property="Background" Value="White"/>
-        <Setter Property="Padding" Value="8"/>
-            <Setter Property="Foreground" Value="{StaticResource ThemeOrangeBrush}"/>
-
-            <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Padding="{TemplateBinding Padding}"
-                                Background="{TemplateBinding Background}"
-                                CornerRadius="20">
-
-                        <TextBlock Style="{StaticResource BaseTextBlockStyle}"
-                                       VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Margin="10"
-                                       Text="{TemplateBinding Content}" 
-                                       FontSize="{TemplateBinding FontSize}" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-
-
-    </Style>
+    
 
 </ResourceDictionary>

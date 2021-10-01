@@ -72,7 +72,7 @@
                                Margin="0 0 0 40"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
-                               FontSize="{StaticResource FontSizeLarge}"/>
+                               FontSize="{StaticResource FontSizeNormal}"/>
 
 
                     <!-- First name -->
