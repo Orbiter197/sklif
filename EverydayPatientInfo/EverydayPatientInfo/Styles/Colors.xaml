@@ -18,8 +18,21 @@
     <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}"/>
     
     <!-- -->
-    <Color x:Key="ThemeBlue">#0456c0</Color>
+    <Color x:Key="ThemeLightBlue">#FF0675E4</Color>
+    <SolidColorBrush x:Key="ThemeLightBlueBrush" Color="{StaticResource ThemeLightBlue}"/>
+    
+    <Color x:Key="ThemeBlue">#FF045FCB</Color>
     <SolidColorBrush x:Key="ThemeBlueBrush" Color="{StaticResource ThemeBlue}"/>
 
-    
+    <Color x:Key="ThemeDarkBlue">#FF032F8C</Color>
+    <SolidColorBrush x:Key="ThemeDarkBlueBrush" Color="{StaticResource ThemeDarkBlue}"/>
+
+    <LinearGradientBrush x:Key="GradientBlue"
+                         EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
+        <GradientStop Color="{StaticResource ThemeDarkBlue}" Offset="1"/>
+        <GradientStop Color="{StaticResource ThemeLightBlue}" Offset="0"/>
+        <GradientStop Color="{StaticResource ThemeBlue}" Offset="0.457"/>
+    </LinearGradientBrush>
+
+
 </ResourceDictionary>

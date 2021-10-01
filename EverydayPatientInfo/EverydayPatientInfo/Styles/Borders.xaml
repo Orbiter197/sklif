@@ -7,11 +7,14 @@
         <ResourceDictionary Source="Fonts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="Border">
-        <Setter Property="Background">
-            <Setter.Value>
-                <SolidColorBrush Color="Red"/>
-            </Setter.Value>
-        </Setter>
+    <Style TargetType="{x:Type Border}" x:Key="Gradient">
+        <Setter Property="Background" Value="{StaticResource GradientBlue}"/>
     </Style>
+    <Style TargetType="{x:Type Border}" x:Key="Light">
+        <Setter Property="Background" Value="{StaticResource BackgroundLightBrush}"/>
+    </Style>
+    <Style TargetType="{x:Type Border}" x:Key="VeryLight">
+        <Setter Property="Background" Value="{StaticResource BackgroundVeryLightBrush}"/>
+    </Style>
+
 </ResourceDictionary>

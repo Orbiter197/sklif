@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using EverydayPatientInfo.Core;
 using System.Windows.Input;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
@@ -11,14 +12,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     /// </summary>
     class MainWindowViewModel : ObservableObject
     {
-
-        private static MainWindowViewModel instance;
-
-        internal static MainWindowViewModel Instance 
-        { 
-            get => instance; 
-            private set => instance = value; 
-        }
 
         #region Private fields
 
@@ -54,8 +47,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// </summary>
         public MainWindowViewModel()
         {
+            Instances.MainWindowVMInstance = this;
+
             CurrentView = new SignInViewModel();
-            Instance = this;
         }
 
         #endregion

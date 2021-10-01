@@ -4,9 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
+             xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1800">
 
+    <UserControl.DataContext>
+        <viewModel:MainContentViewModel/>
+    </UserControl.DataContext>
+    
     <Border Background="{StaticResource BackgroundLightBrush}">
         <Grid>
 
@@ -15,16 +20,33 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <!--#region Navigation-->
-            <StackPanel>
+            <Border Grid.Column="0"
+                    Style="{StaticResource Light}">
 
-                <StackPanel Orientation="Horizontal">
-                    <Rectangle />
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10">
+                        
+                        <Rectangle Fill="{StaticResource ThemeBlueBrush}"
+                                   Height="100" Width="100"/>
+                        
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource Normal}"
+                                       Text="{Binding Name}"/>
+                            <TextBlock Style="{StaticResource Normal}"
+                                       Text="{Binding Name}"/>
+
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
+                
+            </Border>
 
-            </StackPanel>
-            <!--#endregion-->
-            
+            <Border Grid.Column="1"
+                    Style="{StaticResource Light}">
+
+            </Border>
+
         </Grid>
     </Border>
     

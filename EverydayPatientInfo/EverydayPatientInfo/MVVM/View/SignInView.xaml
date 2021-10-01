@@ -13,14 +13,8 @@
         <viewModel:SignInViewModel/>
     </UserControl.DataContext>
 
-    <Border>
-        <Border.Background>
-            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
-                <GradientStop Color="#FF032F8C" Offset="1"/>
-                <GradientStop Color="#FF0675E4" Offset="0"/>
-                <GradientStop Color="#FF045FCB" Offset="0.457"/>
-            </LinearGradientBrush>
-        </Border.Background>
+    <Border Style="{StaticResource Gradient}">
+        
 
         <Grid VerticalAlignment="Stretch"
               HorizontalAlignment="Stretch"
@@ -35,14 +29,8 @@
             <!--#endregion-->
 
             <!--#region Left-->
-            <Border Grid.Column="0">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
-                        <GradientStop Color="#FF032F8C" Offset="1"/>
-                        <GradientStop Color="#FF0675E4" Offset="0"/>
-                        <GradientStop Color="#FF045FCB" Offset="0.457"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+            <Border Grid.Column="0"
+                    Style="{StaticResource Gradient}">
 
                 <StackPanel Orientation="Vertical"
                             Margin="20"

@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
-using EverydayPatientInfo.Core;
+﻿using EverydayPatientInfo.Core;
+using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
     class MainContentViewModel : ObservableObject
     {
-        
-
-
+        public string CardID { get; set; }
+        public string Name { get; set; }
+        public string Role { get; set; }
 
 
         public MainContentViewModel()
         {
-            
+            Instances.MainContentViewModelVMInstance = this;
         }
 
         

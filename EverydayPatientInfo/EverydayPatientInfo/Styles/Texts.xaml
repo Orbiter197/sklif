@@ -8,26 +8,29 @@
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
         <Setter Property="FontSize" Value="20"/>
     </Style>
-    <Style TargetType="{x:Type TextBox}" x:Key="NewTextBloxStyle">
-        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
-        <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Background" Value="{StaticResource BackgroundVeryLightBrush}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Background="{TemplateBinding Background}"
-                            CornerRadius="10">
-                        <TextBox Margin="20 0"
-                                 Background="Transparent"
-                                 Text="{TemplateBinding Text}"
-                                 BorderBrush="Transparent"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="Large">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoBold}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
     </Style>
 
-    
-    
-    
+    <Style TargetType="{x:Type TextBlock}" x:Key="Normal">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeNormal}"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="Small">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}"/>
+    </Style>
+
+
+
+
 </ResourceDictionary>

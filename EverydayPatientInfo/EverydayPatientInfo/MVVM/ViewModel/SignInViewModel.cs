@@ -1,10 +1,8 @@
 ﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 namespace EverydayPatientInfo.MVVM.ViewModel
@@ -54,12 +52,13 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void Register()
         {
-            MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.RegisterVM;
+            Instances.MainWindowVMInstance.CurrentView = Instances.RegisterationVMInstance;
         }
 
         private void ResetPassword()
         {
-            MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.PasswordResetVM;
+            //MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.PasswordResetVM;
+            Instances.MainWindowVMInstance.CurrentView = Instances.PasswordResetVMInstance;
         }
 
         #endregion
@@ -71,6 +70,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// </summary>
         public SignInViewModel()
         {
+            Instances.SignInVMInstance = this;
+
             signInModel = new SignInModel(this);
 
             SignInCommand = new RelayCommand(SignIn);

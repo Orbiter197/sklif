@@ -1,5 +1,6 @@
 ﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
@@ -24,6 +25,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Constructor
         public PasswordResetViewModel()
         {
+            Instances.PasswordResetVMInstance = this;
+
             passwordResetModel = new(this);
 
             ResetPasswordCommand = new RelayCommand(Reset);
@@ -52,7 +55,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void ToLoginPage()
         {
-            MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.SignInVM;
+            Instances.MainWindowVMInstance.CurrentView = Instances.SignInVMInstance;
         }
         #endregion
 

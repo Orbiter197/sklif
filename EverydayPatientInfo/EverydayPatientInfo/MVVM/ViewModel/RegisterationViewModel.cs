@@ -1,5 +1,6 @@
 ﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,19 +38,21 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void Register()
         {
-            if(true)
-                MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.SignInVM;
+            if (true)
+                Instances.MainWindowVMInstance.CurrentView = Instances.SignInVMInstance;
         }
 
         private void ToLoginPage()
         {
-            MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.SignInVM;
+             Instances.MainWindowVMInstance.CurrentView = Instances.SignInVMInstance;
         }
 
         #region Constructor
 
         public RegisterationViewModel()
         {
+            Instances.RegisterationVMInstance = this;
+
             RegisterCommand = new RelayCommand(Register);
             LoginCommand = new RelayCommand(ToLoginPage);
         }
