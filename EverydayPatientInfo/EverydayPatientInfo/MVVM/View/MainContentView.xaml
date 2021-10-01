@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
+             xmlns:view="clr-namespace:EverydayPatientInfo.MVVM.View"
              xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1800">
@@ -11,8 +12,26 @@
     <UserControl.DataContext>
         <viewModel:MainContentViewModel/>
     </UserControl.DataContext>
-    
-    <Border Background="{StaticResource BackgroundLightBrush}">
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewModel:NotAssignedViewModel}">
+            <view:NotAssignedView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:DoctorViewModel}">
+            <view:DoctorView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:OperatorViewModel}">
+            <view:OperatorView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ChangeRoleViewModel}">
+            <view:ChangeRoleView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+            <view:SettingsView/>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource Light}">
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -22,21 +41,23 @@
 
             <!--#region Left-->
             <Border Grid.Column="0"
-                    Style="{StaticResource Light}">
+                    Background="{StaticResource ThemeBlueBrush}">
 
                 <StackPanel>
                     <!-- User Info-->
                     <StackPanel Orientation="Horizontal"
                                 Margin="10">
                         
-                        <Rectangle Fill="{StaticResource ThemeBlueBrush}"
+                        <Rectangle Fill="{StaticResource BackgroundLightBrush}"
                                    Height="100" Width="100"/>
                         
                         <StackPanel VerticalAlignment="Center" Margin="10 0 0 0">
                             <TextBlock Style="{StaticResource Normal}"
-                                       Text="{Binding Name}"/>
+                                       Text="{Binding Name}"
+                                       Foreground="{StaticResource ForegroundLightBrush}"/>
                             <TextBlock Style="{StaticResource Small}"
-                                       Text="{Binding Role}"/>
+                                       Text="{Binding Role}"
+                                       Foreground="{StaticResource ForegroundLightBrush}"/>
 
                         </StackPanel>
                     </StackPanel>
@@ -50,14 +71,17 @@
                                 HorizontalAlignment="Left"
                                 Margin="30 10 0 0"
                                 Style="{StaticResource Transparent}"
-                                FontSize="{StaticResource FontSizeSmall}"/>
+                                FontSize="{StaticResource FontSizeSmall}"
+                                Foreground="{StaticResource ForegroundLightBrush}"/>
+                        
                         <!-- Change role -->
                         <Button Content="Change role"
                                 Command="{Binding ChangRoleCommand}"
                                 HorizontalAlignment="Left"
                                 Margin="30 10 0 0"
                                 Style="{StaticResource Transparent}"
-                                FontSize="{StaticResource FontSizeSmall}"/>
+                                FontSize="{StaticResource FontSizeSmall}"
+                                Foreground="{StaticResource ForegroundLightBrush}"/>
                     </StackPanel>
                 </StackPanel>
                 
@@ -66,7 +90,9 @@
 
             <Border Grid.Column="1"
                     Style="{StaticResource VeryLight}">
-                
+
+                <ContentControl Content="{Binding CurrentView}"/>
+
             </Border>
 
         </Grid>

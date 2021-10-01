@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EverydayPatientInfo.Core;
+using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
+using System.Windows.Input;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
-    class DoctorViewModel
+    class DoctorViewModel : ObservableObject
     {
+        public DoctorViewModel()
+        {
+            Instances.DoctorVM = this;
+        }
     }
 }

@@ -34,13 +34,7 @@
     </Window.DataContext>
 
     <Border>
-        
-        <!--#region Main View-->
-        <ContentControl Content="{Binding CurrentView}">
-        </ContentControl>
-        <!--#endregion-->
-
-
+        <ContentControl Content="{Binding CurrentView}"/>
     </Border>
 
 

@@ -1,9 +1,14 @@
 ﻿
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml;;
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MainWindow.xaml;;
+FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\ChangeRoleView.xaml;;
+FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\DoctorView.xaml;;
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\MainContentView.xaml;;
+FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\NotAssignedView.xaml;;
+FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\OperatorView.xaml;;
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\PasswordResetView.xaml;;
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\RegistrationView.xaml;;
+FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\SettingsView.xaml;;
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\MVVM\View\SignInView.xaml;;
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\Styles\Borders.xaml;;
 FD:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\Styles\Buttons.xaml;;

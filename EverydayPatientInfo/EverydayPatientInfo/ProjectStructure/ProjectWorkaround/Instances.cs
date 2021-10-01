@@ -13,25 +13,22 @@ namespace EverydayPatientInfo.ProjectStructure.ProjectWorkaround
         public static string CardID { get; set; }
         public static string Name { get; set; }
         public static string Role
-        { 
-            get
+        {
+            get => (int)role switch
             {
-                return (int)role switch
-                {
-                    1 => "Doctor",
-                    2 => "Operator",
-                    _ => "Not assigned"
-                };
-            }
-            set
+                1 => "Doctor",
+                2 => "Operator",
+                _ => "Not assigned"
+            };
+               
+            
+            set => role = value switch
             {
-                role = value switch
-                {
-                    "Doctor"    => UserType.Doctor,
-                    "Operator"  => UserType.Operator,
-                    _           => UserType.NotAssigned
-                };
-            }
+                "Doctor"    => UserType.Doctor,
+                "Operator"  => UserType.Operator,
+                _           => UserType.NotAssigned
+            };
+            
         } 
 
         
@@ -52,7 +49,11 @@ namespace EverydayPatientInfo.ProjectStructure.ProjectWorkaround
         public static PasswordResetModel PasswordResetModelInstance { get; set; }
 
         public static MainContentViewModel MainContentVMInstance { get; set; }
-        //public static MainContentModel MainContentModelInstance { get; set; }
+        public static NotAssignedViewModel NotAssignedVM { get; set; }
+        public static DoctorViewModel DoctorVM { get; set; }
+        public static OperatorViewModel OperatorVM { get; set; }
+        public static ChangeRoleViewModel ChangeRoleVM { get; set; }
+        public static SettingsViewModel SettingsVM { get; set; }
 
 
     }
