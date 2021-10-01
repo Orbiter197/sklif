@@ -8,7 +8,7 @@ namespace EverydayPatientInfo.MVVM.Model
 {
     /// <summary>
     /// The model for "Sign in" window that handles all logic
-    /// This class is used to send a login and a password to a database
+    /// This class is used to send a cardID and a password to a database
     /// </summary>
     class SignInModel
     {
@@ -35,8 +35,8 @@ namespace EverydayPatientInfo.MVVM.Model
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE 'user_login' = @login AND 'user_password' = @password",db.GetConnection());
-            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = login;
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE 'user_login' = @cardID AND 'user_password' = @password",db.GetConnection());
+            command.Parameters.Add("@cardID", MySqlDbType.VarChar).Value = login;
             command.Parameters.Add("@password", MySqlDbType.VarChar).Value = password;
 
             adapter.SelectCommand = command;

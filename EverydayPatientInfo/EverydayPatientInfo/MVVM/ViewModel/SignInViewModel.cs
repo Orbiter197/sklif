@@ -16,57 +16,29 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     {
         #region Private fields
 
-        /// <summary>
-        /// The model that handles all logic
-        /// </summary>
-        private MainWindowViewModel parentVM;
 
         /// <summary>
         /// The model that handles all logic
         /// </summary>
         private readonly SignInModel signInModel;
 
-        /// <summary>
-        /// Login 
-        /// </summary>
-        private string login;
-
-        /// <summary>
-        /// Password 
-        /// </summary>
-        private string password;
-
         #endregion
 
         #region Public properties
 
         /// <summary>
-        /// Login 
+        /// CardID 
         /// </summary>
-        public string Login
-        {
-            get => login;
-            set => login = value;
-        }
+        public string CardID { get; set; }
 
         /// <summary>
         /// Password 
         /// </summary>
-        public string Password
-        {
-            get => password;
-            set => password = value;
-        }
+        public string Password { get; set; }
 
         public ICommand SignInCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
         public ICommand ResetPasswordCommand { get; set; }
-
-        public MainWindowViewModel ParentVM
-        {
-            get => parentVM;
-            set => parentVM = (parentVM != null) ? value : parentVM; 
-        }
 
         #endregion
 
@@ -74,7 +46,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void SignIn()
         {
-            if (signInModel.SignIn(Login, Password))
+            if (signInModel.SignIn(CardID, Password))
             {
                 //transition
             }

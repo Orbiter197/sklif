@@ -37,9 +37,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             set => currentView = value;
         }
 
-        public SignInViewModel SignInVM { get; set; }
-        public RegisterationViewModel RegisterVM { get; set; }
-        public MainContentViewModel MainContentVM { get; set; }
+        public SignInViewModel SignInVM { get; set; } = new SignInViewModel();
+        public RegisterationViewModel RegisterVM { get; set; } = new RegisterationViewModel();
+        public MainContentViewModel MainContentVM { get; set; } = new MainContentViewModel();
         
 
         #endregion

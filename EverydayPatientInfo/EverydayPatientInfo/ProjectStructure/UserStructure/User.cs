@@ -15,7 +15,7 @@ namespace EverydayPatientInfo.ProjectStructure.UserStructure
         private UserNaming name;
 
         /// <summary>
-        /// User's login
+        /// User's cardID
         /// </summary>
         private string login;
 
@@ -29,7 +29,7 @@ namespace EverydayPatientInfo.ProjectStructure.UserStructure
         public UserNaming Name { get => name; private set => name = value; }
 
         /// <summary>
-        /// User's login
+        /// User's cardID
         /// </summary>
         public string Login { get => login; private set => login = value; }
 
@@ -41,7 +41,7 @@ namespace EverydayPatientInfo.ProjectStructure.UserStructure
         /// Constructs a User and initialise its fields
         /// </summary>
         /// <param name="name">First name, patronymic and last name of a user</param>
-        /// <param name="type">User's login</param>
+        /// <param name="type">User's cardID</param>
         /// <param name="login">Current role of user</param>
         protected User(UserNaming name, string login) 
         {
@@ -63,7 +63,7 @@ namespace EverydayPatientInfo.ProjectStructure.UserStructure
         /// <param name="firstName">User's first name</param>
         /// <param name="patronymic">User's patronymic</param>
         /// <param name="lastName">User's last name</param>
-        /// <param name="login">User's login</param>
+        /// <param name="login">User's cardID</param>
         /// <param name="password">User's password</param>
         /// <param name="number">User's telephone number</param>
         /// <returns>User</returns>

@@ -6,101 +6,220 @@
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
              xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1000" d:DesignWidth="1800">
 
     <UserControl.DataContext>
         <viewModel:RegisterationViewModel/>
     </UserControl.DataContext>
-    
-    
-    <UserControl.Background>
-        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-            <GradientStop Color="{StaticResource BackgroundVeryLight}"/>
-            <GradientStop Color="{StaticResource ThemeBlue}" Offset="1"/>
-        </LinearGradientBrush>
-    </UserControl.Background>
 
-    <Border HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="{StaticResource ThemeOrangeBrush}"
-            CornerRadius="20" Margin="10">
-        <StackPanel MinWidth="300">
-            <TextBlock HorizontalAlignment="Center"
-                       TextAlignment="Center"
-                       FontSize="{StaticResource FontSizeLarge}"
-                       Foreground="{StaticResource ForegroundLightBrush}"
-                       FontFamily="{StaticResource LatoBold}"
-                       Text="R e g i s t e r"
-                       Margin="0,10,0,0"/>
+    <Border>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
+                <GradientStop Color="#FF032F8C" Offset="1"/>
+                <GradientStop Color="#FF0675E4" Offset="0"/>
+                <GradientStop Color="#FF045FCB" Offset="0.457"/>
+            </LinearGradientBrush>
+        </Border.Background>
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextAlignment="Center"
-                       FontSize="{StaticResource FontSizeSmall}"
-                       Foreground="{StaticResource ForegroundLightBrush}"
-                       FontFamily="{StaticResource LatoBold}"
-                       Text="Login"
-                       Margin="5 10 0 0"/>
-            <TextBox Style="{StaticResource NewTextBloxStyle}"
-                     Margin="15 0"/>
+        <Grid VerticalAlignment="Stretch"
+              HorizontalAlignment="Stretch"
+              Margin="400 120">
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextAlignment="Center"
-                       FontSize="{StaticResource FontSizeSmall}"
-                       Foreground="{StaticResource ForegroundLightBrush}"
-                       FontFamily="{StaticResource LatoBold}"
-                       Text="First name"
-                       Margin="5 10 0 0"/>
-            <TextBox Style="{StaticResource NewTextBloxStyle}"
-                     Margin="15 0"/>
+            <!--#region Columns and rows-->
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextAlignment="Center"
-                       FontSize="{StaticResource FontSizeSmall}"
-                       Foreground="{StaticResource ForegroundLightBrush}"
-                       FontFamily="{StaticResource LatoBold}"
-                       Text="Patronymic"
-                       Margin="5 10 0 0"/>
-            <TextBox Style="{StaticResource NewTextBloxStyle}"
-                     Margin="15 0"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextAlignment="Center"
-                       FontSize="{StaticResource FontSizeSmall}"
-                       Foreground="{StaticResource ForegroundLightBrush}"
-                       FontFamily="{StaticResource LatoBold}"
-                       Text="Last name"
-                       Margin="5 10 0 0"/>
-            <TextBox Style="{StaticResource NewTextBloxStyle}"
-                     Margin="15 0"/>
+            <!--#region Left-->
+            <Border Grid.Column="0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
+                        <GradientStop Color="#FF032F8C" Offset="1"/>
+                        <GradientStop Color="#FF0675E4" Offset="0"/>
+                        <GradientStop Color="#FF045FCB" Offset="0.457"/>
+                    </LinearGradientBrush>
+                </Border.Background>
 
+                <StackPanel Orientation="Vertical"
+                            Margin="40"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextAlignment="Center"
-                       FontSize="{StaticResource FontSizeSmall}"
-                       Foreground="{StaticResource ForegroundLightBrush}"
-                       FontFamily="{StaticResource LatoBold}"
-                       Text="Password"
-                       Margin="5 10 0 0"/>
-            <TextBox Style="{StaticResource NewTextBloxStyle}"
-                     Margin="15 0"/>
+                    <TextBlock Grid.Row="0" 
+                               Text="Welcome!"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="{StaticResource ForegroundLightBrush}"
+                               FontSize="{StaticResource FontSizeLarge}"/>
+
+                </StackPanel>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Right-->
+            <Border Grid.Column="1"
+                    Background="{StaticResource BackgroundVeryLightBrush}">
+
+                <StackPanel Orientation="Vertical"
+                            Margin="80 0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center">
+
+                    <TextBlock Text="Register"
+                               Margin="0 0 0 40"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               FontSize="{StaticResource FontSizeLarge}"/>
 
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextAlignment="Center"
-                       FontSize="{StaticResource FontSizeSmall}"
-                       Foreground="{StaticResource ForegroundLightBrush}"
-                       FontFamily="{StaticResource LatoBold}"
-                       Text="Confirm Password"
-                       Margin="5 10 0 0"/>
-            <TextBox Style="{StaticResource NewTextBloxStyle}"
-                     Margin="15 0"/>
+                    <!-- First name -->
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="First name"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
 
-            <Button Style="{StaticResource InvertedOrange}"
-                    Content="Register"
-                    FontSize="{StaticResource FontSizeNormal}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Margin="0 5"/>
-        </StackPanel>
+                        <TextBox Name="FirstNameField"  
+                                 Text="{Binding FirstName}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <!-- Patronymic -->
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Patronymic"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="PatronymicField"  
+                                 Text="{Binding Patronymic}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <!-- Last name -->
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Last name"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="LastNamedField"  
+                                 Text="{Binding LastName}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <!-- Card ID -->
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Login"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="CardIDField"  
+                                 Text="{Binding CardID}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <!-- Password -->
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Password"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="PasswordField"  
+                                 Text="{Binding Password1}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <!-- Confirm Password -->
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Confirm Password"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="ConfirmPasswordField"  
+                                 Text="{Binding Password2}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+
+
+                    <Button Content="Register"
+                            Margin="0 40 0 0"
+                            Style="{StaticResource Hoverless}"
+                            Command="{Binding RegisterCommand}"
+                            Background="{StaticResource ThemeBlueBrush}"
+                            FontSize="{StaticResource FontSizeNormal}"
+                            FontFamily="{StaticResource LatoBold}"
+                            Foreground="{StaticResource ForegroundLightBrush}"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0"
+                                Content="Already have an account"
+                                Command="{Binding LoginCommand}"
+                                Style="{StaticResource Hoverless}"
+                                FontSize="{StaticResource FontSizeSmall}"/>
+
+                    </Grid>
+                </StackPanel>
+
+            </Border>
+            <!--#endregion-->
+
+        </Grid>
+
+
+        
     </Border>
 </UserControl>
