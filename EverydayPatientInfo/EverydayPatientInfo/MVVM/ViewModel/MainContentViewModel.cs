@@ -13,7 +13,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         public MainContentViewModel()
         {
-            Instances.MainContentViewModelVMInstance = this;
+            Instances.MainContentVMInstance = this;
         }
 
         

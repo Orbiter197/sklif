@@ -37,11 +37,12 @@
                             VerticalAlignment="Center">
 
                     <TextBlock Grid.Row="0" 
-                               Text="Welcome!"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               Foreground="{StaticResource ForegroundLightBrush}"
-                               FontSize="{StaticResource FontSizeLarge}"/>
+                               Text="Everyday patient info"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               Style="{StaticResource Large}"
+                               FontFamily="{StaticResource LatoThin}"
+                               Foreground="{StaticResource ForegroundLightBrush}"/>
 
                 </StackPanel>
             </Border>

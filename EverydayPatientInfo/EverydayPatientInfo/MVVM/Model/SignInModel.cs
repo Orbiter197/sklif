@@ -3,6 +3,7 @@ using EverydayPatientInfo.ProjectStructure.DataBaseStructure;
 
 using System.Data;
 using MySql.Data.MySqlClient;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.Model
 {
@@ -25,8 +26,11 @@ namespace EverydayPatientInfo.MVVM.Model
         /// <summary>
         /// 
         /// </summary>
-        public bool SignIn(string login, string password)
+        public bool SignIn(string cardID, string password)
         {
+            return Instances.CardID == cardID;
+            
+            /*
             DB db = new DB();
 
             db.GetConnection().Open();
@@ -36,7 +40,7 @@ namespace EverydayPatientInfo.MVVM.Model
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE 'user_login' = @cardID AND 'user_password' = @password",db.GetConnection());
-            command.Parameters.Add("@cardID", MySqlDbType.VarChar).Value = login;
+            command.Parameters.Add("@cardID", MySqlDbType.VarChar).Value = cardID;
             command.Parameters.Add("@password", MySqlDbType.VarChar).Value = password;
 
             adapter.SelectCommand = command;
@@ -50,20 +54,14 @@ namespace EverydayPatientInfo.MVVM.Model
                 return true;
             }
             return false;
+            */
             
         }
-        public void Register()
-        {
-            // TODO: send data   
-        }
-        public void ResetPassword()
-        {
-            // TODO: send data   
-        }
+
 
         #endregion
 
-        #region
+        #region Constructor
 
         /// <summary>
         /// The model of authorization 

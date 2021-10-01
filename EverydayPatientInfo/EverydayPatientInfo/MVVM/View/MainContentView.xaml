@@ -34,7 +34,7 @@
                             <TextBlock Style="{StaticResource Normal}"
                                        Text="{Binding Name}"/>
                             <TextBlock Style="{StaticResource Normal}"
-                                       Text="{Binding Name}"/>
+                                       Text="{Binding Role}"/>
 
                         </StackPanel>
                     </StackPanel>

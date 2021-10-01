@@ -45,9 +45,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         private void SignIn()
         {
             if (signInModel.SignIn(CardID, Password))
-            {
-                //transition
-            }
+                Instances.MainWindowVMInstance.CurrentView = Instances.MainContentVMInstance;
+
         }
 
         private void Register()
@@ -57,7 +56,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void ResetPassword()
         {
-            //MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.PasswordResetVM;
             Instances.MainWindowVMInstance.CurrentView = Instances.PasswordResetVMInstance;
         }
 

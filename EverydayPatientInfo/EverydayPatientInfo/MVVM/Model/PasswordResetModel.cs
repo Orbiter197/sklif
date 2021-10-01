@@ -1,5 +1,6 @@
 ﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.MVVM.ViewModel;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.Model
 {
@@ -9,9 +10,11 @@ namespace EverydayPatientInfo.MVVM.Model
 
         public bool ResetPassword(string CardID, string Password)
         {
-            if (false) // if person with card id was found in database
-                return true;
-            return false;
+            if (Instances.CardID != CardID)
+                return false;
+
+            Instances.CardID = CardID;
+            return true;
         }
 
         public PasswordResetModel(PasswordResetViewModel passwordResetVM)

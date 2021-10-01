@@ -7,9 +7,9 @@ namespace EverydayPatientInfo.ProjectStructure.ProjectWorkaround
 {
     static class Instances
     {
-        public static int CardID { get; set; }
-        public static int Name { get; set; }
-        public static int Role { get; set; }
+        public static string CardID { get; set; }
+        public static string Name { get; set; }
+        public static string Role { get; set; }
 
         public static MainWindowViewModel MainWindowVMInstance { get; set; }
         public static MainWindowModel MainWindowModelInstance { get; set; }
@@ -23,7 +23,7 @@ namespace EverydayPatientInfo.ProjectStructure.ProjectWorkaround
         public static PasswordResetViewModel PasswordResetVMInstance { get; set; }
         public static PasswordResetModel PasswordResetModelInstance { get; set; }
 
-        public static MainContentViewModel MainContentViewModelVMInstance { get; set; }
+        public static MainContentViewModel MainContentVMInstance { get; set; }
         //public static MainContentModel MainContentModelInstance { get; set; }
 
 

@@ -6,6 +6,7 @@ using EverydayPatientInfo.ProjectStructure.UserStructure;
 
 using System.Collections.Generic;
 using System.Text;
+using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.Model
 {
@@ -16,7 +17,7 @@ namespace EverydayPatientInfo.MVVM.Model
         /// <summary>
         /// The viewmodel of Register window
         /// </summary>
-        private RegisterationViewModel viewmodel;
+        private RegisterationViewModel registerationVM;
 
         #endregion
 
@@ -30,12 +31,24 @@ namespace EverydayPatientInfo.MVVM.Model
         /// <summary>
         /// This method is used as a Command
         /// </summary>
-        /// <param name="login"></param>
-        /// <param name="password1"></param>
-        /// <param name="password2"></param>
-        public void SendData(string login, HashCode password1, HashCode password2)
+        /// <param name="cardID"></param>
+        /// <param name="password"></param>
+
+        public bool Register(string cardID, string password)
         {
-            
+            Instances.CardID = cardID;
+            return true;
+        }
+
+
+
+        #endregion
+
+        #region Constructor
+
+        public RegisterationModel(RegisterationViewModel registerationVM)
+        {
+            this.registerationVM = registerationVM;
         }
 
         #endregion
