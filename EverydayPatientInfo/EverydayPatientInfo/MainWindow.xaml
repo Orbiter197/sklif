@@ -21,6 +21,9 @@
         <DataTemplate DataType="{x:Type viewModel:RegisterationViewModel}">
             <view:RegistrationView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:PasswordResetViewModel}">
+            <view:PasswordResetView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:MainContentViewModel}">
             <view:MainContentView/>
         </DataTemplate>

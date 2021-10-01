@@ -59,7 +59,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void ResetPassword()
         {
-
+            MainWindowViewModel.Instance.CurrentView = MainWindowViewModel.Instance.PasswordResetVM;
         }
 
         #endregion

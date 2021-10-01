@@ -135,7 +135,7 @@
                     <!-- Card ID -->
                     <StackPanel HorizontalAlignment="Stretch"
                                 Margin="0 10">
-                        <TextBlock Text="Login"
+                        <TextBlock Text="Card ID"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Center"
                                    FontSize="{StaticResource FontSizeSmall}"/>

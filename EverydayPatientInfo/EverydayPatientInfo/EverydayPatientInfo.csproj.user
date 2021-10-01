@@ -10,6 +10,9 @@
     <Compile Update="MVVM\View\MainContentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\View\PasswordResetView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\View\RegistrationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +25,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\MainContentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\PasswordResetView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\RegistrationView.xaml">
