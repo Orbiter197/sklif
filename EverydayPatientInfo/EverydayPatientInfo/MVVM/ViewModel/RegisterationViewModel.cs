@@ -25,8 +25,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Public properties
 
         public string FirstName { get; set; }
-        public string Patronymic { get; set; }
+        
         public string LastName { get; set; }
+        public string DateOfBirth { get; set; }
         public string CardID { get; set; }
         public string Password1 { get; set; }
         public string Password2 { get; set; }
@@ -42,7 +43,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             if (Password1 != Password2)
                 Clear();
-            else if (registerationModel.Register(CardID, Password1))
+            else if (registerationModel.Register(FirstName, LastName, CardID, Password1))
                 ToLoginPage();
             else
                 Clear();

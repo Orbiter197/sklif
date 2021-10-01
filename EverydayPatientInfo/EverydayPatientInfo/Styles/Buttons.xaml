@@ -14,6 +14,9 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Padding" Value="8"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeNormal}"/>
+        
 
         <Setter Property="Template">
             <Setter.Value>
@@ -32,6 +35,18 @@
 
 
     </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="Blue"
+           BasedOn="{StaticResource Hoverless}">
+        <Setter Property="Background" Value="{StaticResource ThemeBlueBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}"/>
+    </Style>
     
+    <Style TargetType="{x:Type Button}" x:Key="Transparent"
+           BasedOn="{StaticResource Hoverless}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
+    </Style>
+
 
 </ResourceDictionary>

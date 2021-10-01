@@ -83,24 +83,6 @@
 
                     </StackPanel>
 
-                    <!-- Patronymic -->
-                    <StackPanel HorizontalAlignment="Stretch"
-                                Margin="0 10">
-                        <TextBlock Text="Patronymic"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"
-                                   FontSize="{StaticResource FontSizeSmall}"/>
-
-                        <TextBox Name="PatronymicField"  
-                                 Text="{Binding Patronymic}"
-                                 HorizontalAlignment="Stretch"
-                                 Margin="10 0" BorderBrush="{x:Null}"
-                                 FontSize="{StaticResource FontSizeSmall}"/>
-                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
-                                   HorizontalAlignment="Stretch"
-                                   Height="3"/>
-
-                    </StackPanel>
 
                     <!-- Last name -->
                     <StackPanel HorizontalAlignment="Stretch"
@@ -112,6 +94,25 @@
 
                         <TextBox Name="LastNamedField"  
                                  Text="{Binding LastName}"
+                                 HorizontalAlignment="Stretch"
+                                 Margin="10 0" BorderBrush="{x:Null}"
+                                 FontSize="{StaticResource FontSizeSmall}"/>
+                        <Rectangle Fill="{StaticResource ForegroundMainBrush}"
+                                   HorizontalAlignment="Stretch"
+                                   Height="3"/>
+
+                    </StackPanel>
+
+                    <!-- Birth -->
+                    <StackPanel HorizontalAlignment="Stretch"
+                                Margin="0 10">
+                        <TextBlock Text="Date of Birth"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="{StaticResource FontSizeSmall}"/>
+
+                        <TextBox Name="PatronymicField"  
+                                 Text="{Binding DateOfBirth}"
                                  HorizontalAlignment="Stretch"
                                  Margin="10 0" BorderBrush="{x:Null}"
                                  FontSize="{StaticResource FontSizeSmall}"/>

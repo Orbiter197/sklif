@@ -34,9 +34,10 @@ namespace EverydayPatientInfo.MVVM.Model
         /// <param name="cardID"></param>
         /// <param name="password"></param>
 
-        public bool Register(string cardID, string password)
+        public bool Register(string firstName, string lastName, string cardID, string password)
         {
             Instances.CardID = cardID;
+            Instances.Name = firstName + " " + lastName;
             return true;
         }
 

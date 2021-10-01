@@ -20,31 +20,53 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <!--#region Left-->
             <Border Grid.Column="0"
                     Style="{StaticResource Light}">
 
                 <StackPanel>
+                    <!-- User Info-->
                     <StackPanel Orientation="Horizontal"
                                 Margin="10">
                         
                         <Rectangle Fill="{StaticResource ThemeBlueBrush}"
                                    Height="100" Width="100"/>
                         
-                        <StackPanel>
+                        <StackPanel VerticalAlignment="Center" Margin="10 0 0 0">
                             <TextBlock Style="{StaticResource Normal}"
                                        Text="{Binding Name}"/>
-                            <TextBlock Style="{StaticResource Normal}"
+                            <TextBlock Style="{StaticResource Small}"
                                        Text="{Binding Role}"/>
 
                         </StackPanel>
                     </StackPanel>
+                    
+                    <!-- Controls-->
+                    <StackPanel VerticalAlignment="Stretch">
+                        
+                        <!-- View Profile -->
+                        <Button Content="View Profile"
+                                Command="{Binding ViewProfileCommand}"
+                                HorizontalAlignment="Left"
+                                Margin="30 10 0 0"
+                                Style="{StaticResource Transparent}"
+                                FontSize="{StaticResource FontSizeSmall}"/>
+                        <!-- Change role -->
+                        <Button Content="Change role"
+                                Command="{Binding ChangRoleCommand}"
+                                HorizontalAlignment="Left"
+                                Margin="30 10 0 0"
+                                Style="{StaticResource Transparent}"
+                                FontSize="{StaticResource FontSizeSmall}"/>
+                    </StackPanel>
                 </StackPanel>
                 
             </Border>
+            <!--#endregion-->
 
             <Border Grid.Column="1"
-                    Style="{StaticResource Light}">
-
+                    Style="{StaticResource VeryLight}">
+                
             </Border>
 
         </Grid>
