@@ -13,7 +13,6 @@
         <viewModel:MainContentViewModel/>
     </UserControl.DataContext>
     
-
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type viewModel:NotAssignedViewModel}">
             <view:NotAssignedView/>
