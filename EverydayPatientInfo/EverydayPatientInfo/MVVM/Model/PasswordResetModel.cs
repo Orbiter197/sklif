@@ -19,7 +19,7 @@ namespace EverydayPatientInfo.MVVM.Model
 
         public PasswordResetModel(PasswordResetViewModel passwordResetVM)
         {
-            this.passwordResetVM = passwordResetVM;
+            //this.passwordResetVM = passwordResetVM;
         }
     }
 }

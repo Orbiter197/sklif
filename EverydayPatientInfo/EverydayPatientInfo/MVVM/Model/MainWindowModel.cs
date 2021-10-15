@@ -7,7 +7,7 @@ namespace EverydayPatientInfo.MVVM.Model
     /// <summary>
     /// The model where all logic happens
     /// </summary>
-    class MainWindowModel
+    public class MainWindowModel
     {
         public MainWindowModel()
         {

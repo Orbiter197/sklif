@@ -43,7 +43,7 @@ namespace EverydayPatientInfo.ProjectStructure.ProjectWorkaround
         public static SignInModel SignInModelInstance { get; set; }
 
         public static RegisterationViewModel RegisterationVMInstance { get; set; }
-        public static RegisterationModel RegisterationModelInstance { get; set; }
+        
 
         public static PasswordResetViewModel PasswordResetVMInstance { get; set; }
         public static PasswordResetModel PasswordResetModelInstance { get; set; }

@@ -18,7 +18,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// <summary>
         /// The model of Register window
         /// </summary>
-        private RegisterationModel registerationModel;
+       
 
         #endregion
 
@@ -43,10 +43,12 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             if (Password1 != Password2)
                 Clear();
-            else if (registerationModel.Register(FirstName, LastName, CardID, Password1))
+            else 
+            {
+                Instances.CardID = CardID;
                 ToLoginPage();
-            else
-                Clear();
+            }
+            
 
         }
 
@@ -67,7 +69,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             Instances.RegisterationVMInstance = this;
 
-            registerationModel = new(this);
+            
 
             RegisterCommand = new RelayCommand(Register);
             LoginCommand = new RelayCommand(ToLoginPage);

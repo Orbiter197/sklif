@@ -2,7 +2,7 @@
 using EverydayPatientInfo.ProjectStructure.DataBaseStructure;
 
 using System.Data;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.Model

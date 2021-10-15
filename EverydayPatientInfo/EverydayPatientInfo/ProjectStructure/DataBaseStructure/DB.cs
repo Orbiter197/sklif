@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿//using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +7,7 @@ namespace EverydayPatientInfo.ProjectStructure.DataBaseStructure
 {
     public class DB
     {
+        /*
         MySqlConnection connection = new MySqlConnection("Server=localhost; Port=3306; Username=root; Password=[-Vse-5*0-lod-]; Database=everyday_patient_info");
 
         public void openConnection()
@@ -25,5 +26,6 @@ namespace EverydayPatientInfo.ProjectStructure.DataBaseStructure
         {
             return connection;
         }
+        */
     } 
 }

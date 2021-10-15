@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\
+C:\Users\Vsevolod\Gerenal\Projects\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\
 EverydayPatientInfo
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
+C:\Users\Vsevolod\Gerenal\Projects\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
 171017749362
 
-38-1361274197
-19552788847
+38-1802199771
+194120249112
 MainWindow.xaml;MVVM\View\ChangeRoleView.xaml;MVVM\View\DoctorView.xaml;MVVM\View\MainContentView.xaml;MVVM\View\NotAssignedView.xaml;MVVM\View\OperatorView.xaml;MVVM\View\PasswordResetView.xaml;MVVM\View\RegistrationView.xaml;MVVM\View\SettingsView.xaml;MVVM\View\SignInView.xaml;Styles\Borders.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\TextBox.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
 
-True
+False
 

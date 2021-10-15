@@ -5,8 +5,14 @@ using System.Windows.Input;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
+    /// <summary>
+    /// A view model for "Change role" window
+    /// 
+    /// </summary>
     class ChangeRoleViewModel : ObservableObject
     {
+
+        
         public string Role
         { 
             get => Instances.Role;
@@ -45,6 +51,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
                 case 2:
                     Instances.MainContentVMInstance.Role = "Operator";
                     Instances.MainContentVMInstance.CurrentView = Instances.OperatorVM;
+                    break;
+                default:
                     break;
             }
         }

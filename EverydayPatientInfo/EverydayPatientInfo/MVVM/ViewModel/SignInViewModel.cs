@@ -14,7 +14,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     {
         #region Private fields
 
-
         /// <summary>
         /// The model that handles all logic
         /// </summary>
