@@ -1,8 +1,5 @@
 ﻿using PropertyChanged;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
 namespace EverydayPatientInfo.Core
 {
@@ -16,7 +13,7 @@ namespace EverydayPatientInfo.Core
         /// The event that is fired when any child property changes its value
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-        
+
         /// <summary>
         /// Call sthis to fire a <see cref="PropertyChanged"/> event
         /// </summary>

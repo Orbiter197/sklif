@@ -1,5 +1,5 @@
 ﻿using EverydayPatientInfo.Core;
-using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure;
 using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
@@ -13,8 +13,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public string Name { get; set; }
         public string Role
         {
-            get => Instances.Role;
-            set => Instances.Role = value;
+            get => ProjectMainClass.Role.ToString();
+            set => ProjectMainClass.Role = int.Parse(value);
         }
 
         public ICommand ViewProfileCommand { get; set; }
@@ -52,9 +52,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
             CardID = Instances.CardID;
             Name = Instances.Name;
-            Role = Instances.Role;
         }
 
-        
+
     }
 }

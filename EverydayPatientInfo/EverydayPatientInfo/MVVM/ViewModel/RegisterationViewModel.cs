@@ -1,32 +1,19 @@
 ﻿using EverydayPatientInfo.Core;
-using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure;
 using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
-    /// <summary>
-    /// The view model for Regestration Window and <see cref="RegisterationModel"/>
-    /// </summary>
     class RegisterationViewModel : ObservableObject
     {
-        #region Private fields
-
-        /// <summary>
-        /// The model of Register window
-        /// </summary>
-        private RegisterationModel registerationModel;
-
-        #endregion
 
         #region Public properties
 
-        public string FirstName { get; set; }
-        
         public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string Patronymic { get; set; }
+
         public string DateOfBirth { get; set; }
         public string CardID { get; set; }
         public string Password1 { get; set; }
@@ -37,18 +24,24 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #endregion
 
-        
+        #region Constructor
 
-        private void Register()
+        public RegisterationViewModel()
         {
-            if (Password1 != Password2)
-                Clear();
-            else if (registerationModel.Register(FirstName, LastName, CardID, Password1))
-                ToLoginPage();
-            else
-                Clear();
+            Instances.RegisterationVMInstance = this;
 
+            RegisterCommand = new RelayCommand(Register);
+            LoginCommand = new RelayCommand(ToLoginPage);
         }
+
+        #endregion
+
+        #region Private methods
+
+        private void Register() => Authorization.SignUp(LastName, FirstName, Patronymic, DateOfBirth, CardID, Password1, Password2);
+
+        #endregion
+
 
         private void Clear()
         {
@@ -58,21 +51,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void ToLoginPage()
         {
-             Instances.MainWindowVMInstance.CurrentView = Instances.SignInVMInstance;
+            Instances.MainWindowVMInstance.CurrentView = Instances.SignInVMInstance;
         }
 
-        #region Constructor
-
-        public RegisterationViewModel()
-        {
-            Instances.RegisterationVMInstance = this;
-
-            registerationModel = new(this);
-
-            RegisterCommand = new RelayCommand(Register);
-            LoginCommand = new RelayCommand(ToLoginPage);
-        }
         
-        #endregion
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EverydayPatientInfo.Core;
-using System.Windows.Input;
+﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
@@ -34,7 +30,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public RegisterationViewModel RegisterVM { get; set; } = new();
         public PasswordResetViewModel PasswordResetVM { get; set; } = new();
         public MainContentViewModel MainContentVM { get; set; } = new();
-        
+
 
         #endregion
 
@@ -56,7 +52,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #region Helpers
 
-       
+
 
         #endregion
 

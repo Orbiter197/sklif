@@ -12,7 +12,7 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\App.xaml
 171017749362
 
-36-880487229
+28-951147047
 19552788847
 MainWindow.xaml;MVVM\View\ChangeRoleView.xaml;MVVM\View\DoctorView.xaml;MVVM\View\MainContentView.xaml;MVVM\View\NotAssignedView.xaml;MVVM\View\OperatorView.xaml;MVVM\View\PasswordResetView.xaml;MVVM\View\RegistrationView.xaml;MVVM\View\SettingsView.xaml;MVVM\View\SignInView.xaml;Styles\Borders.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\TextBox.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
 

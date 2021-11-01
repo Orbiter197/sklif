@@ -1,5 +1,5 @@
 ﻿using EverydayPatientInfo.Core;
-using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure;
 using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
@@ -7,11 +7,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 {
     class PasswordResetViewModel : ObservableObject
     {
-        #region Private fields
-
-        private PasswordResetModel passwordResetModel;
-
-        #endregion
 
         #region Public properties
         public string CardID { get; set; }
@@ -27,8 +22,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             Instances.PasswordResetVMInstance = this;
 
-            passwordResetModel = new(this);
-
             ResetPasswordCommand = new RelayCommand(Reset);
             LoginCommand = new RelayCommand(ToLoginPage);
         }
@@ -38,13 +31,11 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         private void Reset()
         {
-            if (Password1 != Password2)
-                Clear();
-            else if (passwordResetModel.ResetPassword(CardID, Password1))
+            bool state = Authorization.ResetPassword(CardID, Password1, Password2);
+            if (state)
                 ToLoginPage();
             else
                 Clear();
-                    
         }
 
         private void Clear()

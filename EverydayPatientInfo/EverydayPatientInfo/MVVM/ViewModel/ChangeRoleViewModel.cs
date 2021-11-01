@@ -1,5 +1,5 @@
 ﻿using EverydayPatientInfo.Core;
-using EverydayPatientInfo.MVVM.Model;
+using EverydayPatientInfo.ProjectStructure;
 using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
@@ -8,9 +8,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     class ChangeRoleViewModel : ObservableObject
     {
         public string Role
-        { 
-            get => Instances.Role;
-            
+        {
+            get => ProjectMainClass.Role.ToString();
+
         }
 
         public string NotAssignedRoleAvaliable { get; set; }
@@ -19,14 +19,14 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         public ICommand commandICommand { get; set; }
 
-       
+
 
         public ICommand NotAssignedCommand { get; set; }
         public ICommand DoctorCommand { get; set; }
         public ICommand OperatorCommand { get; set; }
 
         public ICommand PickUpRoleCommand { get; set; }
-        
+
 
         private int selected = 0;
 
@@ -53,33 +53,16 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             Instances.ChangeRoleVM = this;
 
-            
 
-            
+
+
             NotAssignedCommand = new RelayCommand(() => selected = 0);
             DoctorCommand = new RelayCommand(() => selected = 1);
             OperatorCommand = new RelayCommand(() => selected = 2);
             PickUpRoleCommand = new RelayCommand(ChangeRole);
-            
 
-            if (Instances.Role == "Not assigned")
-            {
-                NotAssignedRoleAvaliable = "Your current role";
-                DoctorRoleAvaliable = "Avaliable";
-                OperatorRoleAvaliable = "Avaliable";
-            }
-            else if (Instances.Role == "Doctor")
-            {
-                NotAssignedRoleAvaliable = "Avaliable";
-                DoctorRoleAvaliable = "Your current role";
-                OperatorRoleAvaliable = "Avaliable";
-            }
-            else if (Instances.Role == "Not Assigned")
-            {
-                NotAssignedRoleAvaliable = "Avaliable";
-                DoctorRoleAvaliable = "Avaliable";
-                OperatorRoleAvaliable = "Your current role";
-            }
+
+            
 
 
 

@@ -1,5 +1,4 @@
 ﻿using EverydayPatientInfo.Core;
-using EverydayPatientInfo.MVVM.Model;
 using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
@@ -11,8 +10,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public ICommand AddNewCommand { get; set; }
 
         public int state = 5;
-        
-        
+
+
         public string i2 { get; set; }
         public string i3 { get; set; }
         public string i4 { get; set; }
@@ -39,7 +38,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
                 a3 = i3;
                 a4 = i4;
                 a5 = i5;
-                
+
             }
             else
             {

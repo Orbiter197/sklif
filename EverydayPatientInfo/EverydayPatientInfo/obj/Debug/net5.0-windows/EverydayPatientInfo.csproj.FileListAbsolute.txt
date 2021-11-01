@@ -7,7 +7,6 @@ D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bi
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\EverydayPatientInfo.pdb
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\MySql.Data.dll
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Google.Protobuf.dll
-D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Zstandard.Net.dll
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
@@ -58,3 +57,4 @@ D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\ob
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\NotAssignedView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\OperatorView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\SettingsView.baml
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\ZstdNet.dll
