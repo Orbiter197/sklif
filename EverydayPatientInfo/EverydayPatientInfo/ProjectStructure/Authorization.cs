@@ -54,12 +54,36 @@ namespace EverydayPatientInfo.ProjectStructure
 
         public static bool ResetPassword(string cardID, string password1, string password2)
         {
-            throw new NotImplementedException(nameof(ResetPassword));
+            if (password1 != password2)
+                return false;
+            DB.Open();
+            MySqlCommand command = new("UPDATE employees SET pass = @up WHERE card_id = @ui");
+            command.Parameters.Add("@ui", MySqlDbType.VarChar).Value = cardID;
+            command.Parameters.Add("@up", MySqlDbType.VarChar).Value = password1;
+            bool res = command.ExecuteNonQuery() != 0;
+            DB.Close();
+            return res;
         }
 
         public static bool SignUp(string lastName, string firstName, string patronymic, string dateOfBirth, string cardID, string password1, string password2)
         {
-            throw new NotImplementedException(nameof(ResetPassword));
+            MySqlCommand command = new("SELECT * FROM employees WHERE card_id = @ui;", DB.Connection);
+            command.Parameters.Add("@ui", MySqlDbType.VarChar).Value = cardID;
+            MySqlDataAdapter adapter = new(command);
+            DataTable table = new();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                return false;
+
+            DB.Open();
+            command = new("INSERT INTO employees(card_id,pass,last_name,first_name) VALUES(@card_id, @pass, @last_name, @first_name);", DB.Connection);
+            command.Parameters.Add("@card_id", MySqlDbType.VarChar).Value = cardID;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password1;
+            command.Parameters.Add("@last_name", MySqlDbType.VarChar).Value = lastName;
+            command.Parameters.Add("@first_name", MySqlDbType.VarChar).Value = firstName;
+            command.ExecuteNonQuery();
+            DB.Close();
+            return true;
         }
         #endregion
     }
