@@ -1,7 +1,9 @@
 ﻿using EverydayPatientInfo.MVVM.ViewModel;
+using System;
 
 namespace EverydayPatientInfo.ProjectStructure.ProjectWorkaround
 {
+    [Obsolete()]
     static class Instances
     {
 

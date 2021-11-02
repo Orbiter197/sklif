@@ -8,9 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1800">
 
-    <UserControl.DataContext>
-        <viewModel:RegisterationViewModel/>
-    </UserControl.DataContext>
 
     <Border Style="{StaticResource Gradient}">
 

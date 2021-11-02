@@ -9,9 +9,7 @@
              d:DesignHeight="1000" d:DesignWidth="1800"
              Background="White">
 
-    <UserControl.DataContext>
-        <viewModel:SignInViewModel/>
-    </UserControl.DataContext>
+    
 
     <Border Style="{StaticResource Gradient}">
         

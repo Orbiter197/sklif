@@ -14,21 +14,6 @@
         Background="{StaticResource BackgroundLightBrush}" 
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type viewModel:SignInViewModel}">
-            <view:SignInView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:RegisterationViewModel}">
-            <view:RegistrationView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:PasswordResetViewModel}">
-            <view:PasswordResetView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:MainContentViewModel}">
-            <view:MainContentView/>
-        </DataTemplate>
-    </Window.Resources>
-    
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>
     </Window.DataContext>

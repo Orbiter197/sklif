@@ -9,30 +9,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1800">
 
+    <!--    -->
     <UserControl.DataContext>
         <viewModel:MainContentViewModel/>
     </UserControl.DataContext>
     
-    
-    
-    
-    <UserControl.Resources>
-        <DataTemplate DataType="{x:Type viewModel:NotAssignedViewModel}">
-            <view:NotAssignedView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:DoctorViewModel}">
-            <view:DoctorView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:OperatorViewModel}">
-            <view:OperatorView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:ChangeRoleViewModel}">
-            <view:ChangeRoleView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
-            <view:SettingsView/>
-        </DataTemplate>
-    </UserControl.Resources>
 
     <Border Style="{StaticResource Light}">
         <Grid>

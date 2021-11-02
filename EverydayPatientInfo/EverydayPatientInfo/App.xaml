@@ -16,18 +16,37 @@
                 <ResourceDictionary Source="Styles/Windows.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <!--
-            <DataTemplate DataType="{x:Type viewModel:MainContentViewModel}">
-                <view:HomeView/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:SignInViewModel}">
                 <view:SignInView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:RegisterViewModel}">
-                <view:SignUpView/>
+            <DataTemplate DataType="{x:Type viewModel:RegisterationViewModel}">
+                <view:RegistrationView/>
             </DataTemplate>
-            -->
-            
+            <DataTemplate DataType="{x:Type viewModel:PasswordResetViewModel}">
+                <view:PasswordResetView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:MainContentViewModel}">
+                <view:MainContentView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:NotAssignedViewModel}">
+                <view:NotAssignedView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:DoctorViewModel}">
+                <view:DoctorView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:OperatorViewModel}">
+                <view:OperatorView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ChangeRoleViewModel}">
+                <view:ChangeRoleView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/>
+            </DataTemplate>
+
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

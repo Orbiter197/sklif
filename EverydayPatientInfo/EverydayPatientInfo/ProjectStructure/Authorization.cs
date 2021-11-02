@@ -39,6 +39,13 @@ namespace EverydayPatientInfo.ProjectStructure
         #endregion
 
         #region Public methods
+
+        /// <summary>
+        /// Signs in employee 
+        /// </summary>
+        /// <param name="cardID"></param>
+        /// <param name="password"></param>
+        /// <returns>True if successful, otherwise false</returns>
         public static bool SignIn(string cardID, string password)
         {
             MySqlCommand command = new("SELECT * FROM employees WHERE card_id = @ui AND pass = @up;", DB.Connection);
@@ -52,6 +59,13 @@ namespace EverydayPatientInfo.ProjectStructure
             return table.Rows.Count > 0;
         }
 
+        /// <summary>
+        /// Resets employees password 
+        /// </summary>
+        /// <param name="cardID">Employees cardID</param>
+        /// <param name="password1">Employees new password</param>
+        /// <param name="password2">Employees new password confirm</param>
+        /// <returns>True if successful, otherwise false</returns>
         public static bool ResetPassword(string cardID, string password1, string password2)
         {
             if (password1 != password2)
@@ -65,6 +79,17 @@ namespace EverydayPatientInfo.ProjectStructure
             return res;
         }
 
+        /// <summary>
+        /// Signs up an employee in the database
+        /// </summary>
+        /// <param name="lastName">Employees last name</param>
+        /// <param name="firstName">Employees first name</param>
+        /// <param name="patronymic">Employees patronymic</param>
+        /// <param name="dateOfBirth">Employees date of birth</param>
+        /// <param name="cardID">Employees cardID</param>
+        /// <param name="password1">Employees new password</param>
+        /// <param name="password2">Employees new password confirm</param>
+        /// <returns>True if successful, otherwise false</returns>
         public static bool SignUp(string lastName, string firstName, string patronymic, string dateOfBirth, string cardID, string password1, string password2)
         {
             MySqlCommand command = new("SELECT * FROM employees WHERE card_id = @ui;", DB.Connection);
