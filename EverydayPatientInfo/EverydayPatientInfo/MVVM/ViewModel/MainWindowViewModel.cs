@@ -4,7 +4,7 @@ using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
     /// <summary>
-    /// A view model for main window"/>
+    /// A view model for main window/>
     /// </summary>
     class MainWindowViewModel : ObservableObject
     {
@@ -26,14 +26,16 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             set => currentView = value;
         }
 
-        public SignInViewModel SignInVM { get; set; } = new();
-        public RegisterationViewModel RegisterVM { get; set; } = new();
-        public PasswordResetViewModel PasswordResetVM { get; set; } = new();
-        public MainContentViewModel MainContentVM { get; set; } = new();
-
-
         #endregion
 
+        #region Switching
+
+        public void SwitchToSignIn() => CurrentView = new SignInViewModel(this);
+        public void SwitchToSignUp() => CurrentView = new SignUpViewModel(this);
+        public void SwitchToPasswordReset() => CurrentView = new PasswordResetViewModel(this);
+        public void SwitchToMainContent() => CurrentView = new MainContentViewModel(this);
+
+        #endregion
 
 
         #region Constructor 
@@ -43,16 +45,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// </summary>
         public MainWindowViewModel()
         {
-            Instances.MainWindowVMInstance = this;
-
-            CurrentView = new SignInViewModel();
+            CurrentView = new SignInViewModel(this);
         }
-
-        #endregion
-
-        #region Helpers
-
-
 
         #endregion
 

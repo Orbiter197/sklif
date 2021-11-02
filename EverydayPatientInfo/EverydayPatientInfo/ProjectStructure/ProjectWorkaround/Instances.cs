@@ -11,23 +11,8 @@ namespace EverydayPatientInfo.ProjectStructure.ProjectWorkaround
         public static string Name { get; set; }
         
 
-
-
-
-
-
-        public static MainWindowViewModel MainWindowVMInstance { get; set; }
-
-        public static SignInViewModel SignInVMInstance { get; set; }
-
-
-        public static RegisterationViewModel RegisterationVMInstance { get; set; }
-
-
         public static PasswordResetViewModel PasswordResetVMInstance { get; set; }
 
-
-        public static MainContentViewModel MainContentVMInstance { get; set; }
         public static NotAssignedViewModel NotAssignedVM { get; set; }
         public static DoctorViewModel DoctorVM { get; set; }
         public static OperatorViewModel OperatorVM { get; set; }

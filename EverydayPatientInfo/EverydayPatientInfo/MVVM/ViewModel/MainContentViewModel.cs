@@ -7,6 +7,16 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 {
     class MainContentViewModel : ObservableObject
     {
+        #region Private fields
+
+        private MainWindowViewModel baseVM;
+        #endregion
+
+        #region Public properties
+
+        public MainWindowViewModel BaseVM { get => baseVM; }
+        #endregion
+
         private object currentView;
 
         public string CardID { get; set; }
@@ -37,9 +47,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
 
 
-        public MainContentViewModel()
+        public MainContentViewModel(MainWindowViewModel baseVM)
         {
-            Instances.MainContentVMInstance = this;
+            this.baseVM = baseVM;
 
             CurrentView = new NotAssignedViewModel();
             _ = new DoctorViewModel();

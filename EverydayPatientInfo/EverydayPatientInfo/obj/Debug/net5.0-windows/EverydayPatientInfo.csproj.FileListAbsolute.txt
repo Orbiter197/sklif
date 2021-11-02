@@ -43,8 +43,6 @@ D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\ob
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\EverydayPatientInfo.pdb
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\EverydayPatientInfo.genruntimeconfig.cache
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\Styles\Borders.baml
-D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\RegistrationView.g.cs
-D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\RegistrationView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PasswordResetView.g.cs
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PasswordResetView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\ChangeRoleView.g.cs
@@ -58,3 +56,5 @@ D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\ob
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\OperatorView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\SettingsView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\ZstdNet.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\SignUpView.g.cs
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\SignUpView.baml

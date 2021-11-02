@@ -10,7 +10,17 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
     class SignInViewModel : ObservableObject
     {
+        #region Private fields
+
+        private MainWindowViewModel baseVM;
+        #endregion
+
         #region Public properties
+
+        public MainWindowViewModel BaseVM { get => baseVM; }
+        #endregion
+
+        #region Public binding properties
 
         public string CardID { get; set; }
         public string Password { get; set; }
@@ -26,13 +36,13 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         /// <summary>
         /// Default constructor
         /// </summary>
-        public SignInViewModel()
+        public SignInViewModel(MainWindowViewModel baseVM)  
         {
-            Instances.SignInVMInstance = this;
+            this.baseVM = baseVM;
 
             SignInCommand = new RelayCommand(SignIn);
-            RegisterCommand = new RelayCommand(Register);
-            ResetPasswordCommand = new RelayCommand(ResetPassword);
+            RegisterCommand = new RelayCommand(baseVM.SwitchToSignUp);
+            ResetPasswordCommand = new RelayCommand(baseVM.SwitchToPasswordReset);
         }
 
         #endregion
@@ -42,18 +52,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         private void SignIn()
         {
             if (Authorization.SignIn(CardID, Password))
-                Instances.MainWindowVMInstance.CurrentView = Instances.MainContentVMInstance;
-
-        }
-
-        private void Register()
-        {
-            Instances.MainWindowVMInstance.CurrentView = Instances.RegisterationVMInstance;
-        }
-
-        private void ResetPassword()
-        {
-            Instances.MainWindowVMInstance.CurrentView = Instances.PasswordResetVMInstance;
+                baseVM.SwitchToMainContent();
         }
 
         #endregion

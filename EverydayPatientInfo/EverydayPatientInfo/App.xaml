@@ -19,7 +19,7 @@
             <DataTemplate DataType="{x:Type viewModel:SignInViewModel}">
                 <view:SignInView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:RegisterationViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:SignUpViewModel}">
                 <view:RegistrationView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:PasswordResetViewModel}">

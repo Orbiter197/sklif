@@ -40,18 +40,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             switch (selected)
             {
-                case 0:
-                    Instances.MainContentVMInstance.Role = "Not assigned";
-                    Instances.MainContentVMInstance.CurrentView = Instances.NotAssignedVM;
-                    break;
-                case 1:
-                    Instances.MainContentVMInstance.Role = "Doctor";
-                    Instances.MainContentVMInstance.CurrentView = Instances.DoctorVM;
-                    break;
-                case 2:
-                    Instances.MainContentVMInstance.Role = "Operator";
-                    Instances.MainContentVMInstance.CurrentView = Instances.OperatorVM;
-                    break;
                 default:
                     break;
             }
