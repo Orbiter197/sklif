@@ -5,9 +5,21 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 {
     class NotAssignedViewModel : ObservableObject
     {
-        public NotAssignedViewModel()
+        #region Private fields
+
+        private MainContentViewModel baseVM;
+
+        #endregion
+
+        #region Public properties
+
+        public MainContentViewModel BaseVM { get => baseVM; }
+
+        #endregion
+
+        public NotAssignedViewModel(MainContentViewModel baseVM)
         {
-            Instances.NotAssignedVM = this;
+            this.baseVM = baseVM;
         }
     }
 }

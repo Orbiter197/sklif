@@ -5,8 +5,21 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 {
     class DoctorViewModel : ObservableObject
     {
-        public DoctorViewModel()
+        #region Private fields
+
+        private MainContentViewModel baseVM;
+
+        #endregion
+
+        #region Public properties
+
+        public MainContentViewModel BaseVM { get => baseVM; }
+
+        #endregion
+
+        public DoctorViewModel(MainContentViewModel baseVM)
         {
+            this.baseVM = baseVM;
             Instances.DoctorVM = this;
         }
     }

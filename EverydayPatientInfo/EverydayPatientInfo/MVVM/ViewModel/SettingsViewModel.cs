@@ -5,9 +5,14 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 {
     class SettingsViewModel : ObservableObject
     {
-        public SettingsViewModel()
+        #region Private fields
+
+        MainContentViewModel baseVM;
+
+        #endregion
+        public SettingsViewModel(MainContentViewModel baseVM)
         {
-            Instances.SettingsVM = this;
+            this.baseVM = baseVM;
         }
     }
 }

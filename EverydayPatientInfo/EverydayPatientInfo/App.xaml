@@ -38,7 +38,7 @@
             <DataTemplate DataType="{x:Type viewModel:OperatorViewModel}">
                 <view:OperatorView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:ChangeRoleViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:RoleManagerViewModel}">
                 <view:ChangeRoleView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">

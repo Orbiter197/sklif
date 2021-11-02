@@ -48,16 +48,24 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #region Private methods
 
-        private void Register() => Authorization.SignUp(LastName, FirstName, Patronymic, DateOfBirth, CardID, Password1, Password2);
+        private void Register()
+        {
+            bool res = Authorization.SignUp(LastName, FirstName, Patronymic, DateOfBirth, CardID, Password1, Password2);
+            if (res)
+                baseVM.SwitchToSignIn();
+            else
+                SendErrorMessage();
+        }
+
+        private void SendErrorMessage()
+        {
+
+        }
 
         #endregion
 
 
-        private void Clear()
-        {
-            Password1 = "";
-            Password2 = "";
-        }
+        
 
         
     }

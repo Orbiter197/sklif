@@ -18,6 +18,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #endregion
 
         #region Public binding properties
+
         public string CardID { get; set; }
         public string Password1 { get; set; }
         public string Password2 { get; set; }

@@ -6,6 +6,18 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 {
     class OperatorViewModel : ObservableObject
     {
+        #region Private fields
+
+        private MainContentViewModel baseVM;
+
+        #endregion
+
+        #region Public properties
+
+        public MainContentViewModel BaseVM { get => baseVM; }
+
+        #endregion
+
         #region i,a,b
         public ICommand AddNewCommand { get; set; }
 
@@ -73,9 +85,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         }
         #endregion
 
-        public OperatorViewModel()
+        public OperatorViewModel(MainContentViewModel baseVM)
         {
-            Instances.OperatorVM = this;
+            this.baseVM = baseVM;
 
             AddNewCommand = new RelayCommand(AddNew);
             FindCommand = new RelayCommand(Find);

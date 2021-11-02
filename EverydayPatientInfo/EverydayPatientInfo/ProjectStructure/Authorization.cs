@@ -33,7 +33,7 @@ namespace EverydayPatientInfo.ProjectStructure
 
         static Authorization()
         {
-            userID = null;
+            userID = 0;
         }
 
         #endregion
@@ -101,7 +101,7 @@ namespace EverydayPatientInfo.ProjectStructure
                 return false;
 
             DB.Open();
-            command = new("INSERT INTO employees(card_id,pass,last_name,first_name) VALUES(@card_id, @pass, @last_name, @first_name);", DB.Connection);
+            command = new("INSERT INTO employees(card_id,pass,last_name,first_name, role) VALUES(@card_id, @pass, @last_name, @first_name, 0);", DB.Connection);
             command.Parameters.Add("@card_id", MySqlDbType.VarChar).Value = cardID;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password1;
             command.Parameters.Add("@last_name", MySqlDbType.VarChar).Value = lastName;

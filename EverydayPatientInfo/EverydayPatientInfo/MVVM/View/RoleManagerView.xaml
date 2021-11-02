@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="EverydayPatientInfo.MVVM.View.ChangeRoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
+             xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+
+
+    <Border Style="{StaticResource Light}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="{StaticResource GradientBlue}">
+                
+                <StackPanel VerticalAlignment="Center"
+                            Margin="30">
+                    <TextBlock Text="Your current role is "
+                               Style="{StaticResource Large}"
+                               FontFamily="{StaticResource LatoRegular}"
+                               Foreground="{StaticResource ForegroundLightBrush}"/>
+
+                    <TextBlock Text="{Binding Role}"
+                               Style="{StaticResource Large}"
+                               Foreground="{StaticResource ForegroundLightBrush}"/>
+
+                </StackPanel>
+            </Border>
+            <StackPanel Grid.Row="1"
+                        Margin="20">
+                <TextBlock Text="Change role to: "
+                           Style="{StaticResource Normal}"/>
+                <Rectangle Fill="Black" Height="2"/>
+
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Left">
+                    <Button Content="Not Assigned"
+                            Command="{Binding NotAssignedCommand}"
+                            Style="{StaticResource Transparent}"
+                            FontFamily="{StaticResource LatoRegular}"/>
+                    <TextBlock Text="{Binding NotAssignedRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Small}"
+                               FontFamily="{StaticResource LatoThin}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Left">
+                    <Button Content="Doctor"
+                            Command="{Binding DoctorCommand}"
+                            Style="{StaticResource Transparent}"
+                            FontFamily="{StaticResource LatoRegular}"/>
+                    <TextBlock Text="{Binding DoctorRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Small}"
+                               FontFamily="{StaticResource LatoThin}"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Left">
+                    <Button Content="Operator"
+                            Command="{Binding OperatorCommand}"
+                            Style="{StaticResource Transparent}"
+                            FontFamily="{StaticResource LatoRegular}"/>
+                    <TextBlock Text="{Binding OperatorRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Small}"
+                               FontFamily="{StaticResource LatoThin}"/>
+                </StackPanel>
+
+                <Button Content="Pick role"
+                        Command="{Binding PickUpRoleCommand}"
+                        Margin="30"
+                        Style="{StaticResource Blue}"/>
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

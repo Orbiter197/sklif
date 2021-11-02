@@ -10,6 +10,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Private fields
 
         private MainWindowViewModel baseVM;
+
+        private object currentView;
+
         #endregion
 
         #region Public properties
@@ -17,7 +20,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public MainWindowViewModel BaseVM { get => baseVM; }
         #endregion
 
-        private object currentView;
+        #region Binding properties
 
         public string CardID { get; set; }
         public string Name { get; set; }
@@ -35,35 +38,41 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             set => currentView = value;
         }
 
-        private void ViewProfile()
+        #endregion
+
+        #region Switching
+
+        public void SwitchToHome()
         {
-            CurrentView = Instances.SettingsVM;
+            CurrentView = ProjectMainClass.Role switch
+                {
+                    1 => new DoctorViewModel(this),
+                    2 => new OperatorViewModel(this),
+                    _ => new NotAssignedViewModel(this)
+                };
         }
-        private void ChnageRole()
-        {
-            CurrentView = Instances.ChangeRoleVM;
-        }
+        
+        public void SwitchToSettings() => CurrentView = new SettingsViewModel(this);
+        public void SwitchToRoleManager() => CurrentView = new RoleManagerViewModel(this);
 
+        #endregion
 
-
+        #region Constructor
 
         public MainContentViewModel(MainWindowViewModel baseVM)
         {
             this.baseVM = baseVM;
 
-            CurrentView = new NotAssignedViewModel();
-            _ = new DoctorViewModel();
-            _ = new OperatorViewModel();
-            _ = new SettingsViewModel();
-            _ = new ChangeRoleViewModel();
+            CurrentView = new NotAssignedViewModel(this);
 
-            ViewProfileCommand = new RelayCommand(ViewProfile);
-            ChangRoleCommand = new RelayCommand(ChnageRole);
+
+            ViewProfileCommand = new RelayCommand(SwitchToSettings);
+            ChangRoleCommand = new RelayCommand(SwitchToRoleManager);
 
             CardID = Instances.CardID;
             Name = Instances.Name;
         }
 
-
+        #endregion
     }
 }

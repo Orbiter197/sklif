@@ -53,6 +53,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             if (Authorization.SignIn(CardID, Password))
                 baseVM.SwitchToMainContent();
+
         }
 
         #endregion

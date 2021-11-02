@@ -8,7 +8,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
     /// </summary>
     class MainWindowViewModel : ObservableObject
     {
-
         #region Private fields
 
         /// <summary>
@@ -41,7 +40,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Constructor 
 
         /// <summary>
-        /// Constucts a view model for main window and sets a 
+        /// Constucts a view model for main window
         /// </summary>
         public MainWindowViewModel()
         {
