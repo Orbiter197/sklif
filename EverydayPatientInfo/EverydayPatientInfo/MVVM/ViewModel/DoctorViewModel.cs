@@ -20,7 +20,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public DoctorViewModel(MainContentViewModel baseVM)
         {
             this.baseVM = baseVM;
-            Instances.DoctorVM = this;
         }
     }
 }

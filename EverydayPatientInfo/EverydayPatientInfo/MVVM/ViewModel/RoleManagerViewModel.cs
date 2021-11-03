@@ -27,7 +27,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #region Binding Properties
 
-        public string Role{ get => ProjectMainClass.DisplayedRole; }
+        public string Role { get => ProjectMainClass.DisplayedRole; }
         public string NotAssignedRoleAvaliable { get; set; }
         public string DoctorRoleAvaliable { get; set; }
         public string OperatorRoleAvaliable { get; set; }
@@ -41,14 +41,18 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public ICommand OperatorCommand { get; set; }
 
         public ICommand PickUpRoleCommand { get; set; }
-        
+
 
         #endregion
 
 
 
 
-        private void ChangeRole() => ProjectMainClass.Role = selected;
+        private void ChangeRole()
+        {
+
+        }
+        //ProjectMainClass.Role = selected;
 
         public RoleManagerViewModel(MainContentViewModel baseVM)
         {

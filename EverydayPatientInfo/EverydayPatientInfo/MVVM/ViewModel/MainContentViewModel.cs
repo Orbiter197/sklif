@@ -27,7 +27,10 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public string Role
         {
             get => ProjectMainClass.Role.ToString();
-            set => ProjectMainClass.Role = int.Parse(value);
+            set
+            {
+
+            }
         }
 
         public ICommand ViewProfileCommand { get; set; }

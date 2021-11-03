@@ -7,19 +7,14 @@
              xmlns:view="clr-namespace:EverydayPatientInfo.MVVM.View"
              xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1800">
+             d:DesignHeight="1024" d:DesignWidth="1980">
 
 
     <Border Style="{StaticResource Light}">
-        <Grid>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="400"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="True">
 
             <!--#region Left-->
-            <Border Grid.Column="0"
+            <Border DockPanel.Dock="Left" Width="350"
                     Background="{StaticResource ThemeBlueBrush}">
 
                 <StackPanel>
@@ -74,7 +69,7 @@
 
             </Border>
 
-        </Grid>
+        </DockPanel>
     </Border>
     
 </UserControl>

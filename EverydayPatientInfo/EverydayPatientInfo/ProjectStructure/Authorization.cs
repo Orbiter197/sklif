@@ -4,7 +4,11 @@ using MySql.Data.MySqlClient;
 
 namespace EverydayPatientInfo.ProjectStructure
 {
-    public static class Authorization
+
+    /// <summary>
+    /// This class is used to access the database
+    /// </summary>
+    static class Authorization
     {
         #region Private field
 
@@ -33,7 +37,7 @@ namespace EverydayPatientInfo.ProjectStructure
 
         static Authorization()
         {
-            userID = 0;
+            userID = null;
         }
 
         #endregion
@@ -48,15 +52,30 @@ namespace EverydayPatientInfo.ProjectStructure
         /// <returns>True if successful, otherwise false</returns>
         public static bool SignIn(string cardID, string password)
         {
-            MySqlCommand command = new("SELECT * FROM employees WHERE card_id = @ui AND pass = @up;", DB.Connection);
+            MySqlCommand command = new("SELECT * FROM employees WHERE card_id = @ui AND pass = @up;", DataBaseHandler.Connection);
             command.Parameters.Add("@ui", MySqlDbType.VarChar).Value = cardID;
             command.Parameters.Add("@up", MySqlDbType.VarChar).Value = password;
 
-            MySqlDataAdapter adapter = new(command);
-            DataTable table = new();
-            adapter.Fill(table);
+            DataBaseHandler.Open();
+            MySqlDataReader reader = command.ExecuteReader();
 
-            return table.Rows.Count > 0;
+            if (!reader.HasRows)
+            {
+                reader.Close();
+                return false;
+            }
+
+            reader.Read();
+            userID = reader.GetFieldValue<int>(0);
+            reader.Close();
+
+            DataBaseHandler.Close();
+
+            ProjectMainClass.Update();
+
+            return true;
+
+            
         }
 
         /// <summary>
@@ -70,12 +89,13 @@ namespace EverydayPatientInfo.ProjectStructure
         {
             if (password1 != password2)
                 return false;
-            DB.Open();
+
+            DataBaseHandler.Open();
             MySqlCommand command = new("UPDATE employees SET pass = @up WHERE card_id = @ui");
             command.Parameters.Add("@ui", MySqlDbType.VarChar).Value = cardID;
             command.Parameters.Add("@up", MySqlDbType.VarChar).Value = password1;
             bool res = command.ExecuteNonQuery() != 0;
-            DB.Close();
+            DataBaseHandler.Close();
             return res;
         }
 
@@ -92,22 +112,26 @@ namespace EverydayPatientInfo.ProjectStructure
         /// <returns>True if successful, otherwise false</returns>
         public static bool SignUp(string lastName, string firstName, string patronymic, string dateOfBirth, string cardID, string password1, string password2)
         {
-            MySqlCommand command = new("SELECT * FROM employees WHERE card_id = @ui;", DB.Connection);
-            command.Parameters.Add("@ui", MySqlDbType.VarChar).Value = cardID;
-            MySqlDataAdapter adapter = new(command);
-            DataTable table = new();
-            adapter.Fill(table);
-            if (table.Rows.Count > 0)
-                return false;
+            DataBaseHandler.Open();
+            MySqlCommand command;
 
-            DB.Open();
-            command = new("INSERT INTO employees(card_id,pass,last_name,first_name, role) VALUES(@card_id, @pass, @last_name, @first_name, 0);", DB.Connection);
+            command = new("SELECT * FROM employees WHERE card_id = @ui;", DataBaseHandler.Connection);
+            command.Parameters.Add("@ui", MySqlDbType.VarChar).Value = cardID;
+            MySqlDataReader reader = command.ExecuteReader();
+            if(!reader.HasRows)
+            {
+                reader.Close();
+                return false;
+            }
+
+            
+            command = new("INSERT INTO employees(card_id,pass,last_name,first_name, role) VALUES(@card_id, @pass, @last_name, @first_name, 0);", DataBaseHandler.Connection);
             command.Parameters.Add("@card_id", MySqlDbType.VarChar).Value = cardID;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password1;
             command.Parameters.Add("@last_name", MySqlDbType.VarChar).Value = lastName;
             command.Parameters.Add("@first_name", MySqlDbType.VarChar).Value = firstName;
             command.ExecuteNonQuery();
-            DB.Close();
+            DataBaseHandler.Close();
             return true;
         }
         #endregion
