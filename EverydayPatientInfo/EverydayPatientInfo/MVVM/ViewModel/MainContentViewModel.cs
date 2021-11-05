@@ -65,9 +65,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             this.baseVM = baseVM;
 
-            CurrentView = new NotAssignedViewModel(this);
+            SwitchToHome();
 
-            ViewProfileCommand = new RelayCommand(SwitchToSettings);
+            ViewProfileCommand = new RelayCommand(SwitchToHome);
             ChangRoleCommand = new RelayCommand(SwitchToRoleManager);
         }
 

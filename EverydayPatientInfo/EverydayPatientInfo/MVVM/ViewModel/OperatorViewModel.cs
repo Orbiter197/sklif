@@ -1,6 +1,9 @@
-﻿using EverydayPatientInfo.Core;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using EverydayPatientInfo.Core;
+using EverydayPatientInfo.ProjectStructure;
+
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
@@ -24,8 +27,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #endregion
 
-
-
         public OperatorViewModel(MainContentViewModel baseVM)
         {
             this.baseVM = baseVM;
@@ -34,20 +35,10 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             {
                 p.Add(new Patient("Sviridov " + i.ToString(), "Ilya " + i.ToString(), i + 30));
             }
+            PatientList = p;
         }
     }
 
-    class Patient
-    {
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public int Age { get; set; }
 
-        public Patient(string l, string f, int a)
-        {
-            LastName = l;
-            FirstName = f;
-            Age = a;
-        }
-    }
+    
 }
