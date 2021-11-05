@@ -1,6 +1,5 @@
 ﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.ProjectStructure;
-using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
@@ -68,12 +67,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
             CurrentView = new NotAssignedViewModel(this);
 
-
             ViewProfileCommand = new RelayCommand(SwitchToSettings);
             ChangRoleCommand = new RelayCommand(SwitchToRoleManager);
-
-            CardID = Instances.CardID;
-            Name = Instances.Name;
         }
 
         #endregion

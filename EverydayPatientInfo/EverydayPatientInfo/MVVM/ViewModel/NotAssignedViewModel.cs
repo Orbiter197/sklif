@@ -1,5 +1,4 @@
 ﻿using EverydayPatientInfo.Core;
-using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {

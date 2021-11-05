@@ -64,7 +64,13 @@ namespace EverydayPatientInfo.ProjectStructure
 
         public static void SwitchRole(int roleID)
         {
-            
+            MySqlCommand command = new("UPDATE employees SET role = @role WHERE id = @id;", DataBaseHandler.Connection);
+            command.Parameters.Add("@role", MySqlDbType.Int32).Value = roleID;
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = UserID;
+            DataBaseHandler.Open();
+            command.ExecuteNonQuery();
+            DataBaseHandler.Close();
+            Update();
         }
 
     }

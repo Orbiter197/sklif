@@ -1,6 +1,5 @@
 ﻿using EverydayPatientInfo.Core;
 using EverydayPatientInfo.ProjectStructure;
-using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Windows.Input;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
@@ -20,7 +19,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #endregion
 
         #region Public properties
-
         public MainContentViewModel BaseVM { get => baseVM; }
 
         #endregion
@@ -32,28 +30,13 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public string DoctorRoleAvaliable { get; set; }
         public string OperatorRoleAvaliable { get; set; }
 
-        public ICommand commandICommand { get; set; }
-
-
-
         public ICommand NotAssignedCommand { get; set; }
         public ICommand DoctorCommand { get; set; }
         public ICommand OperatorCommand { get; set; }
-
         public ICommand PickUpRoleCommand { get; set; }
 
-
         #endregion
-
-
-
-
-        private void ChangeRole()
-        {
-
-        }
-        //ProjectMainClass.Role = selected;
-
+        
         public RoleManagerViewModel(MainContentViewModel baseVM)
         {
             this.baseVM = baseVM;
@@ -61,7 +44,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             NotAssignedCommand = new RelayCommand(() => selected = 0);
             DoctorCommand = new RelayCommand(() => selected = 1);
             OperatorCommand = new RelayCommand(() => selected = 2);
-            PickUpRoleCommand = new RelayCommand(ChangeRole);
+            PickUpRoleCommand = new RelayCommand(() => ProjectMainClass.SwitchRole(selected));
 
         }
     }

@@ -1,5 +1,4 @@
 ﻿using EverydayPatientInfo.Core;
-using EverydayPatientInfo.ProjectStructure.ProjectWorkaround;
 using System.Collections.Generic;
 using System.Windows.Input;
 
