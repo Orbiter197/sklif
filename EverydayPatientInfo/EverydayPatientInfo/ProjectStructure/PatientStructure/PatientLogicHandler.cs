@@ -36,6 +36,34 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
         {
             throw new NotImplementedException();
         }
+        public static List<Patient> GetByUserID(int? userID)
+        {
+            List<Patient> pl = new();
+            MySqlCommand command;
+            
+            command = new("SELECT * FROM patients WHERE doctor_id = @doctor_id", DataBaseHandler.Connection);
+            command.Parameters.Add("@doctor_id", MySqlDbType.Int32).Value = userID;
+            DataBaseHandler.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                pl.Add(new Patient
+                {
+                    ID = (reader.IsDBNull(0)) ? null : reader.GetFieldValue<int>(0),
+                    Chamber = (reader.IsDBNull(1)) ? null : reader.GetFieldValue<int>(1),
+                    LastName = (reader.IsDBNull(2)) ? null : reader.GetFieldValue<string>(2),
+                    FirstName = (reader.IsDBNull(3)) ? null : reader.GetFieldValue<string>(3),
+                    Patronymic = (reader.IsDBNull(4)) ? null : reader.GetFieldValue<string>(4),
+                    SickLeave = (reader.IsDBNull(5)) ? null : reader.GetFieldValue<string>(5),
+                    Data = (reader.IsDBNull(6)) ? null : JsonSerializer.Deserialize<PatientJsonData>(reader.GetFieldValue<string>(6)),
+                    DoctorID   = (reader.IsDBNull(7)) ? null : reader.GetFieldValue<int>(7)
+            });
+            }
+            reader.Close();
+            DataBaseHandler.Close();
+            return pl;
+                    
+        }
         public static void AddValues(Patient patient, 
             double pressureEvening, 
             double pressureMorning, 

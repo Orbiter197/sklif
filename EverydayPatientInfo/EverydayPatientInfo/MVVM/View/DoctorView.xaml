@@ -6,10 +6,86 @@
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
              xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    
-    
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="800" d:DesignWidth="1600">
+
+
+    <Border Style="{StaticResource Light}">
+        <Viewbox>
+            <DockPanel Width="800">
+                <TextBlock DockPanel.Dock="Top"
+                       Text="View Patients" 
+                       Style="{StaticResource Large}"/>
+
+                <Button DockPanel.Dock="Bottom"
+                    Content="Button"
+                    Style="{StaticResource Blue}"/>
+
+                <DataGrid VerticalAlignment="Top"
+                          Width="1000"
+                          ItemsSource="{Binding PatientList}"
+                          SelectedItem="{Binding SelectedPatient}"
+                          CanUserReorderColumns="False"
+                          CanUserResizeColumns="False"
+                          CanUserResizeRows="False"
+                          IsReadOnly="True"
+                          SelectionUnit="FullRow"
+                          SelectionMode="Single"
+                          AutoGenerateColumns="False">
+                          
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Chamber"
+                                            Binding="{Binding Chamber}"/>
+                        <DataGridTextColumn Header="Last name"
+                                            Binding="{Binding LastName}"/>
+                        <DataGridTextColumn Header="First name"
+                                            Binding="{Binding FirstName}"/>
+                        <DataGridTextColumn Header="Patronymic"
+                                            Binding="{Binding Patronymic}"/>
+                        <DataGridTextColumn Header="Sick Leave Number"
+                                            Binding="{Binding SickLeave}"/>
+
+                    </DataGrid.Columns>
+
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <DataGrid Width="1000"
+                                         ItemsSource="{Binding PatientDataList}"
+                                         CanUserReorderColumns="False"
+                                         CanUserResizeColumns="False"
+                                         CanUserResizeRows="False"
+                                         IsReadOnly="True"
+                                         SelectionUnit="FullRow"
+                                         SelectionMode="Single"
+                                         AutoGenerateColumns="False">
+                                      
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Pressure evening"
+                                            Binding="{Binding PressureEvening}"/>
+                                        <DataGridTextColumn Header="Pressure morning"
+                                            Binding="{Binding PressureMorning}"/>
+                                        <DataGridTextColumn Header="Sugar evening"
+                                            Binding="{Binding SugarEvening}"/>
+                                        <DataGridTextColumn Header="Sugar morning"
+                                            Binding="{Binding SugarMorning}"/>
+                                        <DataGridTextColumn Header="Weight evening  "
+                                            Binding="{Binding WeightEvening  }"/>
+                                        <DataGridTextColumn Header="Weight morning"
+                                            Binding="{Binding WeightMorning}"/>
+                                        <DataGridTextColumn Header="Height"
+                                            Binding="{Binding Height}"/>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </DockPanel>
+
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+
+                </DataGrid>
+
+            </DockPanel>
+        </Viewbox>
+    </Border>
 </UserControl>

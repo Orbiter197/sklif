@@ -1,4 +1,8 @@
-﻿using EverydayPatientInfo.Core;
+﻿using System;
+using System.Collections.Generic;
+using EverydayPatientInfo.Core;
+using EverydayPatientInfo.ProjectStructure;
+using EverydayPatientInfo.ProjectStructure.PatientStructure;
 
 
 namespace EverydayPatientInfo.MVVM.ViewModel
@@ -17,9 +21,34 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #endregion
 
+        #region Binding properties
+
+
+        public List<Patient> PatientList { get; set; }
+        public Patient SelectedPatient { get; set; } = null;
+        
+
+        #endregion
+
         public DoctorViewModel(MainContentViewModel baseVM)
         {
             this.baseVM = baseVM;
+            Show();
         }
+
+        #region Private methods
+
+        
+
+        #endregion
+
+        #region Public methods
+
+        public void Show()
+        {
+            PatientList = PatientLogicHandler.GetByUserID(ProjectMainClass.UserID);
+        }
+
+        #endregion
     }
 }

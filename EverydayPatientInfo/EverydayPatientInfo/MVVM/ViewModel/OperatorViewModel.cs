@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Controls;
 using System.Windows.Input;
 using EverydayPatientInfo.Core;
 using EverydayPatientInfo.ProjectStructure;
@@ -24,6 +25,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Binding properties
 
         public List<Patient> PatientList { get; set; }
+        public Patient SelectedPatient { get; set; } = null;
 
         #endregion
 
@@ -50,11 +52,15 @@ namespace EverydayPatientInfo.MVVM.ViewModel
                         WeightMorning = Array.Empty<double>(),
                         Height = Array.Empty<double>(),
                     },
-                    Doctor_ID = ProjectMainClass.UserID
+                    DoctorID = ProjectMainClass.UserID
                 }); ;
                 PatientLogicHandler.Add(p[i]);
             }
             PatientList = p;
+        }
+        public void F()
+        {
+            
         }
     }
 
