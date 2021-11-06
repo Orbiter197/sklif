@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using EverydayPatientInfo.Core;
 using EverydayPatientInfo.ProjectStructure;
-
+using EverydayPatientInfo.ProjectStructure.PatientStructure;
 
 namespace EverydayPatientInfo.MVVM.ViewModel
 {
@@ -33,7 +33,26 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             List<Patient> p = new();
             for (int i = 0; i < 5; i++)
             {
-                p.Add(new Patient("Sviridov " + i.ToString(), "Ilya " + i.ToString(), i + 30));
+                p.Add(new Patient
+                {
+                    ID = null,
+                    Chamber = 1,
+                    LastName = "Yanushkeevich " + (i + 1).ToString(),
+                    FirstName = "Irina " + (i + 1).ToString(),
+                    Patronymic = "Olegovna",
+                    Data = new PatientJsonData
+                    {
+                        PressureEvening = Array.Empty<double>(),
+                        PressureMorning = Array.Empty<double>(),
+                        SugarEvening = Array.Empty<double>(),
+                        SugarMorning = Array.Empty<double>(),
+                        WeightEvening = Array.Empty<double>(),
+                        WeightMorning = Array.Empty<double>(),
+                        Height = Array.Empty<double>(),
+                    },
+                    Doctor_ID = ProjectMainClass.UserID
+                }); ;
+                PatientLogicHandler.Add(p[i]);
             }
             PatientList = p;
         }
