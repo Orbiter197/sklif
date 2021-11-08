@@ -35,11 +35,10 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
 
-                    <TextBlock Grid.Row="0" 
-                               Text="Everyday patient info"
-                               TextAlignment="Center"
-                               TextWrapping="Wrap"
-                               Style="{StaticResource Large}"
+                    <Button Grid.Row="0" 
+                               Content="Everyday patient info"
+                               Command="{Binding RecoverCommand}"
+                               Style="{StaticResource Hoverless}"
                                FontFamily="{StaticResource LatoThin}"
                                Foreground="{StaticResource ForegroundLightBrush}"/>
 

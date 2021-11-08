@@ -25,6 +25,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public ICommand SignInCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
         public ICommand ResetPasswordCommand { get; set; }
+        public ICommand RecoverCommand { get; set; }
 
         #endregion
 
@@ -40,6 +41,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             SignInCommand = new RelayCommand(SignIn);
             RegisterCommand = new RelayCommand(baseVM.SwitchToSignUp);
             ResetPasswordCommand = new RelayCommand(baseVM.SwitchToPasswordReset);
+            RecoverCommand = new RelayCommand(ProjectStructure.Recovery.RecoveryHandler.Restore);
         }
 
         #endregion
