@@ -41,6 +41,8 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public string NotesMorning { get; set; }
 
         public ICommand AddDataCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
+        public string SearchRequest { get; set; }
 
 
 
@@ -51,6 +53,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             this.baseVM = baseVM;
             PatientList = PatientLogicHandler.GetAll();
             AddDataCommand = new RelayCommand(AddData);
+            SearchCommand = new RelayCommand(() => PatientList = PatientLogicHandler.FindBySomeData(SearchRequest));
         }
         public string ReturnName()
         {

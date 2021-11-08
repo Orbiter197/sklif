@@ -172,7 +172,36 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
             DataBaseHandler.Close();
 
         }
-        
+
+        public static List<Patient> FindBySomeData(string request)
+        {
+            List<Patient> pl = new();
+            MySqlCommand command;
+
+            command = new("SELECT * FROM patients WHERE last_name LIKE @last_name;", DataBaseHandler.Connection);
+            command.Parameters.Add("@last_name", MySqlDbType.VarChar).Value = "%" + request + "%";
+            DataBaseHandler.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                pl.Add(new Patient
+                (
+                    (reader.IsDBNull(0)) ? null : reader.GetFieldValue<int>(0),
+                    (reader.IsDBNull(1)) ? null : reader.GetFieldValue<int>(1),
+                    (reader.IsDBNull(2)) ? null : reader.GetFieldValue<string>(2),
+                    (reader.IsDBNull(3)) ? null : reader.GetFieldValue<string>(3),
+                    (reader.IsDBNull(4)) ? null : reader.GetFieldValue<string>(4),
+                    (reader.IsDBNull(5)) ? null : reader.GetFieldValue<string>(5),
+                    (reader.IsDBNull(5)) ? null : reader.GetFieldValue<string>(6),
+                    (reader.IsDBNull(6)) ? null : JsonSerializer.Deserialize<List<PatientData>>(reader.GetFieldValue<string>(7)),
+                    (reader.IsDBNull(7)) ? null : reader.GetFieldValue<int>(8)
+            ));
+            }
+            reader.Close();
+            DataBaseHandler.Close();
+            return pl;
+        }
+
     }                                                  
 }                                                      
                                                        

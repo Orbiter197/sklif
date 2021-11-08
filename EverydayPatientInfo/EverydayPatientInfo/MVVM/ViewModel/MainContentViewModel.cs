@@ -9,7 +9,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         #region Private fields
 
         private MainWindowViewModel baseVM;
-
         private object currentView;
 
         #endregion
@@ -23,21 +22,18 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         public string CardID { get; set; }
         public string Name { get; set; }
-        public string Role
-        {
-            get => ProjectMainClass.Role.ToString();
-            set
-            {
-
-            }
-        }
+        public string Role { get; set; }
 
         public ICommand ViewProfileCommand { get; set; }
         public ICommand ChangRoleCommand { get; set; }
         public object CurrentView
         {
             get => currentView;
-            set => currentView = value;
+            set
+            {
+                currentView = value;
+                Role = ProjectMainClass.DisplayedRole;
+            }
         }
 
         #endregion
@@ -47,13 +43,13 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public void SwitchToHome()
         {
             CurrentView = ProjectMainClass.Role switch
-                {
-                    1 => new DoctorViewModel(this),
-                    2 => new OperatorViewModel(this),
-                    _ => new NotAssignedViewModel(this)
-                };
+            {
+                1 => new DoctorViewModel(this),
+                2 => new OperatorViewModel(this),
+                _ => new NotAssignedViewModel(this)
+            };
         }
-        
+
         public void SwitchToSettings() => CurrentView = new SettingsViewModel(this);
         public void SwitchToRoleManager() => CurrentView = new RoleManagerViewModel(this);
 
@@ -64,6 +60,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public MainContentViewModel(MainWindowViewModel baseVM)
         {
             this.baseVM = baseVM;
+            Name = ProjectMainClass.FirstName + " " + ProjectMainClass.LastName;
 
             SwitchToHome();
 

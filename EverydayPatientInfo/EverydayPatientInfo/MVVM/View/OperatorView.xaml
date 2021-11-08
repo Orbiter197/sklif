@@ -15,13 +15,6 @@
             <Viewbox DockPanel.Dock="Top" >
                 <StackPanel Width="1000"
                             Margin="10">
-                    <TextBlock HorizontalAlignment="Center"
-                               Text="Operator view"
-                               Style="{StaticResource Normal}"/>
-
-                    <TextBlock HorizontalAlignment="Left"
-                              Text="{Binding SelectedPatientString}"
-                              Style="{StaticResource Normal}"/>
 
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -36,30 +29,42 @@
                             <RowDefinition/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Column="1" Text="Pressurre"/>
-                        <TextBlock Grid.Column="2" Text="Sugar"/>
-                        <TextBlock Grid.Column="3" Text="Weight"/>
-                        <TextBlock Grid.Column="4" Text="Height"/>
-
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Evening" Style="{StaticResource Small}"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" Text="{Binding PressurreEvening}" FontSize="{StaticResource FontSizeSmall}"/>
-                        <TextBox Grid.Row="1" Grid.Column="2" Margin="1" Text="{Binding SugarEvening}" FontSize="{StaticResource FontSizeSmall}"/>
-                        <TextBox Grid.Row="1" Grid.Column="3" Margin="1" Text="{Binding WeightEvening}" FontSize="{StaticResource FontSizeSmall}"/>
-                        <TextBox Grid.Row="1" Grid.Column="4" Margin="1" Text="{Binding Height}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1"
+                                   Grid.ColumnSpan="5"
+                                   HorizontalAlignment="Stretch"
+                                   Text="{Binding SelectedPatientString}"
+                                   Style="{StaticResource Normal}"/>
                         
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Morning" Style="{StaticResource Small}"/>
-                        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" Text="{Binding PressurreMorning}" FontSize="{StaticResource FontSizeSmall}"/>
-                        <TextBox Grid.Row="2" Grid.Column="2" Margin="1" Text="{Binding SugarMorning}" FontSize="{StaticResource FontSizeSmall}"/>
-                        <TextBox Grid.Row="2" Grid.Column="3" Margin="1" Text="{Binding WeightMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <Button Grid.Row="0" Grid.Column="0"
+                                Margin="10"
+                                Content="Save" Command="{Binding AddDataCommand}" 
+                                Style="{StaticResource Blue}" 
+                                FontSize="{StaticResource FontSizeSmall}"/>
 
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="Pressurre"/>
+                        <TextBlock Grid.Row="1" Grid.Column="2" Text="Sugar"/>
+                        <TextBlock Grid.Row="1" Grid.Column="3" Text="Weight"/>
+                        <TextBlock Grid.Row="1" Grid.Column="4" Text="Height"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Evening" Style="{StaticResource Small}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" Text="{Binding PressurreEvening}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="2" Grid.Column="2" Margin="1" Text="{Binding SugarEvening}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="2" Grid.Column="3" Margin="1" Text="{Binding WeightEvening}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="2" Grid.Column="4" Margin="1" Text="{Binding Height}" FontSize="{StaticResource FontSizeSmall}"/>
+                        
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Morning" Style="{StaticResource Small}"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Margin="1" Text="{Binding PressurreMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="3" Grid.Column="2" Margin="1" Text="{Binding SugarMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="3" Grid.Column="3" Margin="1" Text="{Binding WeightMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+
+                        
+                        
                     </Grid>
 
-                    <Button Content="Save" Command="{Binding AddDataCommand}" 
-                            Style="{StaticResource Blue}" 
-                            FontSize="{StaticResource FontSizeSmall}"
-                            />
+                    
                     
                 </StackPanel>
             </Viewbox>
@@ -71,8 +76,19 @@
                                LastChildFill="True"
                                Margin="5">
 
-                        <Button DockPanel.Dock="Left" Content="Search"/>
-                        <TextBox Text="Search request"/>
+                        <Rectangle DockPanel.Dock="Bottom" Height="20"/>
+
+                        <Button DockPanel.Dock="Left" 
+                                Margin="30 0 0 0"
+                                Width="100"
+                                Content="Search"
+                                Command="{Binding SearchCommand}"
+                                Style="{StaticResource Blue}"
+                                FontSize="{StaticResource FontSizeSmall}"/>
+
+                        
+
+                        <TextBox Margin="30 0 30 0" Text="{Binding SearchRequest}" Style="{StaticResource BaseStyle}" FontSize="{StaticResource FontSizeSmall}"/>
                         
                     </DockPanel>
                     <DataGrid VerticalAlignment="Top"
