@@ -45,6 +45,12 @@
                 <view:SettingsView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:PatientDetailViewModel}">
+                <view:PatientDetailView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:PatientTableViewModel}">
+                <view:PatientTableView/>
+            </DataTemplate>
 
 
         </ResourceDictionary>

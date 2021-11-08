@@ -10,10 +10,60 @@
 
     <Border Style="{StaticResource Light}">
         <DockPanel LastChildFill="True">
-            <TextBlock DockPanel.Dock="Top" 
-                       HorizontalAlignment="Center"
-                       Text="Operator view"
-                       Style="{StaticResource Large}"/>
+            
+
+            <Viewbox DockPanel.Dock="Top" >
+                <StackPanel Width="1000"
+                            Margin="10">
+                    <TextBlock HorizontalAlignment="Center"
+                               Text="Operator view"
+                               Style="{StaticResource Normal}"/>
+
+                    <TextBlock HorizontalAlignment="Left"
+                              Text="{Binding SelectedPatientString}"
+                              Style="{StaticResource Normal}"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="1" Text="Pressurre"/>
+                        <TextBlock Grid.Column="2" Text="Sugar"/>
+                        <TextBlock Grid.Column="3" Text="Weight"/>
+                        <TextBlock Grid.Column="4" Text="Height"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Evening" Style="{StaticResource Small}"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="1" Text="{Binding PressurreEvening}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="1" Grid.Column="2" Margin="1" Text="{Binding SugarEvening}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="1" Grid.Column="3" Margin="1" Text="{Binding WeightEvening}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="1" Grid.Column="4" Margin="1" Text="{Binding Height}" FontSize="{StaticResource FontSizeSmall}"/>
+                        
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Morning" Style="{StaticResource Small}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="1" Text="{Binding PressurreMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="2" Grid.Column="2" Margin="1" Text="{Binding SugarMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="2" Grid.Column="3" Margin="1" Text="{Binding WeightMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+
+                    </Grid>
+
+                    <Button Content="Save" Command="{Binding AddDataCommand}" 
+                            Style="{StaticResource Blue}" 
+                            FontSize="{StaticResource FontSizeSmall}"
+                            />
+                    
+                </StackPanel>
+            </Viewbox>
+
             <Viewbox Stretch="Uniform"
                      VerticalAlignment="Top">
                 <DockPanel LastChildFill="True">
@@ -46,50 +96,11 @@
                                                 Binding="{Binding FirstName}"/>
                             <DataGridTextColumn Header="Patronymic"
                                                 Binding="{Binding Patronymic}"/>
-                            
+
                         </DataGrid.Columns>
-
-                        <DataGrid.RowDetailsTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
-                                    
-                                    <TextBlock Grid.Column="1" Text="Pressurre"/>
-                                    <TextBlock Grid.Column="2" Text="Sugar"/>
-                                    <TextBlock Grid.Column="3" Text="Weight"/>
-                                    <TextBlock Grid.Column="4" Text="Height"/>
-
-                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Evening"/>
-                                    <TextBox Grid.Row="1" Grid.Column="1" Margin="1" Text="{Binding PressurreEvening}"/>
-                                    <TextBox Grid.Row="1" Grid.Column="2" Margin="1" Text="{Binding SugarEvening}"/>
-                                    <TextBox Grid.Row="1" Grid.Column="3" Margin="1" Text="{Binding WeightEvening}"/>
-                                    <TextBox Grid.Row="1" Grid.Column="4" Margin="1" Text="{Binding SugarEvening}"/>
-
-                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Morning"/>
-                                    <TextBox Grid.Row="2" Grid.Column="1" Margin="1" Text="{Binding PressurreMorning}"/>
-                                    <TextBox Grid.Row="2" Grid.Column="2" Margin="1" Text="{Binding SugarMorning}"/>
-                                    <TextBox Grid.Row="2" Grid.Column="3" Margin="1" Text="{Binding WeightMorning}"/>
-
-                                </Grid>
-                                    
-                            </DataTemplate>
-                        </DataGrid.RowDetailsTemplate>
-                        
-                        
                     </DataGrid>
+
+                    
                 </DockPanel>
             </Viewbox>
 

@@ -6,7 +6,7 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
     class Patient
     {
         /// <summary>
-        /// Patient ID . User should not see it
+        /// Patient ID. User should not see it
         /// </summary>
         public int? ID { get; set; }
 
@@ -30,44 +30,48 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
         /// </summary>
         public string Patronymic { get; set; }
 
+        public string DateOfBirth { get; set; }
+
         /// <summary>
         /// Sick Leave Number
         /// </summary>
         public string SickLeave { get; set; }
 
         /// <summary>
-        /// The data that stored in Json format
-        /// </summary>
-        public PatientJsonData Data { get; set; }
-
-        /// <summary>
         /// List of data for each day
         /// </summary>
-        public List<PatientData> PatientDataList
-        {
-            get
-            {
-                List<PatientData> pdl = new();
-                for (int i = 0; i < Data.PressureEvening.Length; i++)
-                {
-                    pdl.Add(
-                        new PatientData(Data.PressureEvening[i], Data.PressureMorning[i],
-                                        Data.SugarEvening[i], Data.SugarMorning[i],
-                                        Data.WeightEvening[i], Data.WeightMorning[i], Data.Height[i]));
-                }
-                return pdl;
-            }
-        }
+        public List<PatientData> PatientDataList { get; set; }
+
 
         /// <summary>
         /// Doctor ID
         /// </summary>
         public int? DoctorID { get; set; }
 
-        public Patient()
+        public Patient(int? iD, int? chamber, string lastName, string firstName, string patronymic, string dateOfBirth, string sickLeave, List<PatientData> patientDataList, int? doctorID)
         {
-            
+            ID = iD;
+            Chamber = chamber;
+            LastName = lastName;
+            FirstName = firstName;
+            Patronymic = patronymic;
+            DateOfBirth = dateOfBirth;
+            SickLeave = sickLeave;
+            PatientDataList = patientDataList;
+            DoctorID = doctorID;
         }
 
+        public Patient(int? chamber, string lastName, string firstName, string patronymic, string dateOfBirth, string sickLeave)
+        {
+            ID = null;
+            Chamber = chamber;
+            LastName = lastName;
+            FirstName = firstName;
+            Patronymic = patronymic;
+            DateOfBirth = dateOfBirth;
+            SickLeave = sickLeave;
+            PatientDataList = new List<PatientData>();
+            DoctorID = ProjectMainClass.UserID;
+        }
     }
 }

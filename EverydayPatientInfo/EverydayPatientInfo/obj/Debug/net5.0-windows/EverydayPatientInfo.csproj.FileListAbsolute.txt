@@ -58,3 +58,7 @@ D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\ob
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\SignUpView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\RoleManagerView.g.cs
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\RoleManagerView.baml
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PatientDetailView.g.cs
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PatientDetailView.baml
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PatientTableView.g.cs
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PatientTableView.baml

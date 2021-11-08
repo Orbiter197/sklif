@@ -27,40 +27,45 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public List<Patient> PatientList { get; set; }
         public Patient SelectedPatient { get; set; } = null;
 
+        public string SelectedPatientString { get => ReturnName(); set { } }
+
+        public string PressurreEvening { get; set; }
+        public string PressurreMorning { get; set; }
+        public string SugarEvening { get; set; }
+        public string SugarMorning { get; set; }
+        public string WeightEvening { get; set; }
+        public string WeightMorning { get; set; }
+        public string Height { get; set; }
+
+        public ICommand AddDataCommand { get; set; }
+
+
+
         #endregion
 
         public OperatorViewModel(MainContentViewModel baseVM)
         {
             this.baseVM = baseVM;
-            List<Patient> p = new();
-            for (int i = 0; i < 5; i++)
-            {
-                p.Add(new Patient
-                {
-                    ID = null,
-                    Chamber = 1,
-                    LastName = "Yanushkeevich " + (i + 1).ToString(),
-                    FirstName = "Irina " + (i + 1).ToString(),
-                    Patronymic = "Olegovna",
-                    Data = new PatientJsonData
-                    {
-                        PressureEvening = Array.Empty<double>(),
-                        PressureMorning = Array.Empty<double>(),
-                        SugarEvening = Array.Empty<double>(),
-                        SugarMorning = Array.Empty<double>(),
-                        WeightEvening = Array.Empty<double>(),
-                        WeightMorning = Array.Empty<double>(),
-                        Height = Array.Empty<double>(),
-                    },
-                    DoctorID = ProjectMainClass.UserID
-                }); ;
-                PatientLogicHandler.Add(p[i]);
-            }
-            PatientList = p;
+            PatientList = PatientLogicHandler.GetAll();
+            AddDataCommand = new RelayCommand(AddData);
         }
-        public void F()
+        public string ReturnName()
         {
-            
+            if (SelectedPatient == null)
+                return "Nobody is selected";
+
+            return SelectedPatient.LastName + " " + SelectedPatient.FirstName + " " + SelectedPatient.Patronymic;
+        }
+
+        public void AddData()
+        {
+            if (SelectedPatient == null) return;
+            if (PressurreEvening == null || PressurreMorning == null || SugarEvening == null || SugarMorning == null || WeightEvening == null || WeightMorning == null || Height == null)
+                return;
+            PatientLogicHandler.AddValues(SelectedPatient, int.Parse(PressurreEvening), 
+                int.Parse(PressurreMorning), int.Parse(SugarEvening), 
+                int.Parse(SugarMorning), int.Parse(WeightEvening), 
+                int.Parse(WeightMorning), int.Parse(Height));
         }
     }
 
