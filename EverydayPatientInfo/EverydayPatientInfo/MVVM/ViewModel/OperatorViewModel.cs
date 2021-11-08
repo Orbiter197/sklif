@@ -37,6 +37,9 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public string WeightMorning { get; set; }
         public string Height { get; set; }
 
+        public string NotesEvening { get; set; }
+        public string NotesMorning { get; set; }
+
         public ICommand AddDataCommand { get; set; }
 
 
@@ -62,10 +65,11 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             if (SelectedPatient == null) return;
             if (PressurreEvening == null || PressurreMorning == null || SugarEvening == null || SugarMorning == null || WeightEvening == null || WeightMorning == null || Height == null)
                 return;
-            PatientLogicHandler.AddValues(SelectedPatient, int.Parse(PressurreEvening), 
-                int.Parse(PressurreMorning), int.Parse(SugarEvening), 
-                int.Parse(SugarMorning), int.Parse(WeightEvening), 
-                int.Parse(WeightMorning), int.Parse(Height));
+            PatientLogicHandler.AddValues(SelectedPatient, int.Parse(PressurreEvening),
+                int.Parse(PressurreMorning), int.Parse(SugarEvening),
+                int.Parse(SugarMorning), int.Parse(WeightEvening),
+                int.Parse(WeightMorning), int.Parse(Height),
+                NotesEvening, NotesMorning);
         }
     }
 

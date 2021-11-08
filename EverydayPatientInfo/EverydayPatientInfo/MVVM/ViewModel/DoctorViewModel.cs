@@ -27,78 +27,24 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         public object CurrentView { get; set; }
 
-        public Visibility GridSelection { get; set; }
-
-        public Visibility WindowSelection { get; set; }
-
-
-        public List<Patient> PatientList { get; set; }
-        public Patient SelectedPatient { get; set; } = null;
-
-
-
-        /// <summary>
-        /// Content provoded to "Switch View" Button
-        /// </summary>
-        public string SwitchViewContent { get; set; }
-
-        /// <summary>
-        /// Command provoded to "Switch View" Button
-        /// </summary>
-        public ICommand SwitchViewCommand { get; set; }
-
-        /// <summary>
-        /// Content provoded to "Modify Patient" Button
-        /// </summary>
-        public string ModifyPatientContent { get; set; }
-
-        /// <summary>
-        /// Content provoded to "Modify Patient" Button
-        /// </summary>
-        public ICommand ModifyPatientCommand { get; set; }
-
-
         #endregion
 
         public DoctorViewModel(MainContentViewModel baseVM)
         {
             this.baseVM = baseVM;
-            ShowGrid();
+            SwitchToTable();
         }
 
-        #region Private methods
-
-        public void ShowGrid()
-        {
-            GridSelection = Visibility.Visible;
-            WindowSelection = Visibility.Hidden;
-
-            SwitchViewContent = "Add New Patient";
-            SwitchViewCommand = new RelayCommand(ShowAddNew);
-            ModifyPatientContent = "Modify Selected Patient";
-            ModifyPatientCommand = new RelayCommand(ShowModify);
-            Show();
-        }
-
-        public void ShowAddNew()
-        {
-            CurrentView = new PatientDetailViewModel(this);
-        }
-
-        public void ShowModify()
-        {
-            CurrentView = new PatientDetailViewModel(this, SelectedPatient);
-        }
-
-        
-
-        #endregion
 
         #region Public methods
 
-        public void Show()
+        public void SwitchToTable() => CurrentView = new PatientTableViewModel(this);
+
+        public void AddPatient() => CurrentView = new PatientDetailViewModel(this);
+        public void ModifyPatient(Patient p)
         {
-            PatientList = PatientLogicHandler.GetByUserID(ProjectMainClass.UserID);
+            if (p != null) 
+                CurrentView = new PatientDetailViewModel(this, p);
         }
 
         #endregion

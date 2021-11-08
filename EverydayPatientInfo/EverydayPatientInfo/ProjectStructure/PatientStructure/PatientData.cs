@@ -16,8 +16,10 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
         public double WeightMorning { get; set; }
         public double Height { get; set; } 
         public DateTime Date { get; set; }
+        public string NotesEvening { get; set; }
+        public string NotesMorning { get; set; }
 
-        public PatientData(double pressureEvening, double pressureMorning, double sugarEvening, double sugarMorning, double weightEvening, double weightMorning, double height)
+        public PatientData(double pressureEvening, double pressureMorning, double sugarEvening, double sugarMorning, double weightEvening, double weightMorning, double height, string notesEvening, string notesMorning)
         {
             PressureEvening = pressureEvening;
             PressureMorning = pressureMorning;
@@ -26,6 +28,8 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
             WeightEvening   = weightEvening;
             WeightMorning   = weightMorning;
             Height          = height;
+            NotesEvening = notesEvening;
+            NotesMorning = notesMorning;
             Date = DateTime.Today;
         }
     }

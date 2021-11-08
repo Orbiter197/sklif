@@ -118,13 +118,15 @@ namespace EverydayPatientInfo.ProjectStructure
             command = new("SELECT * FROM employees WHERE card_id = @ui;", DataBaseHandler.Connection);
             command.Parameters.Add("@ui", MySqlDbType.VarChar).Value = cardID;
             MySqlDataReader reader = command.ExecuteReader();
-            if(!reader.HasRows)
+            if(reader.HasRows)
             {
                 reader.Close();
                 return false;
             }
+            reader.Close();
+            DataBaseHandler.Close();
 
-            
+            DataBaseHandler.Open();
             command = new("INSERT INTO employees(card_id,pass,last_name,first_name, role) VALUES(@card_id, @pass, @last_name, @first_name, 0);", DataBaseHandler.Connection);
             command.Parameters.Add("@card_id", MySqlDbType.VarChar).Value = cardID;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password1;

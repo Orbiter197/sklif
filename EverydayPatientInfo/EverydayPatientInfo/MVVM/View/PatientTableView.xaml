@@ -12,13 +12,13 @@
             <DockPanel DockPanel.Dock="Left"
                        LastChildFill="False">
                 <StackPanel DockPanel.Dock="Top">
-                    <Button Content="Add new"
-                            Command=""
+                    <Button Content="Add Patient"
+                            Command="{Binding AddPatientCommand}"
                             Margin="10"
                             Style="{StaticResource Blue}"
                             FontSize="{StaticResource FontSizeSmall}"/>
-                    <Button Content="Modify Selected"
-                            Command=""
+                    <Button Content="Modify Patient"
+                            Command="{Binding ModifyPatientCommand}"
                             Margin="10"
                             Style="{StaticResource Blue}"
                             FontSize="{StaticResource FontSizeSmall}"/>
@@ -30,15 +30,16 @@
                     Background="{StaticResource BackgroundVeryLightBrush}">
 
                 <DataGrid VerticalAlignment="Top"
-                  ItemsSource="{Binding PatientList}"
-                  SelectedItem="{Binding SelectedPatient}"
-                  CanUserReorderColumns="False"
-                  CanUserResizeColumns="False"
-                  CanUserResizeRows="False"
-                  IsReadOnly="True"
-                  SelectionUnit="FullRow"
-                  SelectionMode="Single"
-                  AutoGenerateColumns="False">
+                          HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding PatientList}"
+                          SelectedItem="{Binding SelectedPatient}"
+                          CanUserReorderColumns="False"
+                          CanUserResizeColumns="False"
+                          CanUserResizeRows="False"
+                          IsReadOnly="True"
+                          SelectionUnit="FullRow"
+                          SelectionMode="Single"
+                          AutoGenerateColumns="False">
 
 
                     <DataGrid.Columns>
@@ -51,22 +52,22 @@
                         <DataGridTextColumn Header="Patronymic"
                                             Binding="{Binding Patronymic}"/>
                         <DataGridTextColumn Header="Sick Leave Number"
-                                            Binding="{Binding SickLeave}"/>
+                                            Binding="{Binding SickLeave}"
+                                            Width="*"/>
 
                     </DataGrid.Columns>
 
                     <DataGrid.RowDetailsTemplate>
                         <DataTemplate>
-                            <DockPanel>
-                                <DataGrid Width="1000"
-                                         ItemsSource="{Binding PatientDataList}"
-                                         CanUserReorderColumns="False"
-                                         CanUserResizeColumns="False"
-                                         CanUserResizeRows="False"
-                                         IsReadOnly="True"
-                                         SelectionUnit="FullRow"
-                                         SelectionMode="Single"
-                                         AutoGenerateColumns="False">
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <DataGrid ItemsSource="{Binding PatientDataList}"
+                                          CanUserReorderColumns="False"
+                                          CanUserResizeColumns="False"
+                                          CanUserResizeRows="False"
+                                          IsReadOnly="True"
+                                          SelectionUnit="FullRow"
+                                          SelectionMode="Single"
+                                          AutoGenerateColumns="False">
 
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Date"

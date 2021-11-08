@@ -52,15 +52,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             bool res = Authorization.SignUp(LastName, FirstName, Patronymic, DateOfBirth, CardID, Password1, Password2);
             if (res)
                 baseVM.SwitchToSignIn();
-            else
-                SendErrorMessage();
         }
-
-        private void SendErrorMessage()
-        {
-
-        }
-
         #endregion
 
 

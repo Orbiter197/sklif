@@ -138,20 +138,26 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
         public static void AddValues(Patient patient, 
             double pressureEvening, 
             double pressureMorning, 
-            double SugarEvening,
-            double SugarMorning,
-            double WeightEvening,
-            double WeightMorning,
-            double Height)
+            double sugarEvening,
+            double sugarMorning,
+            double weightEvening,
+            double weightMorning,
+            double height,
+            string notesEvening,
+            string notesMorning
+            )
         {
             patient.PatientDataList.Add(new PatientData(
                 pressureEvening,
                 pressureMorning,
-                SugarEvening,
-                SugarMorning,
-                WeightEvening,
-                WeightMorning,
-                Height));
+                sugarEvening,
+                sugarMorning,
+                weightEvening,
+                weightMorning,
+                height,
+                notesEvening,
+                notesMorning
+                ));
 
             MySqlCommand command;
 

@@ -69,15 +69,15 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             this.baseVM = baseVM;
             this.patient = null;
 
-            baseVM.GridSelection = Visibility.Hidden;
-            baseVM.WindowSelection = Visibility.Visible;
-
-            GoBackCommand = new RelayCommand(baseVM.)
+            GoBackCommand = new RelayCommand(baseVM.SwitchToTable);
+            Delete = new RelayCommand(ConfirmRemoving);
+            Save = new RelayCommand(ConfirmAdding);
 
             Chamber = null;
             LastName = null;
             FirstName = null;
             Patronymic = null;
+            DateOfBirth = null;
             SickLeave = null;
         }
 
@@ -86,14 +86,15 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             this.baseVM = baseVM;
             this.patient = patient;
 
-            baseVM.GridSelection = Visibility.Hidden;
-            baseVM.WindowSelection = Visibility.Visible;
-
+            GoBackCommand = new RelayCommand(baseVM.SwitchToTable);
+            Delete = new RelayCommand(ConfirmRemoving);
+            Save = new RelayCommand(ConfirmModifying);
 
             Chamber = (patient.Chamber == null) ? null : patient.Chamber.ToString();
             LastName = patient.LastName;
             FirstName = patient.FirstName;
             Patronymic = patient.Patronymic;
+            DateOfBirth = patient.DateOfBirth;
             SickLeave = patient.SickLeave;
         }
 
@@ -103,7 +104,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
                 return;
 
             PatientLogicHandler.Add(int.Parse(Chamber), LastName, FirstName, Patronymic, DateOfBirth, SickLeave);
-            baseVM.ShowGrid();
+            baseVM.SwitchToTable();
         }
         private void ConfirmModifying()
         {
@@ -111,11 +112,13 @@ namespace EverydayPatientInfo.MVVM.ViewModel
                 return;
 
             PatientLogicHandler.Modify(patient, int.Parse(Chamber), LastName, FirstName, Patronymic, DateOfBirth, SickLeave);
-            baseVM.ShowGrid();
+            baseVM.SwitchToTable();
+
         }
         private void ConfirmRemoving()
         {
             PatientLogicHandler.Remove(patient);
+            baseVM.SwitchToTable();
         }
 
 
