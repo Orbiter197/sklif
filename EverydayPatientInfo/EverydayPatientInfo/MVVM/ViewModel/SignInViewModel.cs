@@ -41,7 +41,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             SignInCommand = new RelayCommand(SignIn);
             RegisterCommand = new RelayCommand(baseVM.SwitchToSignUp);
             ResetPasswordCommand = new RelayCommand(baseVM.SwitchToPasswordReset);
-            RecoverCommand = new RelayCommand(ProjectStructure.Recovery.RecoveryHandler.Restore);
+            RecoverCommand = new RelayCommand(() => ProjectStructure.Recovery.RecoveryHandler.Restore("C:\\EverydayPatientInfoRecoveryData\\Input.json"));
         }
 
         #endregion

@@ -22,9 +22,6 @@
                     <StackPanel Orientation="Horizontal"
                                 Margin="10">
                         
-                        <Rectangle Fill="{StaticResource BackgroundLightBrush}"
-                                   Height="100" Width="100"/>
-                        
                         <StackPanel VerticalAlignment="Center" Margin="10 0 0 0">
                             <TextBlock Style="{StaticResource Normal}"
                                        Text="{Binding Name}"
@@ -51,6 +48,14 @@
                         <!-- Change role -->
                         <Button Content="Change role"
                                 Command="{Binding ChangRoleCommand}"
+                                HorizontalAlignment="Left"
+                                Margin="30 10 0 0"
+                                Style="{StaticResource Transparent}"
+                                FontSize="{StaticResource FontSizeSmall}"
+                                Foreground="{StaticResource ForegroundLightBrush}"/>
+
+                        <Button Content="Settings"
+                                Command="{Binding SettingsCommand}"
                                 HorizontalAlignment="Left"
                                 Margin="30 10 0 0"
                                 Style="{StaticResource Transparent}"

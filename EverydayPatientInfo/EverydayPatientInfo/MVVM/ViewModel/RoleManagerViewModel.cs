@@ -46,7 +46,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
             NotAssignedRoleAvaliable = "Avalible";
             DoctorRoleAvaliable = "Avalible";
-            NotAssignedRoleAvaliable = "Avalible";
+            OperatorRoleAvaliable = (ProjectMainClass.Role == 2) ? "Occupied" : "Avalible";
 
         }
     }

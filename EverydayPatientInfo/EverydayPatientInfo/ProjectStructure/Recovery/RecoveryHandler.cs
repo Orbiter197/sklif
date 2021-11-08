@@ -11,10 +11,37 @@ namespace EverydayPatientInfo.ProjectStructure.Recovery
 {
     public static class RecoveryHandler
     {
-
-        public static void Restore()
+        public static void Drop()
         {
-            string str = File.ReadAllText("C:\\EverydayPatientInfoRecoveryData\\Output.json");
+            MySqlCommand command;
+
+            DataBaseHandler.Open();
+            try
+            {
+                command = new("DROP TABLE patients;", DataBaseHandler.Connection);
+                command.ExecuteNonQuery();
+            }
+            catch { }
+            try
+            {
+                command = new("DROP TABLE employees;", DataBaseHandler.Connection);
+                command.ExecuteNonQuery();
+            }
+            catch { }
+            DataBaseHandler.Close();
+        }
+        public static void Restore(string path)
+        {
+            string str;
+            try
+            {
+                str = File.ReadAllText(path);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            
             DataRecovery recovery = JsonSerializer.Deserialize<DataRecovery>(str);
 
             MySqlCommand command;
@@ -90,7 +117,7 @@ namespace EverydayPatientInfo.ProjectStructure.Recovery
 
         }
 
-        public static void BackUp()
+        public static void BackUp(string path)
         {
             List<EmployeeRecovery> employeeRecoveries = new();
             List<PatientRecovery> patientRecoveries = new();
@@ -135,7 +162,7 @@ namespace EverydayPatientInfo.ProjectStructure.Recovery
 
             DataRecovery recovery = new(employeeRecoveries, patientRecoveries);
             string str = JsonSerializer.Serialize<DataRecovery>(recovery);
-            File.WriteAllText("C:\\EverydayPatientInfoRecoveryData\\Output.json", str);
+            File.WriteAllText(path, str);
         }
     }
 }

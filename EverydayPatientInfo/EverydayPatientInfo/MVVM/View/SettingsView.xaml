@@ -6,9 +6,84 @@
              xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
              xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="1000">
+    <Border Style="{StaticResource Light}">
 
-    <Grid>
-            
-    </Grid>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Left"
+                       LastChildFill="False">
+                <StackPanel DockPanel.Dock="Top">
+                    <Button Content="Make Backup"
+                            Command="{Binding BackUpCommand}"
+                            Margin="10"
+                            Style="{StaticResource Blue}"
+                            FontSize="{StaticResource FontSizeSmall}"/>
+                    <Button Content="Stop System"
+                            Command="{Binding StopCommand}"
+                            Margin="10"
+                            Style="{StaticResource Blue}"
+                            FontSize="{StaticResource FontSizeSmall}"/>
+                    <Button Content="Restore Data"
+                            Command="{Binding RestoreCommand}"
+                            Margin="10"
+                            Style="{StaticResource Blue}"
+                            FontSize="{StaticResource FontSizeSmall}"/>
+                </StackPanel>
+
+                <Button DockPanel.Dock="Bottom" 
+                        Content="Go back"
+                        Command="{Binding GoBackCommand}"
+                        Margin="10"
+                        Style="{StaticResource Blue}"
+                        FontSize="{StaticResource FontSizeSmall}"/>
+
+            </DockPanel>
+
+            <Border VerticalAlignment="Stretch"
+                    Background="{StaticResource BackgroundVeryLightBrush}">
+                <Grid Margin="40"
+                      VerticalAlignment="Stretch">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition MinWidth="400"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Text="Saving Path"
+                               Style="{StaticResource Normal}"/>
+
+                    <TextBlock Grid.Row="2"
+                               Text="Reloading Path"
+                               Style="{StaticResource Normal}"/>
+
+                    <Button Grid.Row="4" Grid.ColumnSpan="3"
+                               Content="Confirm"
+                               Style="{StaticResource Blue}"/>
+
+                    <TextBox Grid.Row="0" Grid.Column="2" Margin="5" Text="{Binding Saving}" Style="{StaticResource BaseStyle}" FontSize="{StaticResource FontSizeNormal}"/>
+                   
+                    <TextBox Grid.Row="2" Grid.Column="2" Margin="3" Text="{Binding Reloading}" Style="{StaticResource BaseStyle}" FontSize="{StaticResource FontSizeNormal}"/>
+
+
+
+
+                </Grid>
+            </Border>
+        </DockPanel>
+
+
+
+
+    </Border>
 </UserControl>

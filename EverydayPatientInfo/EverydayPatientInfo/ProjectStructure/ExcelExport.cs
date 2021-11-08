@@ -53,8 +53,6 @@ namespace EverydayPatientInfo.ProjectStructure
                 
                 package.Save();
 
-                Recovery.RecoveryHandler.BackUp();
-                Recovery.RecoveryHandler.Restore();
                 return true;
                 
             }

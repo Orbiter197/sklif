@@ -26,6 +26,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         public ICommand ViewProfileCommand { get; set; }
         public ICommand ChangRoleCommand { get; set; }
+        public ICommand SettingsCommand { get; set; }
         public object CurrentView
         {
             get => currentView;
@@ -66,6 +67,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
             ViewProfileCommand = new RelayCommand(SwitchToHome);
             ChangRoleCommand = new RelayCommand(SwitchToRoleManager);
+            SettingsCommand = new RelayCommand(SwitchToSettings);
         }
 
         #endregion

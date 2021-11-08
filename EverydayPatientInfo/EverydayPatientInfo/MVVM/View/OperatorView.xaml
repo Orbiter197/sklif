@@ -48,17 +48,20 @@
                         <TextBlock Grid.Row="1" Grid.Column="2" Text="Sugar"/>
                         <TextBlock Grid.Row="1" Grid.Column="3" Text="Weight"/>
                         <TextBlock Grid.Row="1" Grid.Column="4" Text="Height"/>
+                        <TextBlock Grid.Row="1" Grid.Column="5" Text="Notes"/>
 
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="Evening" Style="{StaticResource Small}"/>
                         <TextBox Grid.Row="2" Grid.Column="1" Margin="1" Text="{Binding PressurreEvening}" FontSize="{StaticResource FontSizeSmall}"/>
                         <TextBox Grid.Row="2" Grid.Column="2" Margin="1" Text="{Binding SugarEvening}" FontSize="{StaticResource FontSizeSmall}"/>
                         <TextBox Grid.Row="2" Grid.Column="3" Margin="1" Text="{Binding WeightEvening}" FontSize="{StaticResource FontSizeSmall}"/>
                         <TextBox Grid.Row="2" Grid.Column="4" Margin="1" Text="{Binding Height}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="2" Grid.Column="5" Margin="1" Text="{Binding NotesEvening}" FontSize="{StaticResource FontSizeSmall}"/>
                         
                         <TextBlock Grid.Row="3" Grid.Column="0" Text="Morning" Style="{StaticResource Small}"/>
                         <TextBox Grid.Row="3" Grid.Column="1" Margin="1" Text="{Binding PressurreMorning}" FontSize="{StaticResource FontSizeSmall}"/>
                         <TextBox Grid.Row="3" Grid.Column="2" Margin="1" Text="{Binding SugarMorning}" FontSize="{StaticResource FontSizeSmall}"/>
                         <TextBox Grid.Row="3" Grid.Column="3" Margin="1" Text="{Binding WeightMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="2" Grid.Column="5" Margin="1" Text="{Binding NotesMorning}" FontSize="{StaticResource FontSizeSmall}"/>
 
                         
                         

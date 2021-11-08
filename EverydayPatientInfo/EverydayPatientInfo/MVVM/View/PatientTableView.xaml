@@ -92,6 +92,10 @@
                                                                 Binding="{Binding WeightMorning}"/>
                                         <DataGridTextColumn Header="Height"
                                                                 Binding="{Binding Height}"/>
+                                        <DataGridTextColumn Header="Notes Evening"
+                                                                Binding="{Binding NotesEvening}"/>
+                                        <DataGridTextColumn Header="Notes Morning"
+                                                                Binding="{Binding NotesMorning}"/>
 
 
                                     </DataGrid.Columns>
