@@ -58,13 +58,14 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
             MySqlCommand command;
 
             DataBaseHandler.Open();
-            command = new("UPDATE patients SET chamber = @chamber, last_name = @last_name, first_name = @first_name, patronymic = @patronymic, date_of_birth = @date_of_birth, sick_leave_number = @sick_leave_number;", DataBaseHandler.Connection);
+            command = new("UPDATE patients SET chamber = @chamber, last_name = @last_name, first_name = @first_name, patronymic = @patronymic, date_of_birth = @date_of_birth, sick_leave_number = @sick_leave_number WHERE id = @id;", DataBaseHandler.Connection);
             command.Parameters.Add("@chamber", MySqlDbType.Int32).Value = patient.Chamber;
             command.Parameters.Add("@last_name", MySqlDbType.VarChar).Value = patient.LastName;
             command.Parameters.Add("@first_name", MySqlDbType.VarChar).Value = patient.FirstName;
             command.Parameters.Add("@patronymic", MySqlDbType.VarChar).Value = patient.Patronymic;
             command.Parameters.Add("@date_of_birth", MySqlDbType.VarChar).Value = patient.DateOfBirth;
             command.Parameters.Add("@sick_leave_number", MySqlDbType.VarChar).Value = patient.SickLeave;
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = patient.ID;
             command.ExecuteNonQuery();
             DataBaseHandler.Close();
 

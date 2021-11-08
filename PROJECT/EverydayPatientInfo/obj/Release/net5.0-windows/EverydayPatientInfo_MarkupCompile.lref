@@ -1,5 +1,5 @@
-﻿d:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\obj\Release\net5.0-windows\GeneratedInternalTypeHelper.g.cs
-Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\App.xaml;;
+﻿
+FD:\General\VisualStudioProjects\sklif\PROJECT\EverydayPatientInfo\App.xaml;;
 Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\MainWindow.xaml;;
 Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\MVVM\View\DoctorView.xaml;;
 Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\MVVM\View\ExportTableView.xaml;;
@@ -12,4 +12,10 @@ Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\MVVM\View\Rol
 Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\MVVM\View\SettingsView.xaml;;
 Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\MVVM\View\SignInView.xaml;;
 Fd:\general\visualstudioprojects\sklif\project\EverydayPatientInfo\MVVM\View\SignUpView.xaml;;
+FD:\General\VisualStudioProjects\sklif\PROJECT\EverydayPatientInfo\Styles\Borders.xaml;;
+FD:\General\VisualStudioProjects\sklif\PROJECT\EverydayPatientInfo\Styles\Buttons.xaml;;
+FD:\General\VisualStudioProjects\sklif\PROJECT\EverydayPatientInfo\Styles\Colors.xaml;;
+FD:\General\VisualStudioProjects\sklif\PROJECT\EverydayPatientInfo\Styles\Fonts.xaml;;
+FD:\General\VisualStudioProjects\sklif\PROJECT\EverydayPatientInfo\Styles\Texts.xaml;;
+FD:\General\VisualStudioProjects\sklif\PROJECT\EverydayPatientInfo\Styles\Windows.xaml;;
 

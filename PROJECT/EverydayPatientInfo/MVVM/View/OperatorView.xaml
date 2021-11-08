@@ -18,12 +18,12 @@
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -61,7 +61,7 @@
                         <TextBox Grid.Row="3" Grid.Column="1" Margin="1" Text="{Binding PressurreMorning}" FontSize="{StaticResource FontSizeSmall}"/>
                         <TextBox Grid.Row="3" Grid.Column="2" Margin="1" Text="{Binding SugarMorning}" FontSize="{StaticResource FontSizeSmall}"/>
                         <TextBox Grid.Row="3" Grid.Column="3" Margin="1" Text="{Binding WeightMorning}" FontSize="{StaticResource FontSizeSmall}"/>
-                        <TextBox Grid.Row="2" Grid.Column="5" Margin="1" Text="{Binding NotesMorning}" FontSize="{StaticResource FontSizeSmall}"/>
+                        <TextBox Grid.Row="3" Grid.Column="5" Margin="1" Text="{Binding NotesMorning}" FontSize="{StaticResource FontSizeSmall}"/>
 
                         
                         
