@@ -41,6 +41,7 @@ namespace EverydayPatientInfo.ProjectStructure
                 ExcelRangeBase range = ws.Cells;
                 range.AutoFitColumns();
 
+                ws.DeleteColumn(1);
                 for (int i = 0, j = 1; i < 16; i++)
                 {
                     if (!@params[i].IsShown)

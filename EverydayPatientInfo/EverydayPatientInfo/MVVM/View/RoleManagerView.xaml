@@ -32,56 +32,59 @@
 
                 </StackPanel>
             </Border>
-            <StackPanel Grid.Row="1"
+            <DockPanel Grid.Row="1"
                         Margin="20">
-                <TextBlock Text="Change role to: "
+                <TextBlock DockPanel.Dock="Top" Text="Change role to: "
                            Style="{StaticResource Normal}"/>
-                <Rectangle Fill="Black" Height="2"/>
 
-                <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Left">
-                    <Button Content="Not Assigned"
+                <Grid VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" Content="Not Assigned" Margin="10" 
                             Command="{Binding NotAssignedCommand}"
-                            Style="{StaticResource Transparent}"
-                            FontFamily="{StaticResource LatoRegular}"/>
-                    <TextBlock Text="{Binding NotAssignedRoleAvaliable}"
-                               HorizontalAlignment="Left"
-                               Margin="30 0 0 10"
-                               Style="{StaticResource Small}"
-                               FontFamily="{StaticResource LatoThin}"/>
-                </StackPanel>
-
-                <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Left">
-                    <Button Content="Doctor"
+                            Style="{StaticResource Blue}"
+                            FontFamily="{StaticResource LatoRegular}"
+                            />
+                    <Button Grid.Row="1" Content="Doctor" Margin="10" 
                             Command="{Binding DoctorCommand}"
-                            Style="{StaticResource Transparent}"
+                            Style="{StaticResource Blue}"
                             FontFamily="{StaticResource LatoRegular}"/>
-                    <TextBlock Text="{Binding DoctorRoleAvaliable}"
-                               HorizontalAlignment="Left"
-                               Margin="30 0 0 10"
-                               Style="{StaticResource Small}"
-                               FontFamily="{StaticResource LatoThin}"/>
-                </StackPanel>
-                <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Left">
-                    <Button Content="Operator"
+                    <Button Grid.Row="2" Content="Operator" Margin="10" 
                             Command="{Binding OperatorCommand}"
-                            Style="{StaticResource Transparent}"
+                            Style="{StaticResource Blue}"
                             FontFamily="{StaticResource LatoRegular}"/>
-                    <TextBlock Text="{Binding OperatorRoleAvaliable}"
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" 
+                               Text="{Binding NotAssignedRoleAvaliable}"
                                HorizontalAlignment="Left"
                                Margin="30 0 0 10"
-                               Style="{StaticResource Small}"
+                               Style="{StaticResource Normal}"
                                FontFamily="{StaticResource LatoThin}"/>
-                </StackPanel>
 
-                <Button Content="Pick role"
-                        Command="{Binding PickUpRoleCommand}"
-                        Margin="30"
-                        Style="{StaticResource Blue}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1"
+                               Text="{Binding DoctorRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Normal}"
+                               FontFamily="{StaticResource LatoThin}"/>
 
-            </StackPanel>
+                    <TextBlock Grid.Row="2" Grid.Column="1"
+                               Text="{Binding OperatorRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Normal}"
+                               FontFamily="{StaticResource LatoThin}"/>
+
+                </Grid>
+            </DockPanel>
         </Grid>
     </Border>
 </UserControl>

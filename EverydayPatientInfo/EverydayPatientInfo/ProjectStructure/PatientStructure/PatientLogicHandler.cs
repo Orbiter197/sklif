@@ -75,6 +75,7 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
 
             DataBaseHandler.Open();
             command = new("DELETE FROM patients WHERE id = @id;", DataBaseHandler.Connection);
+            command.Parameters.Add("@id", MySqlDbType.Int32).Value = patient.ID;
             command.ExecuteNonQuery();
             DataBaseHandler.Close();
         }

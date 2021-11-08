@@ -50,10 +50,10 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
             return paramsList;
         }
 
-        public static void GetDefault(List<PatientExportParams> paramsList)
+        public static List<PatientExportParams> GetDefault()
         {
-            for (int i = 0; i < paramsList.Count; i++)
-                paramsList[i].IsShown = MainList[i];
+            List<PatientExportParams> list = GetList();
+            return list;
             
         }
         public static void SetDefault(List<PatientExportParams> paramsList)

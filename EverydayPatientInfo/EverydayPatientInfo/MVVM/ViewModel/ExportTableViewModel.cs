@@ -26,7 +26,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
 
         #region Binding properties
 
-        public List<PatientExportParams> ParamsList {get; set;}
+        public List<PatientExportParams> ParamsList { get; set;}
         public string SavingPath { get; set; }
 
         public ICommand SelectDefaultCommand { get; set; }
@@ -42,7 +42,7 @@ namespace EverydayPatientInfo.MVVM.ViewModel
             ParamsList = PatientExportParams.GetList();
             SavingPath = "C:\\EverydayPatientInfoExportedExcels";
 
-            SelectDefaultCommand = new RelayCommand(() => PatientExportParams.GetDefault(ParamsList));
+            SelectDefaultCommand = new RelayCommand(() => ParamsList = PatientExportParams.GetDefault());
             SaveAsDefaul = new RelayCommand(() => PatientExportParams.SetDefault(ParamsList));
             Export = new RelayCommand(CheckPath);
             GoBackCommand = new RelayCommand(baseVM.SwitchToTable);

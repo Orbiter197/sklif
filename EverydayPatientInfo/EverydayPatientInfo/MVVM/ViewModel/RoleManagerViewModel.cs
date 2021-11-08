@@ -33,7 +33,6 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         public ICommand NotAssignedCommand { get; set; }
         public ICommand DoctorCommand { get; set; }
         public ICommand OperatorCommand { get; set; }
-        public ICommand PickUpRoleCommand { get; set; }
 
         #endregion
         
@@ -41,10 +40,13 @@ namespace EverydayPatientInfo.MVVM.ViewModel
         {
             this.baseVM = baseVM;
 
-            NotAssignedCommand = new RelayCommand(() => selected = 0);
-            DoctorCommand = new RelayCommand(() => selected = 1);
-            OperatorCommand = new RelayCommand(() => selected = 2);
-            PickUpRoleCommand = new RelayCommand(() => ProjectMainClass.SwitchRole(selected));
+            NotAssignedCommand = new RelayCommand(() => ProjectMainClass.SwitchRole(0));
+            DoctorCommand = new RelayCommand(() => ProjectMainClass.SwitchRole(1));
+            OperatorCommand = new RelayCommand(() => ProjectMainClass.SwitchRole(2));
+
+            NotAssignedRoleAvaliable = "Avalible";
+            DoctorRoleAvaliable = "Avalible";
+            NotAssignedRoleAvaliable = "Avalible";
 
         }
     }
