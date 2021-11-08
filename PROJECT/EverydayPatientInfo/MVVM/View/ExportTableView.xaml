@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="EverydayPatientInfo.MVVM.View.ExportTableView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000">
+    <Border Style="{StaticResource Light}">
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Left"
+                       LastChildFill="False">
+                <StackPanel DockPanel.Dock="Top">
+                    <Button Content="Export"
+                            Command="{Binding Export}"
+                            Margin="10"
+                            Style="{StaticResource Blue}"
+                            FontSize="{StaticResource FontSizeSmall}"/>
+                    <Button Content="Select Default"
+                            Command="{Binding SelectDefaultCommand}"
+                            Margin="10"
+                            Style="{StaticResource Blue}"
+                            FontSize="{StaticResource FontSizeSmall}"/>
+                    <Button Content="Save as Default"
+                            Command="{Binding SaveAsDefaul}"
+                            Margin="10"
+                            Style="{StaticResource Blue}"
+                            FontSize="{StaticResource FontSizeSmall}"/>
+                </StackPanel>
+
+                <Button DockPanel.Dock="Bottom" 
+                        Content="Go back"
+                        Command="{Binding GoBackCommand}"
+                        Margin="10"
+                        Style="{StaticResource Blue}"
+                        FontSize="{StaticResource FontSizeSmall}"/>
+
+            </DockPanel>
+
+            <DockPanel DockPanel.Dock="Top" Margin="10">
+                <TextBlock DockPanel.Dock="Left"
+                           Text="File Path:"
+                           Style="{StaticResource Small}"/>
+                <TextBox Grid.Row="0" Grid.Column="2" Margin="5" Text="{Binding SavingPath}" Style="{StaticResource BaseStyle}" FontSize="{StaticResource FontSizeSmall}"/>
+            </DockPanel>
+
+            <Border VerticalAlignment="Stretch"
+                    Background="{StaticResource BackgroundVeryLightBrush}">
+
+                <DataGrid VerticalAlignment="Top"
+                          HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding ParamsList}"
+                          CanUserReorderColumns="False"
+                          CanUserResizeColumns="False"
+                          CanUserResizeRows="False"
+                          SelectionUnit="CellOrRowHeader"
+                          SelectionMode="Single"
+                          AutoGenerateColumns="False">
+
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Column Name"
+                                            Binding="{Binding ColumnName}"
+                                            IsReadOnly="True"
+                                            Width="*"/>
+                        <DataGridCheckBoxColumn Header="Visible"
+                                                Binding="{Binding IsShown}"
+                                                IsReadOnly="False"
+                                                Width="2*"/>
+
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+                
+            </Border>
+        </DockPanel>
+    </Border>
+</UserControl>

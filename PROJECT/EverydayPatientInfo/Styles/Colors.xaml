@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:EverydayPatientInfo">
+
+    <Color x:Key="BackgroundLight">#EFEFEF</Color>
+    <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}"/>
+    
+    <Color x:Key="BackgroundVeryLight">#FAFAFA</Color>
+    <SolidColorBrush x:Key="BackgroundVeryLightBrush" Color="{StaticResource BackgroundVeryLight}"/>
+    
+    <Color x:Key="ForegroundMain">#686868</Color>
+    <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMain}"/>
+    
+    <Color x:Key="ForegroundVeryDark">#000000</Color>
+    <SolidColorBrush x:Key="ForegroundVeryDarkBrush" Color="{StaticResource ForegroundVeryDark}"/>
+    
+    <Color x:Key="ForegroundLight">#FFFFFF</Color>
+    <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}"/>
+    
+    <!-- -->
+    <Color x:Key="ThemeLightBlue">#FF0675E4</Color>
+    <SolidColorBrush x:Key="ThemeLightBlueBrush" Color="{StaticResource ThemeLightBlue}"/>
+    
+    <Color x:Key="ThemeBlue">#FF045FCB</Color>
+    <SolidColorBrush x:Key="ThemeBlueBrush" Color="{StaticResource ThemeBlue}"/>
+
+    <Color x:Key="ThemeDarkBlue">#FF032F8C</Color>
+    <SolidColorBrush x:Key="ThemeDarkBlueBrush" Color="{StaticResource ThemeDarkBlue}"/>
+
+    <LinearGradientBrush x:Key="GradientBlue"
+                         EndPoint="1,1" StartPoint="0,0" SpreadMethod="Pad">
+        <GradientStop Color="{StaticResource ThemeDarkBlue}" Offset="1"/>
+        <GradientStop Color="{StaticResource ThemeLightBlue}" Offset="0"/>
+        <GradientStop Color="{StaticResource ThemeBlue}" Offset="0.457"/>
+    </LinearGradientBrush>
+
+
+</ResourceDictionary>

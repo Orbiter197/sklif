@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="EverydayPatientInfo.MVVM.View.ChangeRoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EverydayPatientInfo.MVVM.View"
+             xmlns:viewModel="clr-namespace:EverydayPatientInfo.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+
+
+    <Border Style="{StaticResource Light}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Background="{StaticResource GradientBlue}">
+                
+                <StackPanel VerticalAlignment="Center"
+                            Margin="30">
+                    <TextBlock Text="Your current role is "
+                               Style="{StaticResource Large}"
+                               FontFamily="{StaticResource LatoRegular}"
+                               Foreground="{StaticResource ForegroundLightBrush}"/>
+
+                    <TextBlock Text="{Binding Role}"
+                               Style="{StaticResource Large}"
+                               Foreground="{StaticResource ForegroundLightBrush}"/>
+
+                </StackPanel>
+            </Border>
+            <DockPanel Grid.Row="1"
+                        Margin="20">
+                <TextBlock DockPanel.Dock="Top" Text="Change role to: "
+                           Style="{StaticResource Normal}"/>
+
+                <Grid VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" Content="Not Assigned" Margin="10" 
+                            Command="{Binding NotAssignedCommand}"
+                            Style="{StaticResource Blue}"
+                            FontFamily="{StaticResource LatoRegular}"
+                            />
+                    <Button Grid.Row="1" Content="Doctor" Margin="10" 
+                            Command="{Binding DoctorCommand}"
+                            Style="{StaticResource Blue}"
+                            FontFamily="{StaticResource LatoRegular}"/>
+                    <Button Grid.Row="2" Content="Operator" Margin="10" 
+                            Command="{Binding OperatorCommand}"
+                            Style="{StaticResource Blue}"
+                            FontFamily="{StaticResource LatoRegular}"/>
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" 
+                               Text="{Binding NotAssignedRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Normal}"
+                               FontFamily="{StaticResource LatoThin}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="1"
+                               Text="{Binding DoctorRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Normal}"
+                               FontFamily="{StaticResource LatoThin}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="1"
+                               Text="{Binding OperatorRoleAvaliable}"
+                               HorizontalAlignment="Left"
+                               Margin="30 0 0 10"
+                               Style="{StaticResource Normal}"
+                               FontFamily="{StaticResource LatoThin}"/>
+
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Border>
+</UserControl>
