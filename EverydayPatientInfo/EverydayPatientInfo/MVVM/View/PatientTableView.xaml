@@ -22,6 +22,12 @@
                             Margin="10"
                             Style="{StaticResource Blue}"
                             FontSize="{StaticResource FontSizeSmall}"/>
+
+                    <Button Content="Export to Excel"
+                            Command="{Binding ExportToExcelCommand}"
+                            Margin="10"
+                            Style="{StaticResource Blue}"
+                            FontSize="{StaticResource FontSizeSmall}"/>
                 </StackPanel>
 
             </DockPanel>

@@ -47,6 +47,12 @@ namespace EverydayPatientInfo.MVVM.ViewModel
                 CurrentView = new PatientDetailViewModel(this, p);
         }
 
+        public void Export(List<Patient> list)
+        {
+            CurrentView = new ExportTableViewModel(this, list);
+        }
+       
+
         #endregion
     }
 }

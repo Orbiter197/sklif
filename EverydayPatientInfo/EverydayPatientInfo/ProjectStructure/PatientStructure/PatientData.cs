@@ -8,6 +8,7 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
 {
     class PatientData
     {
+        public DateTime Date { get; set; }
         public double PressureEvening { get; set; }
         public double PressureMorning { get; set; }
         public double SugarEvening { get; set; }
@@ -15,7 +16,7 @@ namespace EverydayPatientInfo.ProjectStructure.PatientStructure
         public double WeightEvening { get; set; }
         public double WeightMorning { get; set; }
         public double Height { get; set; } 
-        public DateTime Date { get; set; }
+        
         public string NotesEvening { get; set; }
         public string NotesMorning { get; set; }
 

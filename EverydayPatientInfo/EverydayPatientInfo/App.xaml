@@ -51,6 +51,9 @@
             <DataTemplate DataType="{x:Type viewModel:PatientTableViewModel}">
                 <view:PatientTableView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ExportTableViewModel}">
+                <view:ExportTableView/>
+            </DataTemplate>
 
 
         </ResourceDictionary>

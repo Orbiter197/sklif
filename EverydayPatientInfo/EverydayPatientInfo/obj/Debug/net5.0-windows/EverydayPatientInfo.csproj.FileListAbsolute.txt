@@ -62,3 +62,16 @@ D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\ob
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PatientDetailView.baml
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PatientTableView.g.cs
 D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\PatientTableView.baml
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\EPPlus.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.Extensions.Primitives.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\bin\Debug\net5.0-windows\System.Xml.XPath.XmlDocument.dll
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\ExportTableView.g.cs
+D:\General\VisualStudioProjects\sklif\EverydayPatientInfo\EverydayPatientInfo\obj\Debug\net5.0-windows\MVVM\View\ExportTableView.baml
